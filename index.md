@@ -3,7 +3,7 @@ layout: home
 title: Home
 landing-title: 'Hi, my name is Alice Dissoubray'
 description: null
-image: assets/images/pic01.jpg
+image: assets/images/banner.jpg
 author: null
 show_tile: true
 ---
