@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Home
+title: Welcome
 landing-title: 'Hi, my name is Alice Dissoubray'
 description: null
 image: assets/images/banner.jpg
@@ -8,4 +8,4 @@ author: null
 show_tile: true
 ---
 
-Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.
+Welcome to my e-portfolio! I am a second year computer science student at ENSEEIHT focussing on images and multimedia. You can navigate through the different tabs to find everything about me that could be interesting to you and if you have any questions or want to discuss anything with me, feel free to send me an email through the provided contact area at the botttom! Thanks for reading!
