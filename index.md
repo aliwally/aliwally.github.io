@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Home
-landing-title: 'Hi, my name is Forty'
+landing-title: 'Hi, my name is Alice Dissoubray'
 description: null
 image: assets/images/pic01.jpg
 author: null
