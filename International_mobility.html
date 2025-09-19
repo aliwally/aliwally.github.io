@@ -143,36 +143,11 @@
     </nav>
     <main>
 
-        <h2>My Work</h2>
-        <div class="tab-bar">
-            <button class="tab-btn active" onclick="showTab(0)">Project 1</button>
-            <button class="tab-btn" onclick="showTab(1)">Project 2</button>
-            <button class="tab-btn" onclick="showTab(2)">Project 3</button>
-        </div>
-        <div class="tab-content active">
-            <h3>Project 1</h3>
-            <p>Description of your first project.</p>
-        </div>
-        <div class="tab-content">
-            <h3>Project 2</h3>
-            <p>Description of your second project.</p>
-        </div>
-        <div class="tab-content">
-            <h3>Project 3</h3>
-            <p>Description of your third project.</p>
-        </div>
+        <h2>What about going abroad?</h2>
+       <p>
+            The world is so big and so many cultures 
+       </p>
     </main>
-    <script>
-        function showTab(idx) {
-            const tabs = document.querySelectorAll('.tab-btn');
-            const contents = document.querySelectorAll('.tab-content');
-            tabs.forEach((tab, i) => {
-                tab.classList.toggle('active', i === idx);
-            });
-            contents.forEach((content, i) => {
-                content.classList.toggle('active', i === idx);
-            });
-        }
-    </script>
+
 </body>
 </html>
