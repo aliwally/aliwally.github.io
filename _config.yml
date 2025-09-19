@@ -1,0 +1,25 @@
+title: Ali Wally Portfolio
+email: your@email.com
+description: >-
+  A modern e-portfolio built with Jekyll and the Forty theme.
+baseurl: ""
+url: "https://aliwally.github.io"
+author: Ali Wally
+
+# homepage tiles
+tiles-source: pages # accepts "posts" or "pages"
+tiles-count: 6
+
+# social settings
+socials:
+  GitHub: https://github.com/aliwally
+  LinkedIn: https://www.linkedin.com/in/alice-dissoubray-9a1116295
+
+markdown: kramdown
+sass:
+  style: compressed
+exclude:
+  - "*.gemspec"
+  - LICENSE.md
+  - CONTRIBUTING.md
+  - README.md
