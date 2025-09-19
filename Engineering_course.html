@@ -23,10 +23,8 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100vw;
             z-index: 200;
             transition: padding 0.4s, font-size 0.4s;
         }
@@ -34,18 +32,9 @@
             padding: 0.7rem 1rem 0.7rem 1rem;
         }
         nav {
-            position: fixed;
-            top: 100px;
-            left: 0;
-            width: 100vw;
+            position: sticky;
+            top: 0;
             z-index: 150;
-            transition: top 0.4s;
-        }
-        header.shrink + nav {
-            top: 60px;
-        }
-        body.page-padding main {
-            padding-top: 160px;
         }
         main {
             max-width: 800px;
@@ -118,17 +107,13 @@
     // Header shrink on scroll
     const mainHeader = document.getElementById('mainHeader');
     const mainNav = document.getElementById('mainNav');
-    function updateHeaderNav() {
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 80) {
             mainHeader.classList.add('shrink');
-            document.body.classList.add('page-padding');
         } else {
             mainHeader.classList.remove('shrink');
-            document.body.classList.remove('page-padding');
         }
-    }
-    window.addEventListener('scroll', updateHeaderNav);
-    window.addEventListener('DOMContentLoaded', updateHeaderNav);
+    });
     </script>
         <h2>Who am I?</h2>
         <p>Write a short bio about yourself here. You can include your background, interests, and what you do.</p>
