@@ -28,9 +28,7 @@
             z-index: 200;
             transition: padding 0.4s, font-size 0.4s;
         }
-        header.shrink {
-            padding: 0.7rem 1rem 0.7rem 1rem;
-        }
+    /* Removed shrinking header style */
         nav {
             position: sticky;
             top: 0;
@@ -103,18 +101,7 @@
         <a href="contact.html">Contact</a>
     </nav>
     <main>
-    <script>
-    // Header shrink on scroll
-    const mainHeader = document.getElementById('mainHeader');
-    const mainNav = document.getElementById('mainNav');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 80) {
-            mainHeader.classList.add('shrink');
-        } else {
-            mainHeader.classList.remove('shrink');
-        }
-    });
-    </script>
+
         <h2>Who am I?</h2>
         <p>Write a short bio about yourself here. You can include your background, interests, and what you do.</p>
     </main>
