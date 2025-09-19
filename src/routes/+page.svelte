@@ -11,11 +11,9 @@
 <section class="intro">
     <div>
         <h1>Hi, I'm </h1>
-        <h1 style="color: {Violet}">Nell Truong.</h1>
-        <h2>I'm an engineering student.</h2>
-        <p>I am a engineering student specializing in computer science at N7 (INP-ENSEEIHT) 
-            and I have just finished an internship as a developer at 
-            <a href="https://www.sncf-voyageurs.com/fr/decouvrez-notre-entreprise/nos-directions-et-filiales/direction-du-materiel/" target="blank">SNCF</a>.</p>
+        <h1 style="color: {Violet}">Alice Wally.</h1>
+        <h2>I'm a computer science student.</h2>
+        <p>Welcome to my portfolio! I'm passionate about technology, coding, and creative problem-solving.</p>
         <AButton text={"Learn more"} link="{base}/#about" textColor={Violet} buttonColor={Violet}/>
     </div>
 </section>
@@ -23,9 +21,9 @@
 <section class="abt_section" id="about">
     <h2>About me</h2>
     <div class="abt" >
-        <HomeText/>
-        <!-- svelte-ignore a11y-img-redundant-alt -->
-        <img src="https://nelltruong.dev/img/pfp.jpg" alt="profile picture" class="pfp"/>
+    <HomeText/>
+    <!-- svelte-ignore a11y-img-redundant-alt -->
+    <img src="/img/CdL/cover.jpg" alt="profile picture" class="pfp"/>
     </div>
 </section>
 
