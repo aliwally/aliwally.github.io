@@ -16,20 +16,25 @@
         min-height: 100vh;
     }
     header {
-        position: fixed;
-        top: 0; left: 0; width: 100vw;
-        height: 60px;
         background: linear-gradient(90deg, #1e473d 60%, #3e7c6b 100%);
         color: #fff;
+        padding: 2.5rem 1rem 2rem 1rem;
         text-align: center;
         box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-        letter-spacing: 1px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        transition: padding 0.4s, font-size 0.4s;
+    }
+    header.shrink {
+        padding: 0.7rem 1rem 0.7rem 1rem;
+    }
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 150;
     }
     main {
         max-width: 800px;
@@ -39,7 +44,6 @@
         border-radius: 18px;
         box-shadow: 0 4px 24px rgba(0,0,0,0.08);
         min-height: 60vh;
-        margin-top: 80px;
     }
     nav {
         background: #f6fdfbcc;
@@ -136,10 +140,10 @@
     </style>
 </head>
 <body>
-    <header>
-        <span>Professional project</span>
+    <header id="mainHeader">
+        <h1>Professional project</h1>
     </header>
-    <nav>
+    <nav id="mainNav">
         <a href="index.html">Home</a>
         <a href="Engineering_course.html">Engineering Course</a>
         <a href="International_mobility.html">International mobility</a>
@@ -149,6 +153,18 @@
         <a href="contact.html">Contact</a>
     </nav>
     <main>
+    <script>
+    // Header shrink on scroll
+    const mainHeader = document.getElementById('mainHeader');
+    const mainNav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 80) {
+            mainHeader.classList.add('shrink');
+        } else {
+            mainHeader.classList.remove('shrink');
+        }
+    });
+    </script>
         <div class="tab-bar">
             <button class="tab-btn active" onclick="showTab(0)">Bio</button>
             <button class="tab-btn" onclick="showTab(1)">CV</button>
