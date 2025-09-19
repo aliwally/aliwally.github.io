@@ -6,13 +6,18 @@
     <title>Professional Project - Alice DIssoubray</title>
     <link rel="stylesheet" href="index.html">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-        header { background: #d8ba11; color: #000000; padding: 2rem 1rem; text-align: center; }
-        nav { background: #d8ba11b2; padding: 0.5rem 0; text-align: center; }
-        nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-        main { max-width: 700px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        h1 { margin-top: 0; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #d8ba11; color: #000000; padding: 2rem 1rem; text-align: center; }
+    nav { background: #d8ba11b2; padding: 0.5rem 0; text-align: center; }
+    nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { max-width: 700px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    h1 { margin-top: 0; }
+    .tab-bar { display: flex; gap: 1rem; margin-bottom: 2rem; }
+    .tab-btn { background: #eee; border: none; padding: 0.5rem 1.5rem; border-radius: 5px 5px 0 0; cursor: pointer; font-size: 1rem; }
+    .tab-btn.active { background: #d8ba11; color: #000; font-weight: bold; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
     </style>
 </head>
 <body>
@@ -29,8 +34,34 @@
         <a href="contact.html">Contact</a>
     </nav>
     <main>
-        <h2>Who am I?</h2>
-        <p>Write a short bio about yourself here. You can include your background, interests, and what you do.</p>
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="showTab(0)">Bio</button>
+            <button class="tab-btn" onclick="showTab(1)">CV</button>
+        </div>
+        <div class="tab-content active">
+            <h2>Who am I?</h2>
+            <p>Second-year Images and Multimedia Computer Science student at the engineering school ENSEEIHT in Toulouse. I am extremely passionate about new technologies and the truly incredible things being accomplished today thanks to computers.</p>
+        </div>
+        <div class="tab-content">
+            <h2>My CV</h2>
+            <p>You can view or download my CV below:</p>
+            <!-- Replace 'cv.pdf' and folder if needed -->
+            <a href="docs/CV_English.pdf" target="_blank" style="font-weight:bold; color:#d8ba11;">Open CV (PDF)</a>
+            <br><br>
+            <embed src="docs/CV_English.pdf" type="application/pdf" width="100%" height="500px" style="border:1px solid #eee; border-radius:8px;" />
+        </div>
+        <script>
+            function showTab(idx) {
+                const tabs = document.querySelectorAll('.tab-btn');
+                const contents = document.querySelectorAll('.tab-content');
+                tabs.forEach((tab, i) => {
+                    tab.classList.toggle('active', i === idx);
+                });
+                contents.forEach((content, i) => {
+                    content.classList.toggle('active', i === idx);
+                });
+            }
+        </script>
     </main>
 </body>
 </html>
