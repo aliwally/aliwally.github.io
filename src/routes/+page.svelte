@@ -11,9 +11,9 @@
 <section class="intro">
     <div>
         <h1>Hi, I'm </h1>
-        <h1 style="color: {Violet}">Alice Wally.</h1>
-        <h2>I'm a computer science student.</h2>
-        <p>Welcome to my portfolio! I'm passionate about technology, coding, and creative problem-solving.</p>
+        <h1 style="color: {Violet}">Alice Dissoubray.</h1>
+        <h2>I'm a computer science student at ENSEEIHT studying image and multimedia.</h2>
+        <p>Welcome to my portfolio! I'm passionate about technology, coding, and love creativity and all the beautiful things you can do with it.</p>
         <AButton text={"Learn more"} link="{base}/#about" textColor={Violet} buttonColor={Violet}/>
     </div>
 </section>
