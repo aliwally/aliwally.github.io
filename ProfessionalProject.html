@@ -169,16 +169,24 @@
         <div class="tab-content active">
             <h2>Who am I?</h2>
             <p>Second-year Images and Multimedia Computer Science student at the engineering school ENSEEIHT in Toulouse. I am extremely passionate about new technologies and the truly incredible things being accomplished today thanks to computers.</p>
-    
-                const contents = document.querySelectorAll('.tab-content');
-                tabs.forEach((tab, i) => {
-                    tab.classList.toggle('active', i === idx);
-                });
-                contents.forEach((content, i) => {
-                    content.classList.toggle('active', i === idx);
-                });
-            }
-        </script>
+        </div>
+        <div class="tab-content">
+            <h2>CV</h2>
+            <p>Add your CV content here (PDF, image, or text).</p>
+        </div>
+    </main>
+    <script>
+    function showTab(idx) {
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+        tabs.forEach((tab, i) => {
+            tab.classList.toggle('active', i === idx);
+        });
+        contents.forEach((content, i) => {
+            content.classList.toggle('active', i === idx);
+        });
+    }
+    </script>
     </main>
 </body>
 </html>
