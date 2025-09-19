@@ -6,7 +6,17 @@
     <title>Alice Dissoubray</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-        header { background: #d8ba11; color: #000000; padding: 2rem 1rem; text-align: center; }
+        header { background: #d8ba11; color: #000000; padding: 2rem 1rem 1rem 1rem; text-align: center; position: relative; }
+        .cover-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #fffbe6;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            margin-bottom: 1rem;
+            background: #fffbe6;
+        }
         nav { background: #d8ba11b2; padding: 0.5rem 0; text-align: center; }
         nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: bold; }
         nav a:hover { text-decoration: underline; }
@@ -16,8 +26,9 @@
 </head>
 <body>
     <header>
-        <h1>Alice Dissoubray</h1>
-        <p>Welcome to my portfolio!</p>
+    <img src="img/cover.jpg" alt="Alice Dissoubray Cover" class="cover-img">
+    <h1>Alice Dissoubray</h1>
+    <p>Welcome to my portfolio!</p>
     </header>
     <nav>
         <a href="index.html">Home</a>
