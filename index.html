@@ -83,12 +83,17 @@
             font-weight: 700;
             letter-spacing: 1px;
             opacity: 0;
+            pointer-events: none;
             transition: opacity 0.4s, height 0.4s;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
         }
         .sticky-header.visible {
             height: 60px;
             opacity: 1;
+            pointer-events: auto;
+        }
+        body.sticky-padding main {
+            padding-top: 70px;
         }
         nav {
             background: #f6fdfbcc;
@@ -171,9 +176,11 @@
         if (scrollY > 120) {
             heroHeader.classList.add('shrink');
             stickyHeader.classList.add('visible');
+            document.body.classList.add('sticky-padding');
         } else {
             heroHeader.classList.remove('shrink');
             stickyHeader.classList.remove('visible');
+            document.body.classList.remove('sticky-padding');
         }
     });
     </script>
