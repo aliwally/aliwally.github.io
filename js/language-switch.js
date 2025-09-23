@@ -84,6 +84,15 @@ class LanguageSwitcher {
     }
 
     createLanguageSwitch() {
+        console.log('Creating language switch...');
+        
+        // Remove any existing language switch elements first
+        const existingSwitch = document.querySelector('.language-switch');
+        if (existingSwitch) {
+            console.log('Removing existing language switch');
+            existingSwitch.remove();
+        }
+
         const languageSwitch = document.createElement('div');
         languageSwitch.className = 'language-switch';
         languageSwitch.innerHTML = `
@@ -95,11 +104,13 @@ class LanguageSwitcher {
 
         // Add to body (bottom right position)
         document.body.appendChild(languageSwitch);
+        console.log('Language switch added to body');
 
         // Add event listener
         const toggleButton = document.getElementById('language-toggle');
         if (toggleButton) {
             toggleButton.addEventListener('click', () => this.toggleLanguage());
+            console.log('Event listener added to language toggle');
         }
     }
 
@@ -201,5 +212,7 @@ document.head.appendChild(style);
 
 // Initialize language switcher when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Initializing language switcher...');
     new LanguageSwitcher();
+    console.log('Language switcher initialized');
 });
