@@ -44,6 +44,10 @@ class LanguageSwitcher {
                 'contact-form-message': 'Your Message',
                 'contact-form-send': 'Send Message',
                 
+                // CV section
+                'cv-title': 'CV',
+                'cv-download': 'Download PDF',
+                
                 // Common
                 'language-switch': 'Français'
             },
@@ -76,6 +80,10 @@ class LanguageSwitcher {
                 'contact-form-email': 'Votre email',
                 'contact-form-message': 'Votre message',
                 'contact-form-send': 'Envoyer le message',
+                
+                // CV section
+                'cv-title': 'CV',
+                'cv-download': 'Télécharger PDF',
                 
                 // Common
                 'language-switch': 'English'
@@ -165,6 +173,28 @@ class LanguageSwitcher {
         }
         if (languageText) {
             languageText.textContent = this.translations[language]['language-switch'];
+        }
+
+        // Update CV files based on language
+        const cvImage = document.getElementById('cv-image');
+        const cvDownload = document.getElementById('cv-download');
+        
+        if (cvImage) {
+            if (language === 'fr') {
+                cvImage.src = 'img/CV_Fren.jpg';
+                cvImage.alt = 'CV Français';
+            } else {
+                cvImage.src = 'img/CV_Eng.jpg';
+                cvImage.alt = 'CV English';
+            }
+        }
+        
+        if (cvDownload) {
+            if (language === 'fr') {
+                cvDownload.href = 'docs/CV_French.pdf';
+            } else {
+                cvDownload.href = 'docs/CV_English.pdf';
+            }
         }
     }
 }
