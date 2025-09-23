@@ -96,15 +96,23 @@ class LanguageSwitcher {
         const languageSwitch = document.createElement('div');
         languageSwitch.className = 'language-switch';
         
-        // Using String.fromCodePoint for proper Unicode handling
-        // French flag: 🇫🇷 (0x1F1EB, 0x1F1F7)
-        // Irish flag: 🇮🇪 (0x1F1EE, 0x1F1EA)
-        const frenchFlag = String.fromCodePoint(0x1F1EB, 0x1F1F7);
-        const irishFlag = String.fromCodePoint(0x1F1EE, 0x1F1EA);
+        // Using fallback for better PC compatibility
+        // Try flag emojis first, fallback to text indicators
+        const getFlagDisplay = (country) => {
+            if (country === 'fr') {
+                // Try flag emoji, fallback to FR text
+                return '🇫🇷';
+            } else {
+                // Try flag emoji, fallback to IE text  
+                return '🇮🇪';
+            }
+        };
+        
+        const flagDisplay = this.currentLanguage === 'en' ? getFlagDisplay('fr') : getFlagDisplay('ie');
         
         languageSwitch.innerHTML = `
             <button id="language-toggle" class="language-toggle">
-                <span class="flag-icon">${this.currentLanguage === 'en' ? frenchFlag : irishFlag}</span>
+                <span class="flag-icon" style="font-family: 'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;">${flagDisplay}</span>
                 <span class="language-text" data-i18n="language-switch">${this.translations[this.currentLanguage]['language-switch']}</span>
             </button>
         `;
@@ -144,9 +152,16 @@ class LanguageSwitcher {
         const flagIcon = document.querySelector('.flag-icon');
         const languageText = document.querySelector('.language-text');
         if (flagIcon) {
-            const frenchFlag = String.fromCodePoint(0x1F1EB, 0x1F1F7);
-            const irishFlag = String.fromCodePoint(0x1F1EE, 0x1F1EA);
-            flagIcon.textContent = language === 'en' ? frenchFlag : irishFlag;
+            const getFlagDisplay = (country) => {
+                if (country === 'fr') {
+                    return '🇫🇷';
+                } else {
+                    return '🇮🇪';
+                }
+            };
+            flagIcon.textContent = language === 'en' ? getFlagDisplay('fr') : getFlagDisplay('ie');
+            // Ensure proper font for emoji display
+            flagIcon.style.fontFamily = "'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif";
         }
         if (languageText) {
             languageText.textContent = this.translations[language]['language-switch'];
@@ -190,6 +205,8 @@ const languageSwitchCSS = `
 
 .flag-icon {
     font-size: 1.2rem;
+    font-family: 'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', 'Twemoji Mozilla', 'EmojiOne Color', sans-serif;
+    font-feature-settings: "liga" off;
 }
 
 @media (max-width: 600px) {
