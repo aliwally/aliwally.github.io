@@ -93,11 +93,8 @@ class LanguageSwitcher {
             </button>
         `;
 
-        // Add to navigation
-        const nav = document.querySelector('nav');
-        if (nav) {
-            nav.appendChild(languageSwitch);
-        }
+        // Add to body (bottom right position)
+        document.body.appendChild(languageSwitch);
 
         // Add event listener
         const toggleButton = document.getElementById('language-toggle');
@@ -140,16 +137,18 @@ class LanguageSwitcher {
 // CSS for language switch
 const languageSwitchCSS = `
 .language-switch {
-    display: inline-block;
-    margin-left: 1.5rem;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .language-toggle {
-    background: transparent;
+    background: #fff;
     border: 2px solid #1e473d;
     color: #1e473d;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
+    padding: 0.6rem 1rem;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: 700;
     font-size: 0.9rem;
@@ -158,31 +157,39 @@ const languageSwitchCSS = `
     gap: 0.5rem;
     transition: all 0.3s ease;
     font-family: 'Roboto', Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .language-toggle:hover {
     background: #1e473d;
     color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(30, 71, 61, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 71, 61, 0.3);
 }
 
 .flag-icon {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 600px) {
     .language-switch {
-        margin-left: 0.8rem;
+        bottom: 15px;
+        right: 15px;
     }
     
     .language-toggle {
-        padding: 0.3rem 0.6rem;
+        padding: 0.5rem 0.8rem;
         font-size: 0.8rem;
+        border-radius: 20px;
     }
     
     .language-text {
         display: none;
+    }
+    
+    .flag-icon {
+        font-size: 1.4rem;
     }
 }
 `;
