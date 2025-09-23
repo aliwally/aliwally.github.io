@@ -1,4 +1,4 @@
-// Language switching functionality
+// Language switching functionality with Irish flag
 class LanguageSwitcher {
     constructor() {
         this.currentLanguage = localStorage.getItem('preferred-language') || 'en';
@@ -96,17 +96,15 @@ class LanguageSwitcher {
         const languageSwitch = document.createElement('div');
         languageSwitch.className = 'language-switch';
         
-        // Define flags using Unicode code points to avoid corruption
-        const FLAGS = {
-            fr: String.fromCodePoint(0x1F1EB, 0x1F1F7), // 🇫🇷
-            us: String.fromCodePoint(0x1F1FA, 0x1F1F8)  // 🇺🇸
-        };
-        
-        const currentFlag = this.currentLanguage === 'en' ? FLAGS.fr : FLAGS.us;
+        // Using String.fromCodePoint for proper Unicode handling
+        // French flag: 🇫🇷 (0x1F1EB, 0x1F1F7)
+        // Irish flag: 🇮🇪 (0x1F1EE, 0x1F1EA)
+        const frenchFlag = String.fromCodePoint(0x1F1EB, 0x1F1F7);
+        const irishFlag = String.fromCodePoint(0x1F1EE, 0x1F1EA);
         
         languageSwitch.innerHTML = `
             <button id="language-toggle" class="language-toggle">
-                <span class="flag-icon">${currentFlag}</span>
+                <span class="flag-icon">${this.currentLanguage === 'en' ? frenchFlag : irishFlag}</span>
                 <span class="language-text" data-i18n="language-switch">${this.translations[this.currentLanguage]['language-switch']}</span>
             </button>
         `;
@@ -146,12 +144,9 @@ class LanguageSwitcher {
         const flagIcon = document.querySelector('.flag-icon');
         const languageText = document.querySelector('.language-text');
         if (flagIcon) {
-            // Use Unicode code points to avoid corruption
-            const FLAGS = {
-                fr: String.fromCodePoint(0x1F1EB, 0x1F1F7), // 🇫🇷
-                us: String.fromCodePoint(0x1F1FA, 0x1F1F8)  // 🇺🇸
-            };
-            flagIcon.textContent = language === 'en' ? FLAGS.fr : FLAGS.us;
+            const frenchFlag = String.fromCodePoint(0x1F1EB, 0x1F1F7);
+            const irishFlag = String.fromCodePoint(0x1F1EE, 0x1F1EA);
+            flagIcon.textContent = language === 'en' ? frenchFlag : irishFlag;
         }
         if (languageText) {
             languageText.textContent = this.translations[language]['language-switch'];
@@ -195,7 +190,6 @@ const languageSwitchCSS = `
 
 .flag-icon {
     font-size: 1.2rem;
-    line-height: 1;
 }
 
 @media (max-width: 600px) {
