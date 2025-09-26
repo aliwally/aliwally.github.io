@@ -31,18 +31,6 @@ class LanguageSwitcher {
                 'quote-text': '"And now here is my secret, a very simple secret: It is only with the heart that one can see rightly; what is essential is invisible to the eye."',
                 'quote-author': '― Antoine de Saint-Exupéry, The Little Prince',
                 
-                // Contact page
-                'contact-title': 'Contact',
-                'contact-intro': 'Feel free to reach out to me through any of the following channels:',
-                'contact-email': 'Email',
-                'contact-linkedin': 'LinkedIn',
-                'contact-phone': 'Phone',
-                'contact-location': 'Location',
-                'contact-form-title': 'Send me a message',
-                'contact-form-name': 'Your Name',
-                'contact-form-email': 'Your Email',
-                'contact-form-message': 'Your Message',
-                'contact-form-send': 'Send Message',
                 
                 // CV section
                 'cv-title': 'CV',
@@ -65,21 +53,10 @@ class LanguageSwitcher {
                 'hero-subtitle': 'Bienvenue sur mon portfolio !',
                 'home-greeting': 'Salut !',
                 'home-intro': 'Je m\'appelle Alice et je suis étudiante en première année de master informatique à l\'Enseeiht à Toulouse, spécialisée en Images et multimédia. Vous pouvez naviguer sur ce site web pour en apprendre plus sur moi et mon travail. Vous pouvez aussi regarder cette courte vidéo de présentation de moi-même juste en dessous !',
-                'quote-text': '"Et maintenant, voici mon secret, un secret très simple : On ne voit bien qu\'avec le cœur. L\'essentiel est invisible pour les yeux."',
+                'quote-text': '"Voici mon secret. Il est très simple : on ne voit bien qu\'avec le cœur. L\'essentiel est invisible pour les yeux."',
                 'quote-author': '― Antoine de Saint-Exupéry, Le Petit Prince',
                 
-                // Contact page
-                'contact-title': 'Contact',
-                'contact-intro': 'N\'hésitez pas à me contacter par l\'un des moyens suivants :',
-                'contact-email': 'Email',
-                'contact-linkedin': 'LinkedIn',
-                'contact-phone': 'Téléphone',
-                'contact-location': 'Localisation',
-                'contact-form-title': 'Envoyez-moi un message',
-                'contact-form-name': 'Votre nom',
-                'contact-form-email': 'Votre email',
-                'contact-form-message': 'Votre message',
-                'contact-form-send': 'Envoyer le message',
+
                 
                 // CV section
                 'cv-title': 'CV',
