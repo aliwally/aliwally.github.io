@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="lang-en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/cara.png">
-    <script src="js/language-switch.js"></script>
+    <script src="js/language-switch-css.js"></script>
     <style>
         .fancy-quote {
             margin: 2.5rem auto 2rem auto;
@@ -158,6 +158,19 @@
             main { padding: 1.2rem 0.5rem; }
             .hero-title { font-size: 2rem; }
         }
+        /* Hide French content by default (English is default) */
+        .lang-en .fr { display: none; }
+        .lang-fr .en { display: none; }
+        
+        /* Show appropriate language content */
+        .lang-en .en { display: block; }
+        .lang-fr .fr { display: block; }
+        
+        /* For inline elements */
+        .lang-en .fr.inline { display: none; }
+        .lang-fr .en.inline { display: none; }
+        .lang-en .en.inline { display: inline; }
+        .lang-fr .fr.inline { display: inline; }        
     </style>
 </head>
 <body>
@@ -165,27 +178,58 @@
         <img src="img/cover.jpg" alt="Alice Dissoubray Cover" class="hero-bg" id="heroBg">
         <div class="hero-content" id="heroContent">
             <h1 class="hero-title">Alice Dissoubray</h1>
-            <p class="hero-subtitle" data-i18n="hero-subtitle">Welcome to my portfolio!</p>
+            <p class="hero-subtitle">
+                <span class="en">Welcome to my portfolio!</span>
+                <span class="fr">Bienvenue sur mon portfolio !</span>
+            </p>
         </div>
     </div>
     <div class="sticky-header" id="stickyHeader">Alice Dissoubray</div>
     <nav>
-        <a href="index.html" data-i18n="nav-home">Home</a>
-        <a href="Engineering_course.html" data-i18n="nav-engineering">Engineering Course</a>
-        <a href="International_mobility.html" data-i18n="nav-mobility">International mobility</a>
-        <a href="sustainability.html" data-i18n="nav-sustainability">Sustainability & Civic Engagement</a>
-        <a href="hobbies.html" data-i18n="nav-hobbies">Personal Interests</a>
-        <a href="ProfessionalProject" data-i18n="nav-professional">Professional Project</a>
-        <a href="contact.html" data-i18n="nav-contact">Contact</a>
+        <a href="index.html">
+            <span class="en">Home</span>
+            <span class="fr">Accueil</span>
+        </a>
+        <a href="Engineering_course.html">
+            <span class="en">Engineering Course</span>
+            <span class="fr">Cursus Ingénieur</span>
+        </a>
+        <a href="International_mobility.html">
+            <span class="en">International mobility</span>
+            <span class="fr">Mobilité internationale</span>
+        </a>
+        <a href="sustainability.html">
+            <span class="en">Sustainability & Civic Engagement</span>
+            <span class="fr">Développement durable & Engagement civique</span>
+        </a>
+        <a href="hobbies.html">
+            <span class="en">Personal Interests</span>
+            <span class="fr">Centres d'intérêt personnels</span>
+        </a>
+        <a href="ProfessionalProject">
+            <span class="en">Professional Project</span>
+            <span class="fr">Projet professionnel</span>
+        </a>
+        <a href="contact.html">
+            <span class="en">Contact</span>
+            <span class="fr">Contact</span>
+        </a>
     </nav>
     <main>
-        <h2 data-i18n="home-greeting">Hi!</h2>
-        <p data-i18n="home-intro">My name is Alice and I am a first year masters computer science student at Enseeiht in Toulouse focussing on Images and multimedia. You can navigate through this website to learn more about me and my work.
-            You can also watch this short video presentation about myself just below! 
-        </p>
+        <h2>
+            <span class="en">Hi!</span>
+            <span class="fr">Salut !</span>
+        </h2>
+        <p class="en">My name is Alice and I am a first year masters computer science student at Enseeiht in Toulouse focussing on Images and multimedia. You can navigate through this website to learn more about me and my work. You can also watch this short video presentation about myself just below!</p>
+        <p class="fr">Je m'appelle Alice et je suis étudiante en première année de master informatique à l'Enseeiht à Toulouse, spécialisée en Images et multimédia. Vous pouvez naviguer sur ce site web pour en apprendre plus sur moi et mon travail. Vous pouvez aussi regarder cette courte vidéo de présentation de moi-même juste en dessous !</p>
+        
         <blockquote class="fancy-quote">
-            <span data-i18n="quote-text">"And now here is my secret, a very simple secret: It is only with the heart that one can see rightly; what is essential is invisible to the eye."</span>
-            <span class="quote-author" data-i18n="quote-author">― Antoine de Saint-Exupéry, The Little Prince</span>
+            <span class="en">"And now here is my secret, a very simple secret: It is only with the heart that one can see rightly; what is essential is invisible to the eye."</span>
+            <span class="fr">"Et maintenant, voici mon secret, un secret très simple : On ne voit bien qu'avec le cœur. L'essentiel est invisible pour les yeux."</span>
+            <span class="quote-author">
+                <span class="en">― Antoine de Saint-Exupéry, The Little Prince</span>
+                <span class="fr">― Antoine de Saint-Exupéry, Le Petit Prince</span>
+            </span>
         </blockquote>
         <img src="img/cover.jpg" alt="Alice Dissoubray" style="display:block;margin:2.5rem auto 0 auto;max-width:420px;width:95%;border-radius:24px;box-shadow:0 8px 32px rgba(0,0,0,0.16);">
     </main>
