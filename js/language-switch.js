@@ -153,23 +153,23 @@ class LanguageSwitcher {
         }
 
         // Update CV files based on language
-        const cvImage = document.getElementById('cv-image');
+        const cvIframe = document.getElementById('cv-iframe');
         const cvDownload = document.getElementById('cv-download');
-        
-        if (cvImage) {
-            if (language === 'fr') {
-                cvImage.src = 'img/CV_Fren.jpg';
-                cvImage.alt = 'CV Français';
-            } else {
-                cvImage.src = 'img/CV_Eng.jpg';
-                cvImage.alt = 'CV English';
+
+        if (language === 'fr') {
+            // Switch to French CV
+            if (cvIframe) {
+                cvIframe.src = 'docs/CV_French.pdf#toolbar=0';
             }
-        }
-        
-        if (cvDownload) {
-            if (language === 'fr') {
+            if (cvDownload) {
                 cvDownload.href = 'docs/CV_French.pdf';
-            } else {
+            }
+        } else {
+            // Switch to English CV
+            if (cvIframe) {
+                cvIframe.src = 'docs/CV_English.pdf#toolbar=0';
+            }
+            if (cvDownload) {
                 cvDownload.href = 'docs/CV_English.pdf';
             }
         }
