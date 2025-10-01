@@ -137,6 +137,15 @@
             background: #1e473d;
             text-decoration: none;
         }
+        
+        /* Fix navigation layout for language spans */
+        nav a {
+            display: inline-block;
+            white-space: nowrap;
+        }
+        nav a span {
+            display: inline;
+        }
         main {
             max-width: 800px;
             margin: 2.5rem auto;
@@ -158,19 +167,32 @@
             main { padding: 1.2rem 0.5rem; }
             .hero-title { font-size: 2rem; }
         }
-        /* Hide French content by default (English is default) */
-        .lang-en .fr { display: none; }
-        .lang-fr .en { display: none; }
+        /* Language switching rules - default to English */
+        .lang-en .fr { display: none !important; }
+        .lang-fr .en { display: none !important; }
         
         /* Show appropriate language content */
         .lang-en .en { display: block; }
         .lang-fr .fr { display: block; }
         
-        /* For inline elements */
-        .lang-en .fr.inline { display: none; }
-        .lang-fr .en.inline { display: none; }
-        .lang-en .en.inline { display: inline; }
-        .lang-fr .fr.inline { display: inline; }        
+        /* For inline elements (navigation, spans within text) */
+        nav .en, nav .fr,
+        span.en, span.fr,
+        .hero-subtitle .en, .hero-subtitle .fr,
+        .quote-author .en, .quote-author .fr {
+            display: inline !important;
+        }
+        
+        /* Hide inactive language for inline elements */
+        .lang-en nav .fr, 
+        .lang-en span.fr,
+        .lang-en .hero-subtitle .fr,
+        .lang-en .quote-author .fr { display: none !important; }
+        
+        .lang-fr nav .en,
+        .lang-fr span.en, 
+        .lang-fr .hero-subtitle .en,
+        .lang-fr .quote-author .en { display: none !important; }        
     </style>
 </head>
 <body>
