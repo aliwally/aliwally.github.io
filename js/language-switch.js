@@ -159,7 +159,12 @@ class LanguageSwitcher {
         if (language === 'fr') {
             // Switch to French CV
             if (cvIframe) {
-                cvIframe.src = 'docs/CV_French.pdf#toolbar=0';
+                // Force reload by clearing src first, then setting new src
+                cvIframe.src = '';
+                setTimeout(() => {
+                    const timestamp = new Date().getTime();
+                    cvIframe.src = `docs/CV_French.pdf#toolbar=0&t=${timestamp}`;
+                }, 50);
             }
             if (cvDownload) {
                 cvDownload.href = 'docs/CV_French.pdf';
@@ -167,7 +172,12 @@ class LanguageSwitcher {
         } else {
             // Switch to English CV
             if (cvIframe) {
-                cvIframe.src = 'docs/CV_English.pdf#toolbar=0';
+                // Force reload by clearing src first, then setting new src
+                cvIframe.src = '';
+                setTimeout(() => {
+                    const timestamp = new Date().getTime();
+                    cvIframe.src = `docs/CV_English.pdf#toolbar=0&t=${timestamp}`;
+                }, 50);
             }
             if (cvDownload) {
                 cvDownload.href = 'docs/CV_English.pdf';
