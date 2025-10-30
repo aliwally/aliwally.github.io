@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="js/language-switch.js"></script>
+    <script src="js/language-switch-css.js"></script>
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
@@ -86,37 +86,93 @@
         @media (max-width: 600px) {
             main { padding: 1.2rem 0.5rem; }
         }
+        /* Language switching rules - default to English */
+        .lang-en .fr { display: none !important; }
+        .lang-fr .en { display: none !important; }
+        
+        /* Show appropriate language content */
+        .lang-en .en { display: block; }
+        .lang-fr .fr { display: block; }
+        
+        /* For inline elements (navigation, spans within text) */
+        nav .en, nav .fr,
+        span.en, span.fr,
+        .hero-subtitle .en, .hero-subtitle .fr,
+        .quote-author .en, .quote-author .fr {
+            display: inline !important;
+        }
+        
+        /* Hide inactive language for inline elements */
+        .lang-en nav .fr, 
+        .lang-en span.fr,
+        .lang-en .hero-subtitle .fr,
+        .lang-en .quote-author .fr { display: none !important; }
+        
+        .lang-fr nav .en,
+        .lang-fr span.en, 
+        .lang-fr .hero-subtitle .en,
+        .lang-fr .quote-author .en { display: none !important; }        
     </style>
 </head>
 <body>
     <header id="mainHeader">
-        <h1>About my Engineering courses</h1>
+        <h1>
+            <span class="en">About my Engineering courses</span>
+            <span class="fr">A propos de mon parcours Ingénieur</span>
+            </h1>
     </header>
     <nav id="mainNav">
-        <a href="index.html" data-i18n="nav-home">Home</a>
-        <a href="Engineering_course.html" data-i18n="nav-engineering">Engineering Course</a>
-        <a href="International_mobility.html" data-i18n="nav-mobility">International mobility</a>
-        <a href="sustainability.html" data-i18n="nav-sustainability">Sustainability & Civic Engagement</a>
-        <a href="hobbies.html" data-i18n="nav-hobbies">Personal Interests</a>
-        <a href="ProfessionalProject" data-i18n="nav-professional">Professional Project</a>
-        <a href="contact.html" data-i18n="nav-contact">Contact</a>
+        <a href="index.html">
+            <span class="en">Home</span>
+            <span class="fr">Accueil</span>
+        </a>
+        <a href="Engineering_course.html">
+            <span class="en">Engineering Course</span>
+            <span class="fr">Cursus Ingénieur</span>
+        </a>
+        <a href="International_mobility.html">
+            <span class="en">International mobility</span>
+            <span class="fr">Mobilité internationale</span>
+        </a>
+        <a href="sustainability.html">
+            <span class="en">Sustainability & Civic Engagement</span>
+            <span class="fr">Développement durable & Engagement civique</span>
+        </a>
+        <a href="hobbies.html">
+            <span class="en">Personal Interests</span>
+            <span class="fr">Centres d'intérêt personnels</span>
+        </a>
+        <a href="ProfessionalProject">
+            <span class="en">Professional Project</span>
+            <span class="fr">Projet professionnel</span>
+        </a>
+        <a href="contact.html">
+            <span class="en">Contact</span>
+            <span class="fr">Contact</span>
+        </a>
     </nav>
     <main>
 
-        <h2>What about my studies?</h2>
-        <p>I started off by entering a 2 year Math and Physics called "Classe Preparatoire aux Grandes Ecoles" in Paris. These two years of hard work payed off and got me into Enseeiht As a Computer Science
-            student. There, I started learning about the basics of Computer Science from networks to computer architecture to data analysis and so many other subjects. Above just increasing my
+        <h2>
+            <span class="en">What about my studies?</span>
+            <span class="fr">Que dire de mes études ?</span>
+        </h2>
+        <p>
+            <span class="en">I started off by entering a 2 year Math and Physics called "Classe Preparatoire aux Grandes Ecoles" in Paris. These two years of hard work paid off and got me into Enseeiht as a Computer Science
+            student. There, I started learning about the basics of Computer Science from networks to computer architecture to data analysis and so many other subjects. Beyond just increasing my
             general knowledge and broadening my ideas, all these classes allowed me to work on various projects and put what I had learned in perspective. Most of these projects
-            can be found on my github account if you are interested
+            can be found on my GitHub account if you are interested.</span>
+            <span class="fr">J'ai commencé par intégrer une formation de deux ans en mathématiques et physique appelée « Classe Préparatoire aux Grandes Écoles » à Paris. Ces deux années de travail acharné ont porté leurs fruits et m'ont permis d'entrer à l'Enseeiht en informatique. Là-bas, j'ai appris les bases de l'informatique : des réseaux à l'architecture matérielle en passant par l'analyse de données et bien d'autres sujets. Au‑delà d'accroître mes connaissances générales et d'élargir ma vision, ces cours m'ont permis de travailler sur divers projets et de mettre en pratique ce que j'avais appris. La plupart de ces projets sont disponibles sur mon compte GitHub si cela vous intéresse.</span>
         </p>
-        <p> 
-            Through much discussion and observation, I quickly figured out the most interesting course at Enseeiht for me was the Images and Multemedia one. This course would allow 
-            me to learn how to work with actual data that you can see and work with. The choice was a no-brainer for me considering I love anything creative and working on pictures, sound, videos 
-            or 3D models is one of the most beautiful things you can do in my eyes. The first time I got to choose completly freely a subject to work on and present, I chose to create a dataset of 
+        <p>
+            <span class="en">Through much discussion and observation, I quickly figured out the most interesting course at Enseeiht for me was the Images and Multimedia one. This course would allow
+            me to learn how to work with actual data that you can see and work with. The choice was a no‑brainer for me considering I love anything creative and working on pictures, sound, videos
+            or 3D models is one of the most beautiful things you can do in my eyes. The first time I got to choose completely freely a subject to work on and present, I chose to create a dataset of
             mosaics I could find across Paris and try and train an image recognition model to recognise them. This was my first time learning about these models and it made me excited to try and get my
             project to work. That was my first push towards working with images. To be honest with you, getting into engineering school started off as a default choice being a scientific student
-            but when I discovered this could be what I learn and eventually work on it got me extremly motivated and it made me realise this was definitly the right path for me to take. So, I entered
-            this class in my second year at Enseeiht. Now, if you're interested in learning more you can see my cv and read about my internships and project.
+            but when I discovered this could be what I learn and eventually work on it got me extremely motivated and it made me realise this was definitely the right path for me to take. So, I entered
+            this class in my second year at Enseeiht. Now, if you're interested in learning more you can see my cv and read about my internships and project.</span>
+            <span class="fr">Après de nombreuses discussions et observations, j'ai rapidement compris que la spécialité la plus intéressante pour moi à l'Enseeiht était celle Images et Multimédia. Ce cursus permet d'apprendre à travailler sur des données visibles et manipulables : images, sons, vidéos ou modèles 3D — des supports qui correspondent à mon goût pour la création. La première fois où j'ai pu choisir librement un sujet de projet, j'ai constitué un jeu de données de mosaïques trouvées à Paris et tenté d'entraîner un modèle de reconnaissance d'images pour les identifier. C'était ma première approche de ces modèles et cela m'a donné envie d'aller plus loin. Pour être honnête, l'entrée en école d'ingénieur est d'abord venue d'un parcours scientifique classique, mais quand j'ai découvert que je pouvais étudier et travailler sur ce type de sujets, j'ai été extrêmement motivée et j'ai su que c'était la bonne voie. J'ai donc intégré cette filière en deuxième année à l'Enseeiht. Si vous voulez en savoir plus, vous pouvez consulter mon CV ainsi que mes stages et projets.</span>
         </p>
     </main>
 </body>

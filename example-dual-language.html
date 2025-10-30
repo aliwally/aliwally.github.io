@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="lang-en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Project - Alice Dissoubray</title>
+    <style>
+        /* Hide French content by default (English is default) */
+        .lang-en .fr { display: none; }
+        .lang-fr .en { display: none; }
+        
+        /* Show appropriate language content */
+        .lang-en .en { display: block; }
+        .lang-fr .fr { display: block; }
+        
+        /* For inline elements */
+        .lang-en .fr.inline { display: none; }
+        .lang-fr .en.inline { display: none; }
+        .lang-en .en.inline { display: inline; }
+        .lang-fr .fr.inline { display: inline; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <span class="en">Professional Project</span>
+            <span class="fr">Projet Professionnel</span>
+            💼
+        </h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">
+            <span class="en">Home</span>
+            <span class="fr">Accueil</span>
+        </a>
+        <a href="contact.html">
+            <span class="en">Contact</span>
+            <span class="fr">Contact</span>
+        </a>
+    </nav>
+    
+    <main>
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="showTab(0)">
+                <span class="en">Bio</span>
+                <span class="fr">Bio</span>
+            </button>
+            <button class="tab-btn" onclick="showTab(1)">
+                <span class="en">CV</span>
+                <span class="fr">CV</span>
+            </button>
+        </div>
+        
+        <div class="tab-content active">
+            <h2>
+                <span class="en">Who am I?</span>
+                <span class="fr">Qui suis-je ?</span>
+            </h2>
+            <p class="en">Second-year Images and Multimedia Computer Science student at the engineering school ENSEEIHT in Toulouse. I am extremely passionate about new technologies and the truly incredible things being accomplished today thanks to computers.</p>
+            <p class="fr">Étudiante en deuxième année d'informatique Images et Multimédia à l'école d'ingénieurs ENSEEIHT à Toulouse. Je suis extrêmement passionnée par les nouvelles technologies et les choses vraiment incroyables qui sont accomplies aujourd'hui grâce aux ordinateurs.</p>
+        </div>
+        
+        <div class="tab-content">
+            <h2>
+                <span class="en">CV</span>
+                <span class="fr">CV</span>
+            </h2>
+            <iframe id="cv-iframe" src="docs/CV_English.pdf#toolbar=0" width="100%" height="1150px"></iframe>
+            <p>
+                <a id="cv-download" href="docs/CV_English.pdf" target="_blank">
+                    <span class="en">Download PDF</span>
+                    <span class="fr">Télécharger PDF</span>
+                </a>
+            </p>
+        </div>
+    </main>
+</body>
+</html>
