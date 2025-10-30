@@ -87,24 +87,77 @@
             main { padding: 1.2rem 0.5rem; max-width: 98vw; }
             h1 { font-size: 1.3rem; }
         }
+        /* Language switching rules - default to English */
+        .lang-en .fr { display: none !important; }
+        .lang-fr .en { display: none !important; }
+        
+        /* Show appropriate language content */
+        .lang-en .en { display: block; }
+        .lang-fr .fr { display: block; }
+        
+        /* For inline elements (navigation, spans within text) */
+        nav .en, nav .fr,
+        span.en, span.fr,
+        .hero-subtitle .en, .hero-subtitle .fr,
+        .quote-author .en, .quote-author .fr {
+            display: inline !important;
+        }
+        
+        /* Hide inactive language for inline elements */
+        .lang-en nav .fr, 
+        .lang-en span.fr,
+        .lang-en .hero-subtitle .fr,
+        .lang-en .quote-author .fr { display: none !important; }
+        
+        .lang-fr nav .en,
+        .lang-fr span.en, 
+        .lang-fr .hero-subtitle .en,
+        .lang-fr .quote-author .en { display: none !important; }
     </style>
 </head>
 <body>
     <header id="mainHeader">
-        <h1 data-i18n="contact-title">Contact</h1>
+        <h1>
+            <span class="en">Contact</span>
+            <span class="fr">Contact</span>
+        </h1>
     </header>
     <nav id="mainNav">
-        <a href="index.html" data-i18n="nav-home">Home</a>
-        <a href="Engineering_course.html" data-i18n="nav-engineering">Engineering Course</a>
-        <a href="International_mobility.html" data-i18n="nav-mobility">International mobility</a>
-        <a href="sustainability.html" data-i18n="nav-sustainability">Sustainability & Civic Engagement</a>
-        <a href="hobbies.html" data-i18n="nav-hobbies">Personal Interests</a>
-        <a href="ProfessionalProject" data-i18n="nav-professional">Professional Project</a>
-        <a href="contact.html" data-i18n="nav-contact">Contact</a>
+        <a href="index.html">
+            <span class="en">Home</span>
+            <span class="fr">Accueil</span>
+        </a>
+        <a href="Engineering_course.html">
+            <span class="en">Engineering Course</span>
+            <span class="fr">Cursus Ingénieur</span>
+        </a>
+        <a href="International_mobility.html">
+            <span class="en">International mobility</span>
+            <span class="fr">Mobilité internationale</span>
+        </a>
+        <a href="sustainability.html">
+            <span class="en">Sustainability & Civic Engagement</span>
+            <span class="fr">Développement durable & Engagement civique</span>
+        </a>
+        <a href="hobbies.html">
+            <span class="en">Personal Interests</span>
+            <span class="fr">Centres d'intérêt personnels</span>
+        </a>
+        <a href="ProfessionalProject">
+            <span class="en">Professional Project</span>
+            <span class="fr">Projet professionnel</span>
+        </a>
+        <a href="contact.html">
+            <span class="en">Contact</span>
+            <span class="fr">Contact</span>
+        </a>
     </nav>
     <main>
 
-        <h2>Let's connect!</h2>
+        <h2>
+            <span class="en">Let's connect!</span>
+            <span class="fr">Connecte</span>
+        </h2>
         <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; margin-top: 2rem; width: 100%;">
             <a href="mailto:alice.dissoubray@gmail.com" style="display: flex; align-items: center; gap: 0.75rem; background: #fffbe6; color: #1e473d; padding: 1rem 2rem; border-radius: 18px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 16px rgba(30,71,61,0.07); font-size: 1.1rem; border: 2px solid #e0ede8; transition: box-shadow 0.2s, transform 0.2s;">
                 <span style="font-size:1.4rem;">📧</span>

@@ -147,20 +147,70 @@
         .tab-bar { flex-direction: column; gap: 0.5rem; }
         .tab-btn { width: 100%; }
     }
+        /* Language switching rules - default to English */
+        .lang-en .fr { display: none !important; }
+        .lang-fr .en { display: none !important; }
+        
+        /* Show appropriate language content */
+        .lang-en .en { display: block; }
+        .lang-fr .fr { display: block; }
+        
+        /* For inline elements (navigation, spans within text) */
+        nav .en, nav .fr,
+        span.en, span.fr,
+        .hero-subtitle .en, .hero-subtitle .fr,
+        .quote-author .en, .quote-author .fr {
+            display: inline !important;
+        }
+        
+        /* Hide inactive language for inline elements */
+        .lang-en nav .fr, 
+        .lang-en span.fr,
+        .lang-en .hero-subtitle .fr,
+        .lang-en .quote-author .fr { display: none !important; }
+        
+        .lang-fr nav .en,
+        .lang-fr span.en, 
+        .lang-fr .hero-subtitle .en,
+        .lang-fr .quote-author .en { display: none !important; }
     </style>
 </head>
 <body>
     <header id="mainHeader">
-        <h1>Sustainability & Civic Engagement</h1>
+        <h1>
+             <span class="en">Sustainability & Civic Engagement</span>
+            <span class="fr">Développement durable & Engagement civique</span>
+        </h1>
     </header>
     <nav id="mainNav">
-        <a href="index.html" data-i18n="nav-home">Home</a>
-        <a href="Engineering_course.html" data-i18n="nav-engineering">Engineering Course</a>
-        <a href="International_mobility.html" data-i18n="nav-mobility">International mobility</a>
-        <a href="sustainability.html" data-i18n="nav-sustainability">Sustainability & Civic Engagement</a>
-        <a href="hobbies.html" data-i18n="nav-hobbies">Personal Interests</a>
-        <a href="ProfessionalProject" data-i18n="nav-professional">Professional Project</a>
-        <a href="contact.html" data-i18n="nav-contact">Contact</a>
+        <a href="index.html">
+            <span class="en">Home</span>
+            <span class="fr">Accueil</span>
+        </a>
+        <a href="Engineering_course.html">
+            <span class="en">Engineering Course</span>
+            <span class="fr">Cursus Ingénieur</span>
+        </a>
+        <a href="International_mobility.html">
+            <span class="en">International mobility</span>
+            <span class="fr">Mobilité internationale</span>
+        </a>
+        <a href="sustainability.html">
+            <span class="en">Sustainability & Civic Engagement</span>
+            <span class="fr">Développement durable & Engagement civique</span>
+        </a>
+        <a href="hobbies.html">
+            <span class="en">Personal Interests</span>
+            <span class="fr">Centres d'intérêt personnels</span>
+        </a>
+        <a href="ProfessionalProject">
+            <span class="en">Professional Project</span>
+            <span class="fr">Projet professionnel</span>
+        </a>
+        <a href="contact.html">
+            <span class="en">Contact</span>
+            <span class="fr">Contact</span>
+        </a>
     </nav>
     <main>
     <script>
@@ -181,18 +231,37 @@
             <button class="tab-btn" onclick="showTab(2)">Civic Engagement</button>
         </div>
         <div class="tab-content active">
-            <h2>Climate Fresk</h2>
-            <p>At the beginning of my course at Enseeiht, I was given the opportunity to take part in a climate fresk. I worked with a team of other students and we discussed the different causes and consequences of climate change. We worked together to build a logical flow of information starting with human activities. Many of the cards we were given presented information that was enlightening and explained some consequences and links that we did not know about and had never heard about. After that activity, we took some time to reflect on it and think about what we could do ourselves to try and help reduce global warming and limit climate change as much as possible.</p>
+            <h2>
+                <span class ="en">Climate Fresk</span>
+                <span class ="fr">Fresque du climat</span>
+            </h2>
+            <p>
+                <span class="en">At the beginning of my course at Enseeiht, I was given the opportunity to take part in a climate fresk. I worked with a team of other students and we discussed the different causes and consequences of climate change. We worked together to build a logical flow of information starting with human activities. Many of the cards we were given presented information that was enlightening and explained some consequences and links that we did not know about and had never heard about. After that activity, we took some time to reflect on it and think about what we could do ourselves to try and help reduce global warming and limit climate change as much as possible.
+                    </span>
+                <span class="fr">Au début de </span>
+            </p>
         </div>
         <div class="tab-content">
-            <h2>Sulitest Results</h2>
+            <h2>
+                <span class ="en">Sulitest Results</span>
+                <span class ="fr">Résultats Sulitest</span>
+            </h2>
             <img src="img/sulitest.jpg" alt="Sulitest Results" style="max-width:100%; margin-top:1.2rem;">
         </div>
         <div class="tab-content">
-            <h2>Civic Engagement</h2>
+            <h2>
+                <span class ="en">Civic Engagement</span>
+                <span class ="fr">Engagement Civic</span>
+            </h2>
             <ul style="margin-bottom:1.2rem;">
-                <li><strong>THcon </strong> Took part of the staff team in 2024 and in 2025 to help welcome, guide and help visitors navigate the event. </li>
-                <li><strong>Capitole du Libre:</strong> Was part of the staff team in 2024 helped set up the place, take some pictures and serve some drinks to the visitors.</li>
+                <span class ="en">
+                    <li><strong>THcon </strong> Took part of the staff team in 2024 and in 2025 to help welcome, guide and help visitors navigate the event. </li>
+                    <li><strong>Capitole du Libre:</strong> Was part of the staff team in 2024 helped set up the place, take some pictures and serve some drinks to the visitors.</li>
+                </span>
+                <span class ="fr">
+                    <li><strong>THcon fr </strong> Took part of the staff team in 2024 and in 2025 to help welcome, guide and help visitors navigate the event. </li>
+                    <li><strong>Capitole du Libre: fr</strong> Was part of the staff team in 2024 helped set up the place, take some pictures and serve some drinks to the visitors.</li>
+                </span>
             </ul>
             <a class="pdf-link" href="docs/INGLES (2) (1).pdf" target="_blank">View Civic Engagement PDF</a>
         </div>

@@ -127,29 +127,88 @@
         .tab-bar { flex-direction: column; gap: 0.5rem; }
         .tab-btn { width: 100%; }
     }
+        /* Language switching rules - default to English */
+        .lang-en .fr { display: none !important; }
+        .lang-fr .en { display: none !important; }
+        
+        /* Show appropriate language content */
+        .lang-en .en { display: block; }
+        .lang-fr .fr { display: block; }
+        
+        /* For inline elements (navigation, spans within text) */
+        nav .en, nav .fr,
+        span.en, span.fr,
+        .hero-subtitle .en, .hero-subtitle .fr,
+        .quote-author .en, .quote-author .fr {
+            display: inline !important;
+        }
+        
+        /* Hide inactive language for inline elements */
+        .lang-en nav .fr, 
+        .lang-en span.fr,
+        .lang-en .hero-subtitle .fr,
+        .lang-en .quote-author .fr { display: none !important; }
+        
+        .lang-fr nav .en,
+        .lang-fr span.en, 
+        .lang-fr .hero-subtitle .en,
+        .lang-fr .quote-author .en { display: none !important; }        
+
     </style>
 </head>
 <body>
     <header id="mainHeader">
-        <h1>International Mobility</h1>
+        <h1>
+            <span class="en">International Mobility</span>
+            <span class="fr">Mobilité internationale</span>
+            </h1>
     </header>
     <nav id="mainNav">
-        <a href="index.html" data-i18n="nav-home">Home</a>
-        <a href="Engineering_course.html" data-i18n="nav-engineering">Engineering Course</a>
-        <a href="International_mobility.html" data-i18n="nav-mobility">International mobility</a>
-        <a href="sustainability.html" data-i18n="nav-sustainability">Sustainability & Civic Engagement</a>
-        <a href="hobbies.html" data-i18n="nav-hobbies">Personal Interests</a>
-        <a href="ProfessionalProject" data-i18n="nav-professional">Professional Project</a>
-        <a href="contact.html" data-i18n="nav-contact">Contact</a>
+        <a href="index.html">
+            <span class="en">Home</span>
+            <span class="fr">Accueil</span>
+        </a>
+        <a href="Engineering_course.html">
+            <span class="en">Engineering Course</span>
+            <span class="fr">Cursus Ingénieur</span>
+        </a>
+        <a href="International_mobility.html">
+            <span class="en">International mobility</span>
+            <span class="fr">Mobilité internationale</span>
+        </a>
+        <a href="sustainability.html">
+            <span class="en">Sustainability & Civic Engagement</span>
+            <span class="fr">Développement durable & Engagement civique</span>
+        </a>
+        <a href="hobbies.html">
+            <span class="en">Personal Interests</span>
+            <span class="fr">Centres d'intérêt personnels</span>
+        </a>
+        <a href="ProfessionalProject">
+            <span class="en">Professional Project</span>
+            <span class="fr">Projet professionnel</span>
+        </a>
+        <a href="contact.html">
+            <span class="en">Contact</span>
+            <span class="fr">Contact</span>
+        </a>
     </nav>
     <main>
 
-        <h2>What about going abroad?</h2>
+        <h2>
+            <span class="en">What about going abroad?</span>
+            <span class="fr">A propos de voyage internationale</span>
+        </h2>
        <p>
+            <span class="en">
             There are so many beautiful countries that are all so different and from which we can always learn so much and discover so much. I have had the chance of discovering 
-            a few countries so let me tell you all about it.
+            a few countries so let me tell you all about it.</span>
+            <span class="fr">
+            Il y a tellement de pays à découvrir et desquelles on peut apprendre tellement. J'ai eu la chance d'en découvrir quelques uns 
+            </span>
        </p>
        <p> 
+            <span class="en">
             My first cultural experience comes from my mum. She was born in England from Scottish parents and lived in Ireland. My grandparents, aunts, uncles and cousins all lived there 
             and going over to Ireland to see them was my first experience with another country than France. It always felt different but it always felt as home as well as France did. 
 
@@ -161,7 +220,10 @@
             I got to go to a primary school and give English classes teaching them songs for a few times. One of my nicest memories from that trip was when we went back about a year later 
             and I went to the same school and they could still remember the songs we had learned and sang a year ago. 
 
-            So far these are my most enriching experiences I got to live abroad and I hope I will have more to come!
+            So far these are my most enriching experiences I got to live abroad and I hope I will have more to come!</span>
+            <span class="fr">
+                Ma premiere exp
+            </span>
        </p>
     </main>
 
