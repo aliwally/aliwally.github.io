@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+                <li>
+                    <strong><span class="en">Data Processing Internship</span><span class="fr">Stage Traitement de données</span></strong>
+                    <img src="img/irit-logo.png" alt="IRIT logo" class="company-logo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Project - Alice Dissoubray</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+                        <span class="en"><em>IRIT, Toulouse — 2024 — 4 months</em><br>Retrieval of satellite images and calculation of vegetation index based on GPS coordinates, and assistance in the detection and identification of arthropods. Helped train and cross‑validate recognition models.</span>
+                        <span class="fr"><em>IRIT, Toulouse — 2024 — 4 mois</em><br>Récupération d'images satellite et calcul d'indice de végétation à partir de coordonnées GPS, et assistance à la détection et à l'identification d'arthropodes. Participation à l'entraînement et à la validation croisée de modèles de reconnaissance.</span>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="js/language-switch-css.js"></script>
-    <style>
+                    <strong><span class="en">Python Software Developer Internship</span><span class="fr">Stage Développeur Python</span></strong>
+                    <img src="img/vitesco-logo.png" alt="Vitesco Technologies logo" class="company-logo">
     body {
         font-family: 'Roboto', Arial, sans-serif;
         margin: 0;
@@ -110,6 +112,8 @@
         background: #3e7c6b;
         color: #fff;
     }
+    /* Company logo used in internships list */
+    .company-logo { height: 36px; margin-left: 0.6rem; vertical-align: middle; border-radius: 4px; }
     .tab-content {
         display: none;
         animation: fadeIn 0.5s;
@@ -215,8 +219,9 @@
     });
     </script>
         <div class="tab-bar">
-            <button class="tab-btn active" onclick="showTab(0)">Bio</button>
-            <button class="tab-btn" onclick="showTab(1)">CV</button>
+            <button class="tab-btn active" onclick="showTab(0)"><span class="en">Bio</span><span class="fr">Bio</span></button>
+            <button class="tab-btn" onclick="showTab(1)"><span class="en">CV</span><span class="fr">CV</span></button>
+            <button class="tab-btn" onclick="showTab(2)"><span class="en">Previous experiences</span><span class="fr">Expériences précédentes</span></button>
         </div>
         <div class="tab-content active">
             <h2>
@@ -236,6 +241,40 @@
             <h2 data-i18n="cv-title">CV</h2>
             <iframe id="cv-iframe" src="docs/CV_English.pdf#toolbar=0" width="100%" height="1150px"></iframe>
             <p style="margin-top:0.7rem; font-size:0.98rem;"> <a id="cv-download" href="docs/CV_English.pdf" target="_blank" data-i18n="cv-download">Download PDF</a></p>
+        </div>
+        <div class="tab-content">
+            <h2>
+                <span class="en">Previous internships</span>
+                <span class="fr">Stages précédente</span>
+            </h2>
+            <p>
+                <span class="en">My previous internships are shown below, highlighting practical experience in data processing, software development and multimedia.
+                     Tell me if you would like more information.</span>
+                <span class="fr">Vous trouverez ci‑dessous mes stages précédants illustrant mon expérience pratique en traitement de données, développement logiciel et multimédia.
+                     Dites‑moi si vous souhaitez avoir plus d'information.</span>
+            </p>
+            <ul>
+                <li>
+                    <div style="display:flex;align-items:center;gap:0.6rem;">
+                        <strong><span class="en">Data Processing Internship</span><span class="fr">Stage Traitement de données</span></strong>
+                        <img src="img/irit-logo.png" alt="IRIT logo" class="company-logo">
+                    </div>
+                    <div>
+                        <span class="en"><em>IRIT, Toulouse — 2024 — 4 months</em><br>Retrieval of satellite images and calculation of vegetation index based on GPS coordinates, and assistance in the detection and identification of arthropods. Helped train and cross‑validate recognition models.</span>
+                        <span class="fr"><em>IRIT, Toulouse — 2024 — 4 mois</em><br>Récupération d'images satellite et calcul d'indice de végétation à partir de coordonnées GPS, et assistance à la détection et l'identification d'arthropodes. Participation à l'entraînement et à la validation croisée de modèles de reconnaissance.</span>
+                    </div>
+                </li>
+                <li>
+                    <div style="display:flex;align-items:center;gap:0.6rem;">
+                        <strong><span class="en">Python Software Developer Internship</span><span class="fr">Stage Développeur Python</span></strong>
+                        <img src="img/vitesco-logo.png" alt="Vitesco Technologies logo" class="company-logo">
+                    </div>
+                    <div>
+                        <span class="en"><em>Vitesco Technologies, Toulouse — 2024 — 2 months</em><br>Prototyping the processing of measurement files from electric battery test benches by creating a Python architecture that allows for processing, analyzing, and validating the proper execution of the tests.</span>
+                        <span class="fr"><em>Vitesco Technologies, Toulouse — 2024 — 2 mois</em><br>Prototypage du traitement des fichiers de mesures provenant de bancs d'essai de batteries électriques en créant une architecture Python permettant le traitement, l'analyse et la validation du bon déroulement des tests.</span>
+                    </div>
+                </li>
+            </ul>
         </div>
     </main>
     <script>
