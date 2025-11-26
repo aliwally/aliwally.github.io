@@ -111,6 +111,12 @@
         .lang-fr span.en, 
         .lang-fr .hero-subtitle .en,
         .lang-fr .quote-author .en { display: none !important; }
+        /* Gallery styles */
+        .gallery { display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem; }
+        .gallery figure { flex:1 1 calc(33% - 0.5rem); margin:0; }
+        .gallery img { width:100%; height:auto; border-radius:10px; display:block; }
+        .gallery figcaption { text-align:center; font-size:0.95rem; color:#3e6b5a; padding:0.35rem 0; }
+        @media (max-width:600px) { .gallery figure { flex:1 1 100%; } }
     </style>
 </head>
 <body>
@@ -157,9 +163,24 @@
             <span class="fr">Centres d'intérêt</span>
         </h2>
         <p>
-            <span class="en">I'm passionate about creative activities: photography, drawing, painting, writing, and video editing are my favourites. I enjoy storytelling through images and sound, and I like experimenting with animation and simple 3D projects. Outside creative work, I'm a runner — I listen to music and go for regular runs. I've completed two 10km races and I'm training toward a half‑marathon.</span>
-            <span class="fr">Je suis passionnée par les activités créatives : photographie, dessin, peinture, écriture et montage vidéo sont mes préférées. J'aime raconter des histoires à travers l'image et le son, et j'expérimente aussi l'animation et la 3D. En dehors de la création, je cours régulièrement — j'ai déjà participé à deux 10 km et je m'entraîne pour un semi‑marathon.</span>
+            <span class="en">I explore storytelling through images and sound — photography, drawing, painting, video editing, and small 2D/3D animations. I enjoy documentary-style projects and creative experiments, and I often photograph while travelling. Outside of creative work I run regularly: I have completed two 10 km races and I'm currently training for a half‑marathon.</span>
+            <span class="fr">J'explore la narration par l'image et le son — photographie, dessin, peinture, montage vidéo et petites animations 2D/3D. J'aime les projets au style documentaire et les expérimentations créatives, et je photographie souvent lors de mes voyages. En dehors de la création, je cours régulièrement : j'ai participé à deux 10 km et je me prépare actuellement pour un semi‑marathon.</span>
         </p>
+
+        <section class="gallery" aria-label="Photos gallery">
+            <figure>
+                <img src="img/camera.jpg" alt="Camera on table">
+                <figcaption><span class="en">My camera — street photography</span><span class="fr">Mon appareil — photographie de rue</span></figcaption>
+            </figure>
+            <figure>
+                <img src="img/eze.jpg" alt="View from Èze village">
+                <figcaption><span class="en">Èze — travel photo</span><span class="fr">Èze — photo de voyage</span></figcaption>
+            </figure>
+            <figure>
+                <img src="img/grasse.jpg" alt="Grasse landscape">
+                <figcaption><span class="en">Grasse — landscape</span><span class="fr">Grasse — paysage</span></figcaption>
+            </figure>
+        </section>
     </main>
 </body>
 </html>
