@@ -1,258 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-                <li>
-                    <strong><span class="en">Data Processing Internship</span><span class="fr">Stage Traitement de données</span></strong>
-                    <img src="img/irit-logo.png" alt="IRIT logo" class="company-logo">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <span class="en"><em>IRIT, Toulouse — 2024 — 4 months</em><br>Retrieval of satellite images and calculation of vegetation index based on GPS coordinates, and assistance in the detection and identification of arthropods. Helped train and cross‑validate recognition models.</span>
-                        <span class="fr"><em>IRIT, Toulouse — 2024 — 4 mois</em><br>Récupération d'images satellite et calcul d'indice de végétation à partir de coordonnées GPS, et assistance à la détection et à l'identification d'arthropodes. Participation à l'entraînement et à la validation croisée de modèles de reconnaissance.</span>
+    <title>Professional Project - Alice Dissoubray</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="js/language-switch-css.js"></script>
-                    <strong><span class="en">Python Software Developer Internship</span><span class="fr">Stage Développeur Python</span></strong>
-                    <img src="img/vitesco-logo.png" alt="Vitesco Technologies logo" class="company-logo">
-    body {
-        font-family: 'Roboto', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(120deg, #f9f9f9 0%, #e0ede8 100%);
-        min-height: 100vh;
-    }
-    header {
-        background: linear-gradient(90deg, #1e473d 60%, #3e7c6b 100%);
-        color: #fff;
-        padding: 2.5rem 1rem 2rem 1rem;
-        text-align: center;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        position: sticky;
-        top: 0;
-        z-index: 200;
-        transition: padding 0.4s, font-size 0.4s;
-    }
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 150;
-    }
-    main {
-        max-width: 800px;
-        margin: 2.5rem auto;
-        background: #fff;
-        padding: 2.5rem 2rem;
-        border-radius: 18px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        min-height: 60vh;
-    }
-    nav {
-        background: #f6fdfbcc;
-        padding: 0.7rem 0;
-        text-align: center;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.03);
-        border-bottom: 1px solid #e0ede8;
-    }
-    nav a {
-        color: #1e473d;
-        margin: 0 1.2rem;
-        text-decoration: none;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        transition: color 0.2s, background 0.2s;
-        padding: 0.2rem 0.5rem;
-        border-radius: 4px;
-    }
-    nav a:hover {
-        color: #fff;
-        background: #1e473d;
-        text-decoration: none;
-    }
-    main {
-        max-width: 800px;
-        margin: 2.5rem auto;
-        background: #fff;
-        padding: 2.5rem 2rem;
-        border-radius: 18px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        min-height: 60vh;
-    }
-    h1 {
-        margin-top: 0;
-        font-size: 2.3rem;
-        letter-spacing: 1px;
-    }
-    h2 {
-        color: #1e473d;
-    }
-    .tab-bar {
-        display: flex;
-        gap: 1.2rem;
-        margin-bottom: 2.2rem;
-        justify-content: center;
-    }
-    .tab-btn {
-        background: #e0ede8;
-        border: none;
-        padding: 0.7rem 2rem;
-        border-radius: 8px 8px 0 0;
-        cursor: pointer;
-        font-size: 1.08rem;
-        font-weight: 500;
-        color: #1e473d;
-        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-        box-shadow: 0 2px 6px rgba(30,71,61,0.04);
-    }
-    .tab-btn.active {
-        background: #1e473d;
-        color: #fff;
-        font-weight: bold;
-        box-shadow: 0 4px 12px rgba(30,71,61,0.13);
-    }
-    .tab-btn:hover:not(.active) {
-        background: #3e7c6b;
-        color: #fff;
-    }
-    /* Company logo used in internships list */
-    .company-logo { height: 36px; margin-left: 0.6rem; vertical-align: middle; border-radius: 4px; }
-    .tab-content {
-        display: none;
-        animation: fadeIn 0.5s;
-    }
-    .tab-content.active {
-        display: block;
-        animation: fadeIn 0.5s;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    a {
-        color: #1e473d;
-        font-weight: bold;
-        transition: color 0.2s;
-    }
-    a:hover {
-        color: #3e7c6b;
-    }
-    @media (max-width: 600px) {
-        main { padding: 1.2rem 0.5rem; }
-        .tab-bar { flex-direction: column; gap: 0.5rem; }
-        .tab-btn { width: 100%; }
-    }
-        /* Language switching rules - default to English */
-        .lang-en .fr { display: none !important; }
-        .lang-fr .en { display: none !important; }
-        
-        /* Show appropriate language content */
-        .lang-en .en { display: block; }
-        .lang-fr .fr { display: block; }
-        
-        /* For inline elements (navigation, spans within text) */
-        nav .en, nav .fr,
-        span.en, span.fr,
-        .hero-subtitle .en, .hero-subtitle .fr,
-        .quote-author .en, .quote-author .fr {
-            display: inline !important;
-        }
-        
-        /* Hide inactive language for inline elements */
-        .lang-en nav .fr, 
-        .lang-en span.fr,
-        .lang-en .hero-subtitle .fr,
-        .lang-en .quote-author .fr { display: none !important; }
-        
-        .lang-fr nav .en,
-        .lang-fr span.en, 
-        .lang-fr .hero-subtitle .en,
-        .lang-fr .quote-author .en { display: none !important; }
+    <style>
+    body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background: linear-gradient(120deg,#f9f9f9 0%,#e0ede8 100%); min-height:100vh; }
+    header { background: linear-gradient(90deg,#1e473d 60%,#3e7c6b 100%); color:#fff; padding:2.5rem 1rem 2rem 1rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.07); border-bottom-left-radius:30px; border-bottom-right-radius:30px; position:sticky; top:0; z-index:200; }
+    nav{ position:sticky; top:0; z-index:150; background:#f6fdfbcc; padding:0.7rem 0; text-align:center; box-shadow:0 1px 6px rgba(0,0,0,0.03); border-bottom:1px solid #e0ede8; }
+    nav a{ color:#1e473d; margin:0 1.2rem; text-decoration:none; font-weight:700; padding:0.2rem 0.5rem; border-radius:4px; }
+    nav a:hover{ background:#1e473d; color:#fff; }
+    main{ max-width:800px; margin:2.5rem auto; background:#fff; padding:2.5rem 2rem; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); }
+    h1{ margin-top:0; font-size:2.3rem; }
+    .tab-bar{ display:flex; gap:1.2rem; justify-content:center; margin-bottom:2.2rem; }
+    .tab-btn{ background:#e0ede8; border:none; padding:0.7rem 2rem; border-radius:8px 8px 0 0; cursor:pointer; font-weight:500; }
+    .tab-btn.active{ background:#1e473d; color:#fff; font-weight:bold; }
+    .company-logo{ height:36px; margin-left:0.6rem; border-radius:4px; }
+    .tab-content{ display:none; }
+    .tab-content.active{ display:block; }
+    /* Language rules */
+    .lang-en .fr{ display:none !important; }
+    .lang-fr .en{ display:none !important; }
+    nav .en, nav .fr, span.en, span.fr{ display:inline !important; }
     </style>
 </head>
 <body>
-    <header id="mainHeader">
-        <h1>
-            
-            <span class="en">Professional Project</span>
-            <span class="fr">Projet professionnel</span>
-        </h1>
-    </header>
+    <header id="mainHeader"><h1><span class="en">Professional Project</span><span class="fr">Projet professionnel</span></h1></header>
     <nav id="mainNav">
-        <a href="index.html">
-            <span class="en">Home</span>
-            <span class="fr">Accueil</span>
-        </a>
-        <a href="Engineering_course.html">
-            <span class="en">Engineering Course</span>
-            <span class="fr">Cursus Ingénieur</span>
-        </a>
-        <a href="International_mobility.html">
-            <span class="en">International mobility</span>
-            <span class="fr">Mobilité internationale</span>
-        </a>
-        <a href="sustainability.html">
-            <span class="en">Sustainability & Civic Engagement</span>
-            <span class="fr">Développement durable & Engagement civique</span>
-        </a>
-        <a href="hobbies.html">
-            <span class="en">Personal Interests</span>
-            <span class="fr">Centres d'intérêt personnels</span>
-        </a>
-        <a href="ProfessionalProject">
-            <span class="en">Professional Project</span>
-            <span class="fr">Projet professionnel</span>
-        </a>
-        <a href="contact.html">
-            <span class="en">Contact</span>
-            <span class="fr">Contact</span>
-        </a>
+        <a href="index.html"><span class="en">Home</span><span class="fr">Accueil</span></a>
+        <a href="Engineering_course.html"><span class="en">Engineering Course</span><span class="fr">Cursus Ingénieur</span></a>
+        <a href="International_mobility.html"><span class="en">International mobility</span><span class="fr">Mobilité internationale</span></a>
+        <a href="sustainability.html"><span class="en">Sustainability & Civic Engagement</span><span class="fr">Développement durable & Engagement civique</span></a>
+        <a href="hobbies.html"><span class="en">Personal Interests</span><span class="fr">Centres d'intérêt personnels</span></a>
+        <a href="ProfessionalProject"><span class="en">Professional Project</span><span class="fr">Projet professionnel</span></a>
+        <a href="contact.html"><span class="en">Contact</span><span class="fr">Contact</span></a>
     </nav>
     <main>
-    <script>
-    // Header shrink on scroll
-    const mainHeader = document.getElementById('mainHeader');
-    const mainNav = document.getElementById('mainNav');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 80) {
-            mainHeader.classList.add('shrink');
-        } else {
-            mainHeader.classList.remove('shrink');
-        }
-    });
-    </script>
         <div class="tab-bar">
             <button class="tab-btn active" onclick="showTab(0)"><span class="en">Bio</span><span class="fr">Bio</span></button>
             <button class="tab-btn" onclick="showTab(1)"><span class="en">CV</span><span class="fr">CV</span></button>
-            <button class="tab-btn" onclick="showTab(2)"><span class="en">Previous experiences</span><span class="fr">Expériences précédentes</span></button>
+            <button class="tab-btn" onclick="showTab(2)"><span class="en">Previous internships</span><span class="fr">Stages précédents</span></button>
         </div>
+
         <div class="tab-content active">
-            <h2>
-                <span class="en">Who am I?</span>
-                <span class="fr">Qui suis‑je ?</span>
-            </h2>
+            <h2><span class="en">Who am I?</span><span class="fr">Qui suis‑je ?</span></h2>
             <p>
-                <span class="en">I'm deeply curious and love creating and sharing work that conveys emotion and sparks imagination. 
-                    That's why I'm studying computer science with a focus on Images & Multimedia: to combine technical skills with creative storytelling.
-                     My ambition is to work in a role that ties those interests together — for example, at an animation studio where technology meets artistic creation.</span>
-                <span class="fr">Je suis profondément curieuse et j'aime créer et partager des œuvres qui transmettent des émotions et font rêver. 
-                    C'est pourquoi j'étudie l'informatique, en particulier les Images et le Multimédia : pour allier compétences techniques et narration créative. 
-                    Mon souhait est d'exercer un métier qui lie ces deux aspects — par exemple dans un studio d'animation où la technique rencontre la création artistique.</span>
+                <span class="en">I'm deeply curious and love creating and sharing work that conveys emotion and sparks imagination. That's why I'm studying computer science with a focus on Images & Multimedia: to combine technical skills with creative storytelling.</span>
+                <span class="fr">Je suis profondément curieuse et j'aime créer et partager des œuvres qui transmettent des émotions et font rêver. C'est pourquoi j'étudie l'informatique, en particulier les Images et le Multimédia : pour allier compétences techniques et narration créative.</span>
             </p>
         </div>
+
         <div class="tab-content">
             <h2 data-i18n="cv-title">CV</h2>
             <iframe id="cv-iframe" src="docs/CV_English.pdf#toolbar=0" width="100%" height="1150px"></iframe>
-            <p style="margin-top:0.7rem; font-size:0.98rem;"> <a id="cv-download" href="docs/CV_English.pdf" target="_blank" data-i18n="cv-download">Download PDF</a></p>
+            <p style="margin-top:0.7rem; font-size:0.98rem;"><a id="cv-download" href="docs/CV_English.pdf" target="_blank">Download PDF</a></p>
         </div>
+
         <div class="tab-content">
-            <h2>
-                <span class="en">Previous internships</span>
-                <span class="fr">Stages précédente</span>
-            </h2>
-            <p>
-                <span class="en">My previous internships are shown below, highlighting practical experience in data processing, software development and multimedia.
-                     Tell me if you would like more information.</span>
-                <span class="fr">Vous trouverez ci‑dessous mes stages précédants illustrant mon expérience pratique en traitement de données, développement logiciel et multimédia.
-                     Dites‑moi si vous souhaitez avoir plus d'information.</span>
-            </p>
+            <h2><span class="en">Previous internships</span><span class="fr">Stages précédents</span></h2>
+            <p><span class="en">My previous internships are shown below, highlighting practical experience in data processing, software development and multimedia.</span><span class="fr">Vous trouverez ci‑dessous mes stages précédents illustrant mon expérience pratique en traitement de données, développement logiciel et multimédia.</span></p>
             <ul>
                 <li>
                     <div style="display:flex;align-items:center;gap:0.6rem;">
@@ -276,19 +86,15 @@
                 </li>
             </ul>
         </div>
+
     </main>
     <script>
-    function showTab(idx) {
+    function showTab(idx){
         const tabs = document.querySelectorAll('.tab-btn');
         const contents = document.querySelectorAll('.tab-content');
-        tabs.forEach((tab, i) => {
-            tab.classList.toggle('active', i === idx);
-        });
-        contents.forEach((content, i) => {
-            content.classList.toggle('active', i === idx);
-        });
+        tabs.forEach((tab,i)=>tab.classList.toggle('active', i===idx));
+        contents.forEach((c,i)=>c.classList.toggle('active', i===idx));
     }
     </script>
-    </main>
 </body>
 </html>
