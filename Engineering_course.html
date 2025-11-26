@@ -112,6 +112,21 @@
         .lang-fr span.en, 
         .lang-fr .hero-subtitle .en,
         .lang-fr .quote-author .en { display: none !important; }        
+        /* Collapsible year/semester styles */
+        details.year, details.semester { margin: 1rem 0; border-radius: 8px; }
+        details.year > summary, details.semester > summary {
+            cursor: pointer;
+            padding: 0.6rem 0.8rem;
+            background: linear-gradient(90deg,#e9f7f2,#f6fff9);
+            border: 1px solid #dfeee6;
+            border-radius: 8px;
+            font-weight: 700;
+            color: #114b3b;
+            list-style: none;
+        }
+        details.year[open] > summary, details.semester[open] > summary { box-shadow: inset 0 -2px 0 rgba(0,0,0,0.03); }
+        details.year details.semester { margin: 0.6rem 0 0 0.6rem; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body>
@@ -168,119 +183,140 @@
                 <span class="fr">Cours pris à l'ENSEEIHT en première année (S5 &amp; S6)</span>
             </h2>
 
-            <h3>
-                <span class="en">S5 - UE Integration &amp; Applications / Probability</span>
-                <span class="fr">S5 - UE Intégration et Applications - Probabilités</span>
-            </h3>
-            <ul>
-                <li><span class="en">Integration and Applications <strong>(matlab)</strong></span><span class="fr">Intégration et applications <strong>(matlab)</strong></span></li>
-                <li><span class="en">Probability <strong>(matlab)</strong></span><span class="fr">Probabilités <strong>(matlab)</strong></span></li>
-            </ul>
+            <details class="year">
+                <summary>
+                    <span class="en">First year — S5 &amp; S6</span>
+                    <span class="fr">Première année — S5 &amp; S6</span>
+                </summary>
 
-            <h3>
-                <span class="en">S5 - UE Imperative Programming</span>
-                <span class="fr">S5 - UE Programmation Impérative</span>
-            </h3>
-            <ul>
-                <li><span class="en">Imperative Programming <strong>(Ada)</strong> </span><span class="fr">Programmation impérative <strong>(Ada)</strong> </span></li>
-                <li><span class="en">Imperative Programming 2 <strong>(Ada)</strong></span><span class="fr">Programmation impérative 2 <strong>(Ada)</strong></span></li>
-            </ul>
+                <details class="semester">
+                    <summary>
+                        <span class="en">S5</span>
+                        <span class="fr">S5</span>
+                    </summary>
 
-            <h3>
-                <span class="en">S5 - UE Numerical Analysis &amp; Statistics</span>
-                <span class="fr">S5 - UE Analyse Numérique - Statistiques</span>
-            </h3>
-            <ul>
-                <li><span class="en">Partial Differential Equations <strong>(PDE)</strong> <strong>(matlab)</strong></span><span class="fr">Equations aux Dérivées partielles EDP <strong>(matlab)</strong></span></li>
-                <li><span class="en">Optimization <strong>(matlab)</strong></span><span class="fr">Optimisation <strong>(matlab)</strong></span></li>
-                <li><span class="en">Statistics <strong>(matlab)</strong></span><span class="fr">Statistiques <strong>(matlab)</strong></span></li>
-            </ul>
+                    <h3>
+                        <span class="en">S5 - UE Integration &amp; Applications / Probability</span>
+                        <span class="fr">S5 - UE Intégration et Applications - Probabilités</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Integration and Applications <strong>Matlab</strong></span><span class="fr">Intégration et applications <strong>Matlab</strong></span></li>
+                        <li><span class="en">Probability <strong>Matlab</strong></span><span class="fr">Probabilités <strong>Matlab</strong></span></li>
+                    </ul>
 
-            <h3>
-                <span class="en">S5 - UE Control &amp; Data Analysis</span>
-                <span class="fr">S5 - UE Automatique - Analyse de Données</span>
-            </h3>
-            <ul>
-                <li><span class="en">Data Analysis <strong>(Python)</strong></span><span class="fr">Analyse de Données <strong>(Python)</strong></span></li>
-                <li><span class="en">Automatic Control <strong>(C)</strong></span><span class="fr">Automatique <strong>(C)</strong></span></li>
-                <li><span class="en">C Programming <strong>(C)</strong></span><span class="fr">Langage C <strong>(C)</strong></span></li>
-            </ul>
+                    <h3>
+                        <span class="en">S5 - UE Imperative Programming</span>
+                        <span class="fr">S5 - UE Programmation Impérative</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Imperative Programming <strong>Ada</strong> </span><span class="fr">Programmation impérative <strong>Ada</strong> </span></li>
+                        <li><span class="en">Imperative Programming 2 <strong>Ada</strong></span><span class="fr">Programmation impérative 2 <strong>Ada</strong></span></li>
+                    </ul>
 
-            <h3>
-                <span class="en">S5 - UE Modelling &amp; Architecture</span>
-                <span class="fr">S5 - UE Modélisation - Architecture</span>
-            </h3>
-            <ul>
-                <li><span class="en">Computer Architecture <strong>(Simple Hardware Description Language)</strong></span><span class="fr">Architecture des ordinateurs <strong>(Simple Hardware Description Language)</strong></span></li>
-                <li><span class="en">Modeling <strong>(Coq)</strong></span><span class="fr">Modélisation <strong>(Coq)</strong></span></li>
-            </ul>
-            
-            <h3>
-                <span class="en">S5 - UE Soft &amp; Human Skills</span>
-                <span class="fr">S5 - UE Compétences humaines et transversales</span>
-            </h3>
-            <ul>
-                <li><span class="en">Sport</span><span class="fr">Sport</span></li>
-                <li><span class="en">Japanese</span><span class="fr">Japonais</span></li>
-                <li><span class="en">Professional and Communication English</span><span class="fr">Anglais Professionel et Communication</span></li>
-                <li><span class="en">Career Management</span><span class="fr">Gestion de carrière</span></li>
-            </ul>
+                    <h3>
+                        <span class="en">S5 - UE Numerical Analysis &amp; Statistics</span>
+                        <span class="fr">S5 - UE Analyse Numérique - Statistiques</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Partial Differential Equations EDP <strong>Matlab</strong></span><span class="fr">Equations aux Dérivées partielles EDP <strong>Matlab</strong></span></li>
+                        <li><span class="en">Optimization <strong>Matlab</strong></span><span class="fr">Optimisation <strong>Matlab</strong></span></li>
+                        <li><span class="en">Statistics <strong>Matlab</strong></span><span class="fr">Statistiques <strong>Matlab</strong></span></li>
+                    </ul>
 
-            <h3>
-                <span class="en">S6 - UE Signal Processing &amp; Telecommunications</span>
-                <span class="fr">S6 - UE Traitement du Signal - Télécommunications</span>
-            </h3>
-            <ul>
-                <li><span class="en">Telecommunications <strong>(matlab)</strong></span><span class="fr">Télécommunications <strong>(matlab)</strong></span></li>
-                <li><span class="en">Signal Processing <strong>(matlab)</strong></span><span class="fr">Traitement du signal <strong>(matlab)</strong></span></li>
-            </ul>
+                    <h3>
+                        <span class="en">S5 - UE Control &amp; Data Analysis</span>
+                        <span class="fr">S5 - UE Automatique - Analyse de Données</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Data Analysis <strong>Python</strong></span><span class="fr">Analyse de Données <strong>Python</strong></span></li>
+                        <li><span class="en">Automatic Control <strong>C</strong></span><span class="fr">Automatique <strong>C</strong></span></li>
+                        <li><span class="en">C Programming <strong>C</strong></span><span class="fr">Langage C <strong>C</strong></span></li>
+                    </ul>
 
-            <h3>
-                <span class="en">S6 - UE Networks</span>
-                <span class="fr">S6 - UE Réseaux</span>
-            </h3>
-            <ul>
-                <li><span class="en">Internet</span><span class="fr">Internet</span></li>
-                <li><span class="en">Local Networks</span><span class="fr">Réseaux locaux</span></li>
-            </ul>
+                    <h3>
+                        <span class="en">S5 - UE Modelling &amp; Architecture</span>
+                        <span class="fr">S5 - UE Modélisation - Architecture</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Computer Architecture <strong>Simple Hardware Description Language</strong></span><span class="fr">Architecture des ordinateurs <strong>Simple Hardware Description Language</strong></span></li>
+                        <li><span class="en">Modeling <strong>Coq</strong></span><span class="fr">Modélisation <strong>Coq</strong></span></li>
+                    </ul>
 
-            <h3>
-                <span class="en">S6 - UE Scientific Computing &amp; Learning</span>
-                <span class="fr">S6 - UE Calcul scientifique – Apprentissage</span>
-            </h3>
-            <ul>
-                <li><span class="en">Machine Learning <strong>(Python)</strong></span><span class="fr">Apprentissage <strong>(Python)</strong></span></li>
-                <li><span class="en">Scientific Computing <strong>(matlab)</strong></span><span class="fr">Calcul Scientifique <strong>(matlab)</strong></span></li>
-            </ul>
+                    <h3>
+                        <span class="en">S5 - UE Soft &amp; Human Skills</span>
+                        <span class="fr">S5 - UE Compétences humaines et transversales</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Sport</span><span class="fr">Sport</span></li>
+                        <li><span class="en">Japanese</span><span class="fr">Japonais</span></li>
+                        <li><span class="en">Professional and Communication English</span><span class="fr">Anglais Professionel et Communication</span></li>
+                        <li><span class="en">Career Management</span><span class="fr">Gestion de carrière</span></li>
+                    </ul>
+                </details>
 
-            <h3>
-                <span class="en">S6 - UE Object Technology</span>
-                <span class="fr">S6 - UE Technologie Objet</span>
-            </h3>
-            <ul>
-                <li><span class="en">Object Technology <strong>(Java)</strong></span><span class="fr">Technologie Objet <strong>(Java)</strong></span></li>
-            </ul>
+                <details class="semester">
+                    <summary>
+                        <span class="en">S6</span>
+                        <span class="fr">S6</span>
+                    </summary>
 
-            <h3>
-                <span class="en">S6 - UE Architecture &amp; Systems</span>
-                <span class="fr">S6 - UE Architecture - Système</span>
-            </h3>
-            <ul>
-                <li><span class="en">Architecture and Systems</span><span class="fr">Architecture et système</span></li>
-                <li><span class="en">C Programming <strong>(C)</strong></span><span class="fr">Langage C <strong>(C)</strong></span></li>
-                <li><span class="en">Centralized Operating Systems <strong>(C)</strong></span><span class="fr">Systèmes d'Exploitation Centralisés <strong>(C)</strong></span></li>
-            </ul>
+                    <h3>
+                        <span class="en">S6 - UE Signal Processing &amp; Telecommunications</span>
+                        <span class="fr">S6 - UE Traitement du Signal - Télécommunications</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Telecommunications <strong>Matlab</strong></span><span class="fr">Télécommunications <strong>Matlab</strong></span></li>
+                        <li><span class="en">Signal Processing <strong>Matlab</strong></span><span class="fr">Traitement du signal <strong>Matlab</strong></span></li>
+                    </ul>
 
-            <h3>
-                <span class="en">S6 - UE Soft &amp; Human Skills</span>
-                <span class="fr">S6 - UE Compétences humaines et transversales</span>
-            </h3>
-            <ul>
-                <li><span class="en">Sport</span><span class="fr">Sport</span></li>
-                <li><span class="en">Japanese</span><span class="fr">Japonais</span></li>
-                <li><span class="en">Professional and Communication English</span><span class="fr">Anglais Professionel et Communication</span></li>
-                <li><span class="en">Career Management</span><span class="fr">Gestion de carrière</span></li>
-            </ul>
+                    <h3>
+                        <span class="en">S6 - UE Networks</span>
+                        <span class="fr">S6 - UE Réseaux</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Internet</span><span class="fr">Internet</span></li>
+                        <li><span class="en">Local Networks</span><span class="fr">Réseaux locaux</span></li>
+                    </ul>
+
+                    <h3>
+                        <span class="en">S6 - UE Scientific Computing &amp; Learning</span>
+                        <span class="fr">S6 - UE Calcul scientifique – Apprentissage</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Machine Learning <strong>Pytho)</strong></span><span class="fr">Apprentissage <strong>Python</strong></span></li>
+                        <li><span class="en">Scientific Computing <strong>Matlab</strong></span><span class="fr">Calcul Scientifique <strong>Matlab</strong></span></li>
+                    </ul>
+
+                    <h3>
+                        <span class="en">S6 - UE Object Technology</span>
+                        <span class="fr">S6 - UE Technologie Objet</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Object Technology <strong>Java</strong></span><span class="fr">Technologie Objet <strong>Java</strong></span></li>
+                    </ul>
+
+                    <h3>
+                        <span class="en">S6 - UE Architecture &amp; Systems</span>
+                        <span class="fr">S6 - UE Architecture - Système</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Architecture and Systems</span><span class="fr">Architecture et système</span></li>
+                        <li><span class="en">C Programming <strong>C</strong></span><span class="fr">Langage C <strong>C</strong></span></li>
+                        <li><span class="en">Centralized Operating Systems <strong>C</strong></span><span class="fr">Systèmes d'Exploitation Centralisés <strong>C</strong></span></li>
+                    </ul>
+
+                    <h3>
+                        <span class="en">S6 - UE Soft &amp; Human Skills</span>
+                        <span class="fr">S6 - UE Compétences humaines et transversales</span>
+                    </h3>
+                    <ul>
+                        <li><span class="en">Sport</span><span class="fr">Sport</span></li>
+                        <li><span class="en">Japanese</span><span class="fr">Japonais</span></li>
+                        <li><span class="en">Professional and Communication English</span><span class="fr">Anglais Professionel et Communication</span></li>
+                        <li><span class="en">Career Management</span><span class="fr">Gestion de carrière</span></li>
+                    </ul>
+                </details>
+            </details>
         </section>
         <p>
             <span class="en">During my studies I discovered that Images & Multimedia was the most inspiring specialty for me — it combines technical rigour with creativity. I enjoy working with visual and audio data (images, sound, videos, 3D) and I’ve developed small projects such as creating a dataset of mosaics found in Paris and training an image‑recognition model. These experiences confirmed my interest in pursuing work at the intersection of signal processing, machine learning and creative media.</span>
