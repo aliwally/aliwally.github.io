@@ -27,8 +27,16 @@
             position: sticky;
             top: 0;
             z-index: 200;
-            transition: padding 0.4s, font-size 0.4s;
+            transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease;
         }
+        header.shrink {
+            padding: 0.9rem 1rem 0.85rem 1rem;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        header h1 { transition: font-size 0.25s ease, transform 0.25s ease; }
+        header.shrink h1 { font-size: 1.2rem; transform: translateY(-2px); }
         nav {
             position: sticky;
             top: 0;
@@ -285,6 +293,24 @@
         let resizeTimer;
         window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(layoutMasonry, 120); });
         if (document.fonts) document.fonts.ready.then(() => { layoutMasonry(); });
+    })();
+    </script>
+    <script>
+    // Shrink header on scroll for hobbies page
+    (function(){
+        const header = document.getElementById('mainHeader');
+        if (!header) return;
+        const THRESHOLD = 80;
+        let lastScroll = 0;
+        function onScroll(){
+            const y = window.scrollY || window.pageYOffset;
+            if (y > THRESHOLD) header.classList.add('shrink');
+            else header.classList.remove('shrink');
+            lastScroll = y;
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        // Initialize state
+        onScroll();
     })();
     </script>
 </body>
