@@ -14,20 +14,30 @@
     let isShrunk = header.classList.contains('shrink');
     let ticking = false;
 
+    function setShrunk(state){
+        if (state){
+            header.classList.add('shrink');
+            // only apply layout changes if page is long enough
+            if (!pageTooShort()) header.classList.add('shrink-layout');
+            else header.classList.remove('shrink-layout');
+        } else {
+            header.classList.remove('shrink');
+            header.classList.remove('shrink-layout');
+        }
+        isShrunk = state;
+    }
+
     function update() {
         ticking = false;
-        if (pageTooShort()) {
-            header.classList.remove('shrink');
-            isShrunk = false;
-            return;
-        }
         const y = window.scrollY || window.pageYOffset;
         if (!isShrunk && y > THRESHOLD) {
-            header.classList.add('shrink');
-            isShrunk = true;
+            setShrunk(true);
         } else if (isShrunk && y < THRESHOLD_LOW) {
-            header.classList.remove('shrink');
-            isShrunk = false;
+            setShrunk(false);
+        } else if (isShrunk) {
+            // if still shrunk, ensure layout class matches current page length
+            if (pageTooShort()) header.classList.remove('shrink-layout');
+            else header.classList.add('shrink-layout');
         }
     }
 

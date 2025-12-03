@@ -30,13 +30,9 @@
         transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease;
     }
     header { will-change: transform; }
-    header.shrink {
-        transform: scaleY(0.65);
-        transform-origin: top;
-        box-shadow: 0 1px 8px rgba(0,0,0,0.06);
-    }
-    header h1 { transition: transform 0.25s ease, font-size 0.25s ease; }
-    header.shrink h1 { transform: scale(0.92); }
+    header.shrink h1 { transform: translateY(-6px) scale(0.985); transition: transform 0.22s ease, font-size 0.22s ease; }
+    header.shrink-layout { padding: 0.9rem 1rem 0.85rem 1rem; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
+    header.shrink-layout h1 { font-size: 1.2rem; }
     nav {
         position: sticky;
         top: 0;
