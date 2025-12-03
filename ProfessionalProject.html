@@ -11,9 +11,10 @@
     <style>
     body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background: linear-gradient(120deg,#f9f9f9 0%,#e0ede8 100%); min-height:100vh; }
     header { background: linear-gradient(90deg,#1e473d 60%,#3e7c6b 100%); color:#fff; padding:2.5rem 1rem 2rem 1rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.07); border-bottom-left-radius:30px; border-bottom-right-radius:30px; position:sticky; top:0; z-index:200; transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease; }
-    header.shrink { padding: 0.9rem 1rem 0.85rem 1rem; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
-    header h1 { transition: font-size 0.25s ease, transform 0.25s ease; }
-    header.shrink h1 { font-size: 1.2rem; transform: translateY(-2px); }
+    header { will-change: transform; }
+    header.shrink { transform: scaleY(0.65); transform-origin: top; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+    header h1 { transition: transform 0.25s ease, font-size 0.25s ease; }
+    header.shrink h1 { transform: scale(0.92); }
     nav{ position:sticky; top:0; z-index:150; background:#f6fdfbcc; padding:0.7rem 0; text-align:center; box-shadow:0 1px 6px rgba(0,0,0,0.03); border-bottom:1px solid #e0ede8; }
     nav a{ color:#1e473d; margin:0 1.2rem; text-decoration:none; font-weight:700; padding:0.2rem 0.5rem; border-radius:4px; }
     nav a:hover{ background:#1e473d; color:#fff; }

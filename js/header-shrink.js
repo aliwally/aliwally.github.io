@@ -1,17 +1,45 @@
 // Shared header shrink script — toggles 'shrink' class on the page header
 (function(){
     const THRESHOLD = 80;
+    const THRESHOLD_LOW = 40; // hysteresis to avoid flicker
     // Prefer explicit IDs used in pages
     const header = document.getElementById('mainHeader') || document.getElementById('heroHeader') || document.querySelector('header');
     if (!header) return;
 
-    function onScroll(){
+    // Don't enable shrink behavior on very short pages
+    function pageTooShort() {
+        return document.documentElement.scrollHeight <= window.innerHeight + 120;
+    }
+
+    let isShrunk = header.classList.contains('shrink');
+    let ticking = false;
+
+    function update() {
+        ticking = false;
+        if (pageTooShort()) {
+            header.classList.remove('shrink');
+            isShrunk = false;
+            return;
+        }
         const y = window.scrollY || window.pageYOffset;
-        if (y > THRESHOLD) header.classList.add('shrink');
-        else header.classList.remove('shrink');
+        if (!isShrunk && y > THRESHOLD) {
+            header.classList.add('shrink');
+            isShrunk = true;
+        } else if (isShrunk && y < THRESHOLD_LOW) {
+            header.classList.remove('shrink');
+            isShrunk = false;
+        }
+    }
+
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(update);
+            ticking = true;
+        }
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => { if (!ticking) { window.requestAnimationFrame(update); } }, { passive: true });
     // initialize
-    onScroll();
+    update();
 })();
