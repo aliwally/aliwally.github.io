@@ -29,8 +29,16 @@
         position: sticky;
         top: 0;
         z-index: 200;
-        transition: padding 0.4s, font-size 0.4s;
+        transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease;
     }
+    header.shrink {
+        padding: 0.9rem 1rem 0.85rem 1rem;
+        box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+    header h1 { transition: font-size 0.25s ease, transform 0.25s ease; }
+    header.shrink h1 { font-size: 1.2rem; transform: translateY(-2px); }
     nav {
         position: sticky;
         top: 0;
@@ -213,18 +221,6 @@
         </a>
     </nav>
     <main>
-    <script>
-    // Header shrink on scroll
-    const mainHeader = document.getElementById('mainHeader');
-    const mainNav = document.getElementById('mainNav');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 80) {
-            mainHeader.classList.add('shrink');
-        } else {
-            mainHeader.classList.remove('shrink');
-        }
-    });
-    </script>
         <div class="tab-bar">
             <button class="tab-btn active" onclick="showTab(0)">Climate Fresk</button>
             <button class="tab-btn" onclick="showTab(1)">Sulitest Results</button>
@@ -301,5 +297,6 @@
         }
     </script>
     </main>
+    <script src="js/header-shrink.js"></script>
 </body>
 </html>

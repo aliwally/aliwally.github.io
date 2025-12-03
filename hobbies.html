@@ -295,23 +295,6 @@
         if (document.fonts) document.fonts.ready.then(() => { layoutMasonry(); });
     })();
     </script>
-    <script>
-    // Shrink header on scroll for hobbies page
-    (function(){
-        const header = document.getElementById('mainHeader');
-        if (!header) return;
-        const THRESHOLD = 80;
-        let lastScroll = 0;
-        function onScroll(){
-            const y = window.scrollY || window.pageYOffset;
-            if (y > THRESHOLD) header.classList.add('shrink');
-            else header.classList.remove('shrink');
-            lastScroll = y;
-        }
-        window.addEventListener('scroll', onScroll, { passive: true });
-        // Initialize state
-        onScroll();
-    })();
-    </script>
+    <script src="js/header-shrink.js"></script>
 </body>
 </html>
