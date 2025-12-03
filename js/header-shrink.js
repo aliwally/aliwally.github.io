@@ -27,6 +27,14 @@
         isShrunk = state;
     }
 
+    // Also toggle a sticky header (if present) for the hero page
+    const stickyHeader = document.getElementById('stickyHeader');
+    function updateStickyVisibility() {
+        if (!stickyHeader) return;
+        if (header.classList.contains('shrink')) stickyHeader.classList.add('visible');
+        else stickyHeader.classList.remove('visible');
+    }
+
     function update() {
         ticking = false;
         const y = window.scrollY || window.pageYOffset;
@@ -39,6 +47,7 @@
             if (pageTooShort()) header.classList.remove('shrink-layout');
             else header.classList.add('shrink-layout');
         }
+        updateStickyVisibility();
     }
 
     function onScroll() {
