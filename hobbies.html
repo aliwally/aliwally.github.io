@@ -111,12 +111,29 @@
         .lang-fr span.en, 
         .lang-fr .hero-subtitle .en,
         .lang-fr .quote-author .en { display: none !important; }
-        /* Gallery styles */
-        .gallery { display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem; }
-        .gallery figure { flex:1 1 calc(33% - 0.5rem); margin:0; }
-        .gallery img { width:100%; height:auto; border-radius:10px; display:block; }
-        .gallery figcaption { text-align:center; font-size:0.95rem; color:#3e6b5a; padding:0.35rem 0; }
-        @media (max-width:600px) { .gallery figure { flex:1 1 100%; } }
+        /* Gallery styles (CSS Grid masonry packing) */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-auto-rows: 8px; /* small row unit to allow fine-grained spanning */
+            gap: 12px;
+            margin-top: 1rem;
+        }
+        .gallery figure {
+            margin: 0;
+            display: block;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #f6fbf7;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .gallery figcaption { text-align: center; font-size: 0.95rem; color: #3e6b5a; padding: 0.35rem 0; }
+        @media (max-width:600px) { .gallery { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -206,5 +223,55 @@
             </figure>
         </section>
     </main>
+    <script>
+    // Masonry-like packing using CSS Grid: compute row spans based on image height.
+    (function(){
+        const gallery = document.querySelector('.gallery');
+        if (!gallery) return;
+
+        function getRowHeight(){
+            const style = window.getComputedStyle(gallery);
+            const rowHeight = parseFloat(style.getPropertyValue('grid-auto-rows'));
+            const rowGap = parseFloat(style.getPropertyValue('gap')) || parseFloat(style.getPropertyValue('grid-row-gap')) || 0;
+            return {rowHeight, rowGap};
+        }
+
+        function resizeAllGridItems(){
+            const {rowHeight, rowGap} = getRowHeight();
+            const images = gallery.querySelectorAll('img');
+            images.forEach(img => {
+                const item = img.closest('figure');
+                if (!item) return;
+                const height = img.getBoundingClientRect().height;
+                const rowSpan = Math.ceil((height + rowGap) / rowHeight);
+                item.style.gridRowEnd = 'span ' + rowSpan;
+            });
+        }
+
+        // Recalculate when each image finishes loading (for cached images, 'load' may not fire)
+        const imgs = gallery.querySelectorAll('img');
+        let loaded = 0;
+        imgs.forEach(img => {
+            if (img.complete && img.naturalHeight !== 0) {
+                loaded++;
+            } else {
+                img.addEventListener('load', () => { resizeAllGridItems(); });
+            }
+        });
+
+        // If all images already loaded, compute immediately; otherwise compute after a short timeout
+        if (loaded === imgs.length) {
+            resizeAllGridItems();
+        } else {
+            // also compute after a short delay to catch layout changes
+            setTimeout(resizeAllGridItems, 350);
+        }
+
+        // Recompute on window resize
+        window.addEventListener('resize', () => { resizeAllGridItems(); });
+        // Also recompute after fonts load (in case layout shifts)
+        if (document.fonts) document.fonts.ready.then(resizeAllGridItems);
+    })();
+    </script>
 </body>
 </html>
