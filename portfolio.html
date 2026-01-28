@@ -9,28 +9,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="js/language-switch-css.js"></script>
     <style>
-        body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background: linear-gradient(120deg,#f9f9f9 0%,#e0ede8 100%); min-height:100vh; }
-        header { background: linear-gradient(90deg,#1e473d 60%,#3e7c6b 100%); color:#fff; padding:2.5rem 1rem 2rem 1rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.07); border-bottom-left-radius:30px; border-bottom-right-radius:30px; position:sticky; top:0; z-index:200; }
-        nav { background:#f6fdfbcc; padding:0.7rem 0; text-align:center; box-shadow:0 1px 6px rgba(0,0,0,0.03); border-bottom:1px solid #e0ede8; }
-        nav a { color:#1e473d; margin:0 1.2rem; text-decoration:none; font-weight:700; padding:0.2rem 0.5rem; border-radius:4px; }
-        nav a:hover{ background:#1e473d; color:#fff; }
-        main { max-width:800px; margin:2.5rem auto; background:#fff; padding:2.5rem 2rem; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); }
-        h1{ margin-top:0; font-size:2.3rem; }
-        .project-card { background:#e0ede8; border-radius:14px; box-shadow:0 2px 10px rgba(30,71,61,0.06); padding:1.2rem 1.5rem; margin-bottom:1.5rem; }
-        .project-card h2 { margin-top:0; color:#1e473d; font-size:1.18rem; }
-        .project-card a { color:#0077b5; text-decoration:underline; font-weight:bold; }
-        .project-card a:hover { color:#1e473d; }
+    body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background: linear-gradient(120deg,#f9f9f9 0%,#e0ede8 100%); min-height:100vh; }
+    header { background: linear-gradient(90deg,#1e473d 60%,#3e7c6b 100%); color:#fff; padding:2.5rem 1rem 2rem 1rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.07); border-bottom-left-radius:30px; border-bottom-right-radius:30px; position:sticky; top:0; z-index:200; transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease; }
+    header { will-change: transform; }
+    header.shrink h1 { transform: translateY(-6px) scale(0.985); transition: transform 0.22s ease, font-size 0.22s ease; }
+    header.shrink-layout { padding: 0.9rem 1rem 0.85rem 1rem; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
+    header.shrink-layout h1 { font-size: 1.2rem; }
+    nav{ position:sticky; top:0; z-index:150; background:#f6fdfbcc; padding:0.7rem 0; text-align:center; box-shadow:0 1px 6px rgba(0,0,0,0.03); border-bottom:1px solid #e0ede8; }
+    nav a{ color:#1e473d; margin:0 1.2rem; text-decoration:none; font-weight:700; padding:0.2rem 0.5rem; border-radius:4px; }
+    nav a:hover{ background:#1e473d; color:#fff; }
+    main{ max-width:800px; margin:2.5rem auto; background:#fff; padding:2.5rem 2rem; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); }
+    h1{ margin-top:0; font-size:2.3rem; }
+    .tab-bar{ display:flex; gap:1.2rem; justify-content:center; margin-bottom:2.2rem; }
+    .tab-btn{ background:#e0ede8; border:none; padding:0.7rem 2rem; border-radius:8px 8px 0 0; cursor:pointer; font-weight:500; }
+    .tab-btn.active{ background:#1e473d; color:#fff; font-weight:bold; }
+    .company-logo{ height:36px; margin-left:0.6rem; border-radius:4px; }
+    .tab-content{ display:none; }
+    .tab-content.active{ display:block; }
+    /* Language rules */
+    .lang-en .fr{ display:none !important; }
+    .lang-fr .en{ display:none !important; }
+    nav .en, nav .fr, span.en, span.fr{ display:inline !important; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Portfolio</h1>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Engineering_course.html">Engineering Course</a>
-        <a href="ProfessionalProject">Professional Project</a>
-        <a href="contact.html">Contact</a>
+    <header id="mainHeader"><h1><span class="en">Professional Project</span><span class="fr">Projet professionnel</span></h1></header>
+    <nav id="mainNav">
+        <a href="index.html"><span class="en">Home</span><span class="fr">Accueil</span></a>
+        <a href="Engineering_course.html"><span class="en">Engineering Course</span><span class="fr">Cursus Ingénieur</span></a>
+        <a href="International_mobility.html"><span class="en">International mobility</span><span class="fr">Mobilité internationale</span></a>
+        <a href="sustainability.html">
+            <span class="en">Civic Engagement</span>
+            <span class="fr">Engagement civique</span></a>
+        <a href="hobbies.html"><span class="en">Personal Interests</span><span class="fr">Centres d'intérêt personnels</span></a>
+        <a href="ProfessionalProject"><span class="en">Professional Project</span><span class="fr">Projet professionnel</span></a>
+        <a href="contact.html"><span class="en">Contact</span><span class="fr">Contact</span></a>
     </nav>
     <main>
         <div class="project-card">
@@ -38,6 +51,39 @@
             <p>I am learning Python scripting for Autodesk Maya to automate tasks and enhance animation workflows. See my progress and code examples in this public repository:</p>
             <a href="https://github.com/aliwally/Python_scripting_for_animation" target="_blank">View GitHub Repo</a>
         </div>
+
+        <div class="project-card">
+            <h2>Blender Animation Examples</h2>
+            <p>Here are some of my Blender animation and rendering experiments:</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start; align-items: flex-start;">
+                <div style="flex: 1 1 260px; max-width: 320px;">
+                    <video controls style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.5rem;">
+                        <source src="img/blender/0000-0110.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div style="font-size:0.95rem; color:#1e473d;">Blender Animation (Frames 0-110)</div>
+                </div>
+                <div style="flex: 1 1 260px; max-width: 320px;">
+                    <video controls style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.5rem;">
+                        <source src="img/blender/0001-0050.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div style="font-size:0.95rem; color:#1e473d;">Blender Animation (Frames 1-50)</div>
+                </div>
+                <div style="flex: 1 1 260px; max-width: 320px;">
+                    <video controls style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.5rem;">
+                        <source src="img/blender/0001-0084.mkv" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div style="font-size:0.95rem; color:#1e473d;">Blender Animation (Frames 1-84, MKV)</div>
+                </div>
+                <div style="flex: 1 1 260px; max-width: 320px;">
+                    <img src="img/blender/Pisssenlit_final.png" alt="Blender Render Example" style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.5rem;" />
+                    <div style="font-size:0.95rem; color:#1e473d;">Blender Render: Pissenlit</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Add more project cards here as you grow your portfolio! -->
     </main>
 </body>
