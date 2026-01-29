@@ -10,79 +10,87 @@
     <link rel="icon" type="image/png" href="img/cara.png">
     <script src="js/language-switch-css.js"></script>
     <style>
-        body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background: #f9f9f9; min-height:100vh; }
-        .hero-header { position: relative; width:100vw; min-height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background: linear-gradient(90deg, #1e473d 60%, #3e7c6b 100%); color:white; text-align:center; }
-        .hero-title { font-size:3rem; font-weight:700; margin:0; }
-        .hero-subtitle { font-size:1.2rem; margin-top:1rem; }
-        .sticky-header { position: fixed; top:0; left:0; width:100vw; height:60px; background: linear-gradient(90deg,#1e473d 60%,#3e7c6b 100%); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; letter-spacing:1px; opacity:0; pointer-events:none; transition:opacity 0.4s; }
-        .sticky-header.visible { opacity:1; pointer-events:auto; }
-        nav { background:#f6fdfbcc; padding:0.7rem 0; text-align:center; box-shadow:0 1px 6px rgba(0,0,0,0.03); border-bottom:1px solid #e0ede8; }
-        nav a { color:#1e473d; margin:0 1rem; text-decoration:none; font-weight:700; padding:0.2rem 0.5rem; border-radius:4px; transition:0.2s; }
-        nav a:hover { background:#1e473d; color:white; }
-        main { max-width:800px; margin:2.5rem auto; background:#fff; padding:2rem; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); min-height:60vh; }
-        h2 { color:#1e473d; }
-        .btn { display:inline-flex; align-items:center; gap:0.5rem; background:#e0ede8; color:#1e473d; padding:0.7rem 1.3rem; border-radius:14px; text-decoration:none; font-weight:bold; font-size:1rem; box-shadow:0 4px 16px rgba(30,71,61,0.07); border:2px solid #1e473d; transition:0.2s; }
-        .btn:hover { transform:scale(1.05); background:#1e473d; color:white; }
+        body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background: linear-gradient(120deg, #f9f9f9 0%, #e0ede8 100%); min-height:100vh; }
+        .hero-header { position: relative; width: 100vw; min-height: 60vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background: linear-gradient(90deg, #1e473d 60%, #3e7c6b 100%); overflow:hidden; }
+        .hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1; filter:brightness(0.7); }
+        .hero-content { position: relative; z-index:2; color:#fff; text-align:center; }
+        .hero-title { font-size:3.2rem; font-weight:700; margin:0; letter-spacing:1.5px; text-shadow:0 4px 24px rgba(0,0,0,0.18); }
+        .hero-subtitle { font-size:1.3rem; margin-top:1rem; text-shadow:0 2px 8px rgba(0,0,0,0.1); }
+        main { max-width:800px; margin:2.5rem auto; background:#fff; padding:2.5rem 2rem; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); min-height:60vh; }
+        nav { background: #f6fdfbcc; padding:0.7rem 0; text-align:center; box-shadow:0 1px 6px rgba(0,0,0,0.03); border-bottom:1px solid #e0ede8; }
+        nav a { color:#1e473d; margin:0 1.2rem; text-decoration:none; font-weight:700; padding:0.2rem 0.5rem; border-radius:4px; transition: color 0.2s, background 0.2s; }
+        nav a:hover { color:#fff; background:#1e473d; text-decoration:none; }
+        @media(max-width:600px){ main{padding:1.2rem 0.5rem;} .hero-title{font-size:2rem;} }
+        .lang-en .fr{display:none !important;} .lang-fr .en{display:none !important;} 
+        .lang-en .en, .lang-fr .fr{display:inline !important;}
+        .btn-group { display:flex; flex-wrap:wrap; gap:0.7rem; justify-content:center; margin-bottom:2.2rem; }
+        .btn-group a { display:inline-flex; align-items:center; gap:0.5rem; background:#e0ede8; color:#1e473d; padding:0.7rem 1.3rem; border-radius:14px; text-decoration:none; font-weight:bold; font-size:1rem; box-shadow:0 4px 16px rgba(30,71,61,0.07); border:2px solid #1e473d; transition: background 0.2s, transform 0.2s; }
+        .btn-group a:hover { transform: scale(1.07) rotate(-2deg); box-shadow:0 8px 32px rgba(30,71,61,0.18),0 0 0 4px #b3e0f7; background: linear-gradient(90deg, #3e7c6b 60%, #1e473d 100%) !important; color:#fff !important; }
         .projects { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem; }
-        .project-card { flex:1 1 250px; background:#f0f9f4; padding:1rem; border-radius:14px; text-align:center; box-shadow:0 4px 12px rgba(30,71,61,0.07); min-height:120px; display:flex; flex-direction:column; justify-content:center; }
-        @media (max-width:500px) { .hero-title { font-size:2rem; } .projects { flex-direction:column; } }
-        .lang-en .fr { display:none !important; }
-        .lang-fr .en { display:none !important; }
-        .lang-en .en, .lang-fr .fr { display:inline !important; }
+        .project-card { flex:1 1 250px; max-width:300px; text-align:center; background:#f6fdfb; padding:0.8rem; border-radius:14px; box-shadow:0 4px 16px rgba(30,71,61,0.08); }
+        .project-card img { width:100%; border-radius:12px; }
+        .skills ul { columns:2; max-width:500px; margin:0 auto 0.5rem auto; font-size:1.05rem; }
     </style>
 </head>
 <body>
     <div class="hero-header" id="heroHeader">
+        <img src="img/cover.jpg" alt="Alice Dissoubray Cover" class="hero-bg" id="heroBg">
         <div class="hero-content" id="heroContent">
             <h1 class="hero-title">Alice Dissoubray</h1>
             <p class="hero-subtitle">
-                <span class="en">Hi, I’m Alice, a Master’s student in Computer Science focusing on Images & Multimedia. Curious about animation, eager to contribute as a technical artist, pipeline developer, or in another creative role.</span>
-                <span class="fr">Bonjour, je suis Alice, étudiante en Master d’informatique spécialisée en Images & Multimédia. Curieuse de l’animation, je souhaite contribuer en tant qu’assistante technique, développeuse pipeline, ou dans un rôle créatif.</span>
+                <span class="en"><strong>Python & Blender Developer | Workflow Automation | Pipeline & R&D Enthusiast</strong></span>
+                <span class="fr"><strong>Développeuse Python & Blender | Automatisation de workflows | Passionnée Pipeline & R&D</strong></span>
+            </p>
+            <p class="hero-subtitle">
+                <span class="en">Hi, I’m Alice, a Master’s student in Computer Science focusing on Images & Multimedia.<br>I am genuinely curious about animation and eager to discover where I could contribute in a studio environment.</span>
+                <span class="fr">Bonjour, je suis Alice, étudiante en master informatique, spécialisée en Images & Multimédia.<br>Je suis passionnée par l’animation et curieuse de découvrir comment contribuer dans un studio.</span>
             </p>
         </div>
     </div>
-    <div class="sticky-header" id="stickyHeader">Alice Dissoubray</div>
+
     <nav>
         <a href="index.html"><span class="en">Home</span><span class="fr">Accueil</span></a>
-        <a href="portfolio.html"><span class="en">Portfolio</span><span class="fr">Portfolio</span></a>
+        <a href="Engineering_course.html"><span class="en">Engineering Course</span><span class="fr">Cursus Ingénieur</span></a>
+        <a href="International_mobility.html"><span class="en">International Mobility</span><span class="fr">Mobilité internationale</span></a>
+        <a href="sustainability.html"><span class="en">Civic Engagement</span><span class="fr">Engagement civique</span></a>
+        <a href="hobbies.html"><span class="en">Personal Interests</span><span class="fr">Centres d'intérêt</span></a>
+        <a href="ProfessionalProject.html"><span class="en">Professional Project</span><span class="fr">Projet professionnel</span></a>
         <a href="contact.html"><span class="en">Contact</span><span class="fr">Contact</span></a>
     </nav>
 
     <main>
-        <h2><span class="en">About Me</span><span class="fr">À propos</span></h2>
-        <p class="en">I’m Alice, a computer science student passionate about animation, tool development, and pipeline workflows. I have experience in Python, Blender, Maya, and workflow automation, and I’m eager to contribute in studio environments.</p>
-        <p class="fr">Je suis Alice, étudiante en informatique passionnée par l’animation, le développement d’outils et le pipeline. J’ai de l’expérience en Python, Blender, Maya et automatisation de workflows, et je souhaite contribuer en studio d’animation.</p>
+        <section class="skills">
+            <h2><span class="en">Software & Tools</span><span class="fr">Logiciels & Outils</span></h2>
+            <ul>
+                <li><strong>Python</strong></li>
+                <li><strong>Blender</strong></li>
+                <li><strong>Maya</strong></li>
+                <li>Git & Linux</li>
+                <li>Unity</li>
+                <li>DaVinci Resolve</li>
+                <li>Adobe Lightroom</li>
+                <li>Matlab</li>
+            </ul>
+            <p style="text-align:center; font-size:0.98rem; color:#2a4d3c;">Actively exploring animation tools and pipeline development for studios.</p>
+        </section>
 
-        <div style="display:flex;flex-wrap:wrap;gap:0.7rem;justify-content:center;margin-bottom:2rem;">
-            <a href="portfolio.html" class="btn">🎬 <span class="en">Portfolio</span><span class="fr">Portfolio</span></a>
-            <a href="docs/CV_English.pdf" target="_blank" class="btn">📄 CV</a>
-            <a href="contact.html" class="btn">✉️ <span class="en">Contact</span><span class="fr">Contact</span></a>
+        <div class="btn-group">
+            <a href="portfolio.html"><span style="font-size:1.15rem;">🎬</span> Portfolio</a>
+            <a href="docs/CV_English.pdf" target="_blank"><span style="font-size:1.15rem;">📄</span> CV</a>
+            <a href="contact.html"><span style="font-size:1.15rem;">✉️</span> Contact</a>
+            <a href="https://github.com/aliwally" target="_blank"><span style="font-size:1.15rem;">💻</span> GitHub</a>
         </div>
 
-        <h2><span class="en">Skills & Tools</span><span class="fr">Compétences & Outils</span></h2>
-        <ul style="columns:2;max-width:500px;margin:0 auto 1rem auto;font-size:1.05rem;">
-            <li>Python</li>
-            <li>Java</li>
-            <li>Blender</li>
-            <li>Maya</li>
-            <li>Unity</li>
-            <li>Adobe Lightroom</li>
-            <li>DaVinci Resolve</li>
-            <li>Linux</li>
-            <li>Git & GitHub</li>
-            <li>Matlab</li>
-        </ul>
-
-        <h2><span class="en">Projects</span><span class="fr">Projets</span></h2>
-        <div class="projects">
+        <section class="projects">
             <div class="project-card">
                 <p><strong>Blender / Maya Scripts</strong><br><span class="en">Python scripts for 3D workflows (coming soon)</span><span class="fr">Scripts Python pour workflows 3D (bientôt)</span></p>
             </div>
             <div class="project-card">
                 <p><strong>Data Processing</strong><br><span class="en">Satellite image processing & automation (coming soon)</span><span class="fr">Traitement d’images satellites & automatisation (bientôt)</span></p>
             </div>
-        </div>
+        </section>
     </main>
+
     <script src="js/header-shrink.js"></script>
 </body>
 </html>
