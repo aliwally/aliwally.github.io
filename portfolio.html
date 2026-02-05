@@ -48,12 +48,33 @@
         font-size: 0.85rem;
         border: 1px solid #d7e6df;
     }
+    .mini-nav {
+        display:flex;
+        flex-wrap:wrap;
+        gap:0.6rem;
+        margin: 1.2rem 0 0 0;
+    }
+    .mini-nav a {
+        text-decoration:none;
+        color: #1e473d;
+        background:#eef5f2;
+        border:1px solid #d7e6df;
+        padding:0.35rem 0.7rem;
+        border-radius:999px;
+        font-weight:600;
+        font-size:0.9rem;
+    }
     .section {
         margin-top: 2.2rem;
     }
     .section h3 {
         margin: 0 0 1rem 0;
         font-size: 1.4rem;
+    }
+    .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #dbe7e1, transparent);
+        margin: 2.2rem 0;
     }
     .project {
         border: 1px solid #e1ebe7;
@@ -74,6 +95,11 @@
         margin: 0;
         font-size: 1.4rem;
         color: #1e473d;
+    }
+    .project-subtitle {
+        margin: 0.4rem 0 0 0;
+        color: #2b4c42;
+        font-weight: 600;
     }
     .project-meta {
         display: flex;
@@ -137,6 +163,29 @@
         border: 1px solid #d7e6df;
         border-radius: 12px;
         color: #2c5a4b;
+    }
+    .outcome-grid {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap:0.8rem;
+        margin-top:1rem;
+    }
+    .outcome-card {
+        background:#ffffff;
+        border:1px solid #e1ebe7;
+        border-radius:12px;
+        padding:0.8rem 0.9rem;
+    }
+    .outcome-title {
+        font-weight:700;
+        color:#1e473d;
+        margin:0 0 0.3rem 0;
+    }
+    .outcome-text {
+        margin:0;
+        color:#2b4c42;
+        font-size:0.92rem;
+        line-height:1.5;
     }
     @media (max-width: 800px) {
         .portfolio-hero { grid-template-columns: 1fr; }
@@ -215,6 +264,11 @@
                     <span class="tag">Image Processing</span>
                     <span class="tag">CG</span>
                 </div>
+                <div class="mini-nav">
+                    <a href="#featured">Featured</a>
+                    <a href="#tools">Tools</a>
+                    <a href="#blender">Blender</a>
+                </div>
             </div>
             <div class="hero-card">
                 <div class="project-meta">
@@ -227,7 +281,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="featured">
             <h3><span class="en">Featured Project</span><span class="fr">Projet phare</span></h3>
             <div class="project">
                 <div class="project-header">
@@ -241,6 +295,7 @@
                 <div class="project-body">
                     <p class="en">A guided study measuring how samples and denoising impact noise, reflections, shadows, and render time.</p>
                     <p class="fr">Étude guidée mesurant l’impact des samples et du denoise sur le bruit, les reflets, les ombres et le temps de rendu.</p>
+                    <p class="project-subtitle"><span class="en">Goal:</span><span class="fr">Objectif :</span> <span class="en">compare quality vs. time for studio‑ready settings.</span><span class="fr">comparer qualité et temps pour des réglages studio.</span></p>
                 </div>
 
                 <table class="data-table">
@@ -288,10 +343,27 @@
                     <span class="en">Observations: shadow noise, metallic reflections, and the quality jump with denoise. Comparison of 256 vs 1024 samples with denoise enabled.</span>
                     <span class="fr">Observations : bruit dans les ombres, reflets métalliques, et gain avec denoise. Comparaison 256 vs 1024 samples avec denoise activé.</span>
                 </div>
+
+                <div class="outcome-grid">
+                    <div class="outcome-card">
+                        <p class="outcome-title"><span class="en">Best Tradeoff</span><span class="fr">Meilleur compromis</span></p>
+                        <p class="outcome-text"><span class="en">R4 (256 + denoise) for cleaner shadows with controlled time.</span><span class="fr">R4 (256 + denoise) pour des ombres plus propres et un temps maîtrisé.</span></p>
+                    </div>
+                    <div class="outcome-card">
+                        <p class="outcome-title"><span class="en">Quality Peak</span><span class="fr">Qualité max</span></p>
+                        <p class="outcome-text"><span class="en">R5 (1024 + denoise) shows refinement but with heavy render cost.</span><span class="fr">R5 (1024 + denoise) affine la qualité mais coûte très cher en temps.</span></p>
+                    </div>
+                    <div class="outcome-card">
+                        <p class="outcome-title"><span class="en">Key Insight</span><span class="fr">Insight clé</span></p>
+                        <p class="outcome-text"><span class="en">Denoise gives the biggest perceived jump at mid samples.</span><span class="fr">Le denoise apporte le plus grand gain perçu à samples moyens.</span></p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="section">
+        <div class="section-divider"></div>
+
+        <section class="section" id="tools">
             <h3><span class="en">Tools & Scripting</span><span class="fr">Outils & scripting</span></h3>
             <div class="project">
                 <div class="project-header">
@@ -310,7 +382,9 @@
             </div>
         </section>
 
-        <section class="section">
+        <div class="section-divider"></div>
+
+        <section class="section" id="blender">
             <h3><span class="en">Blender Animation & Renders</span><span class="fr">Animations & rendus Blender</span></h3>
             <div class="project">
                 <div class="project-body">
