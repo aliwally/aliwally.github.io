@@ -56,6 +56,7 @@ class SimpleLanguageSwitcher {
         const languageText = document.querySelector('.language-text');
         
         if (flagIcon) {
+            flagIcon.textContent = '';
             flagIcon.classList.toggle('flag-fr', language === 'en');
             flagIcon.classList.toggle('flag-en', language !== 'en');
         }
