@@ -9,155 +9,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="js/language-switch-css.js"></script>
     <style>
-    body {
-        font-family: 'Roboto', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(120deg, #f9f9f9 0%, #e0ede8 100%);
-        min-height: 100vh;
+    .page-hero {
+        display:grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 1.4rem;
+        align-items: center;
+        margin-bottom: 1.8rem;
     }
-    header {
-        background: linear-gradient(90deg, #1e473d 60%, #3e7c6b 100%);
-        color: #fff;
-        padding: 2.5rem 1rem 2rem 1rem;
-        text-align: center;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        position: sticky;
-        top: 0;
-        z-index: 200;
-        transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease;
-    }
-    header { will-change: transform; }
-    header.shrink h1 { transform: translateY(-6px) scale(0.985); transition: transform 0.22s ease, font-size 0.22s ease; }
-    header.shrink-layout { padding: 0.9rem 1rem 0.85rem 1rem; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
-    header.shrink-layout h1 { font-size: 1.2rem; }
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 150;
-    }
-    main {
-        max-width: 800px;
-        margin: 2.5rem auto;
-        background: #fff;
-        padding: 2.5rem 2rem;
+    .hero-card {
+        background: linear-gradient(120deg, #f3f7f5 0%, #e6efe9 100%);
+        border: 1px solid #dfeae4;
         border-radius: 18px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        min-height: 60vh;
+        padding: 1.2rem 1.3rem;
+        box-shadow: 0 10px 24px rgba(19, 43, 37, 0.08);
     }
-    nav {
-        background: #f6fdfbcc;
-        padding: 0.7rem 0;
-        text-align: center;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.03);
-        border-bottom: 1px solid #e0ede8;
+    .highlight {
+        background:#eef5f2;
+        border:1px solid #d7e6df;
+        border-radius:14px;
+        padding:1.1rem 1.3rem;
+        margin: 1.2rem 0 1.8rem 0;
     }
-    nav a {
-        color: #1e473d;
-        margin: 0 1.2rem;
-        text-decoration: none;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        transition: color 0.2s, background 0.2s;
-        padding: 0.2rem 0.5rem;
-        border-radius: 4px;
+    .section-title {
+        font-family:'Fraunces', serif;
+        color:#1e473d;
+        margin-bottom:0.6rem;
     }
-    nav a:hover {
-        color: #fff;
-        background: #1e473d;
-        text-decoration: none;
+    .tag-row {
+        display:flex;
+        flex-wrap:wrap;
+        gap:0.5rem;
+        margin-top:0.8rem;
     }
-    main {
-        max-width: 800px;
-        margin: 2.5rem auto;
-        background: #fff;
-        padding: 2.5rem 2rem;
-        border-radius: 18px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        min-height: 60vh;
+    .tag {
+        background:#eef5f2;
+        color:#2c5a4b;
+        padding:0.3rem 0.7rem;
+        border-radius:999px;
+        font-size:0.85rem;
+        border:1px solid #d7e6df;
     }
-    h1 {
-        margin-top: 0;
-        font-size: 2.3rem;
-        letter-spacing: 1px;
+    .experience-grid {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap:1rem;
+        margin-top:1rem;
     }
-    h2, h3 {
-        color: #1e473d;
+    .experience-card {
+        background:#f9fbfa;
+        border:1px solid #e1ebe7;
+        border-radius:16px;
+        padding:1rem 1.1rem;
+        box-shadow:0 8px 18px rgba(19,43,37,0.07);
     }
-    .tab-bar {
-        display: flex;
-        gap: 1.2rem;
-        margin-bottom: 2.2rem;
-        justify-content: center;
+    .experience-meta {
+        font-size:0.9rem;
+        color:#3b6154;
+        margin-bottom:0.4rem;
     }
-    .tab-btn {
-        background: #e0ede8;
-        border: none;
-        padding: 0.7rem 2rem;
-        border-radius: 8px 8px 0 0;
-        cursor: pointer;
-        font-size: 1.08rem;
-        font-weight: 500;
-        color: #1e473d;
-        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-        box-shadow: 0 2px 6px rgba(30,71,61,0.04);
+    .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #dbe7e1, transparent);
+        margin: 2rem 0;
     }
-    .tab-btn.active {
-        background: #1e473d;
-        color: #fff;
-        font-weight: bold;
-        box-shadow: 0 4px 12px rgba(30,71,61,0.13);
+    @media (max-width: 900px) {
+        .page-hero { grid-template-columns: 1fr; }
     }
-    .tab-btn:hover:not(.active) {
-        background: #3e7c6b;
-        color: #fff;
-    }
-    .tab-content {
-        display: none;
-        animation: fadeIn 0.5s;
-    }
-    .tab-content.active {
-        display: block;
-        animation: fadeIn 0.5s;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 600px) {
-        main { padding: 1.2rem 0.5rem; }
-        .tab-bar { flex-direction: column; gap: 0.5rem; }
-        .tab-btn { width: 100%; }
-    }
-        /* Language switching rules - default to English */
-        .lang-en .fr { display: none !important; }
-        .lang-fr .en { display: none !important; }
-        
-        /* Show appropriate language content */
-        .lang-en .en { display: block; }
-        .lang-fr .fr { display: block; }
-        
-        /* For inline elements (navigation, spans within text) */
-        nav .en, nav .fr,
-        span.en, span.fr,
-        .hero-subtitle .en, .hero-subtitle .fr,
-        .quote-author .en, .quote-author .fr {
-            display: inline !important;
-        }
-        
-        /* Hide inactive language for inline elements */
-        .lang-en nav .fr, 
-        .lang-en span.fr,
-        .lang-en .hero-subtitle .fr,
-        .lang-en .quote-author .fr { display: none !important; }
-        
-        .lang-fr nav .en,
-        .lang-fr span.en, 
-        .lang-fr .hero-subtitle .en,
-        .lang-fr .quote-author .en { display: none !important; }        
-
     </style>
     <link rel="stylesheet" href="css/site.css">
 </head>
@@ -190,7 +107,7 @@
             <span class="en">Personal Interests</span>
             <span class="fr">Centres d'intérêt personnels</span>
         </a>
-        <a href="ProfessionalProject">
+        <a href="ProfessionalProject.html">
             <span class="en">Professional Project</span>
             <span class="fr">Projet professionnel</span>
         </a>
@@ -200,31 +117,61 @@
         </a>
     </nav>
     <main>
+        <section class="page-hero">
+            <div>
+                <h2 class="section-title"><span class="en">International Mobility</span><span class="fr">Mobilité internationale</span></h2>
+                <p class="en">My international experiences shaped my curiosity, adaptability, and ability to collaborate across cultures—qualities I bring into team‑based creative work.</p>
+                <p class="fr">Mes expériences internationales ont renforcé ma curiosité, mon adaptabilité et ma capacité à collaborer entre cultures — des qualités utiles en équipe créative.</p>
+                <div class="tag-row">
+                    <span class="tag">Adaptability</span>
+                    <span class="tag">Communication</span>
+                    <span class="tag">Cultural Awareness</span>
+                    <span class="tag">Languages</span>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3 class="section-title"><span class="en">Languages</span><span class="fr">Langues</span></h3>
+                <p class="en">French (native), English (fluent), Spanish (intermediate).</p>
+                <p class="fr">Français (natif), Anglais (courant), Espagnol (intermédiaire).</p>
+            </div>
+        </section>
+
+        <section class="highlight">
+            <h3 class="section-title"><span class="en">Key Takeaways</span><span class="fr">Points clés</span></h3>
+            <p class="en">These trips taught me autonomy, open‑mindedness, and the confidence to contribute in diverse teams—valuable in studio environments.</p>
+            <p class="fr">Ces voyages m’ont appris l’autonomie, l’ouverture d’esprit et la confiance pour contribuer dans des équipes diverses — utile en studio.</p>
+        </section>
+
+        <h2 class="section-title">
+            <span class="en">International experiences</span>
+            <span class="fr">Expériences à l'étranger</span>
+        </h2>
+
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-meta">Ireland · Family trips</div>
+                <p class="en">Childhood visits introduced me to bilingual environments and Irish/Scottish traditions, building early cultural awareness.</p>
+                <p class="fr">Voyages d’enfance en Irlande : immersion bilingue et découverte des traditions irlandaises/écossaises.</p>
+            </div>
+            <div class="experience-card">
+                <div class="experience-meta">Argentina · 1‑month exchange</div>
+                <p class="en">A one‑month exchange in Argentina improved my Spanish fluency and confidence abroad.</p>
+                <p class="fr">Échange d’un mois en Argentine : amélioration de mon espagnol et de ma confiance à l’étranger.</p>
+            </div>
+            <div class="experience-card">
+                <div class="experience-meta">Senegal · Volunteering</div>
+                <p class="en">Volunteered in a primary school, teaching simple English songs and returning the next year to see lasting impact.</p>
+                <p class="fr">Bénévolat en école primaire : enseignement de chansons en anglais et retour un an plus tard pour constater l’impact.</p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <p class="en">These experiences strengthened my adaptability, empathy, and ability to collaborate across cultures—skills I apply in technical and creative projects.</p>
+        <p class="fr">Ces expériences ont renforcé mon adaptabilité, mon empathie et ma capacité à collaborer entre cultures — des compétences que j’applique dans mes projets techniques et créatifs.</p>
+    </main>
 
     <script src="js/header-shrink.js"></script>
-
-           <h2>
-              <span class="en">International experiences</span>
-              <span class="fr">Expériences à l'étranger</span>
-           </h2>
-          <p>
-              <span class="en">I was lucky enough to travel to several countries, experiences that broadened my outlook and strengthened my intercultural skills. 
-                Family ties brought me to Ireland during my childhood, introducing me to bilingual settings and Scottish and Irish traditions. 
-                At school I studied Spanish and completed a one?month exchange in Argentina, an intense immersion that improved my language fluency and confidence abroad.</span>
-              <span class="fr">J'ai eu la chance de voyager dans plusieurs pays, ce qui a élargi mon regard et renforcé mes compétences interculturelles.
-                 Des liens familiaux m'ont conduite en Irlande pendant mon enfance, où j'ai découvert des environnements bilingues et des traditions écossaises et irlandaises.
-                  Au collège, j'ai étudié l'espagnol et effectué un échange d'un mois en Argentine, une immersion intense qui a amélioré ma pratique de la langue et ma confiance
-                   à l'étranger.</span>
-          </p>
-          <p>
-              <span class="en">I also travelled to Senegal with my father to volunteer in a primary school, where I taught simple English songs to young children. 
-                Returning a year later and seeing them still remember the songs was deeply moving and taught me the value of lasting connections. These trips taught
-                 me adaptability, curiosity, and the ability to collaborate across cultures, qualities I still carry with me to this day.</span>
-              <span class="fr">J'ai également voyagé au Sénégal avec mon père pour faire du bénévolat dans une école primaire, où j'ai enseigné de simples chansons en anglais
-                 aux enfants. Revenir un an plus tard et les voir s'en souvenir m'a profondément touchée et m'a montré l'importance des liens durables. Ces expériences m'ont 
-                 apporté adaptabilité, curiosité et capacité à collaborer avec des personnes de cultures différentes, des qualités que je garde avec moi encore aujourd'hui.</span>
-          </p>
-    </main>
 
 </body>
 </html>
