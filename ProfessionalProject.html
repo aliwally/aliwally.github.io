@@ -9,27 +9,83 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="js/language-switch-css.js"></script>
     <style>
-    body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background: linear-gradient(120deg,#f9f9f9 0%,#e0ede8 100%); min-height:100vh; }
-    header { background: linear-gradient(90deg,#1e473d 60%,#3e7c6b 100%); color:#fff; padding:2.5rem 1rem 2rem 1rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.07); border-bottom-left-radius:30px; border-bottom-right-radius:30px; position:sticky; top:0; z-index:200; transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease; }
-    header { will-change: transform; }
-    header.shrink h1 { transform: translateY(-6px) scale(0.985); transition: transform 0.22s ease, font-size 0.22s ease; }
-    header.shrink-layout { padding: 0.9rem 1rem 0.85rem 1rem; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
-    header.shrink-layout h1 { font-size: 1.2rem; }
-    nav{ position:sticky; top:0; z-index:150; background:#f6fdfbcc; padding:0.7rem 0; text-align:center; box-shadow:0 1px 6px rgba(0,0,0,0.03); border-bottom:1px solid #e0ede8; }
-    nav a{ color:#1e473d; margin:0 1.2rem; text-decoration:none; font-weight:700; padding:0.2rem 0.5rem; border-radius:4px; }
-    nav a:hover{ background:#1e473d; color:#fff; }
-    main{ max-width:800px; margin:2.5rem auto; background:#fff; padding:2.5rem 2rem; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); }
-    h1{ margin-top:0; font-size:2.3rem; }
-    .tab-bar{ display:flex; gap:1.2rem; justify-content:center; margin-bottom:2.2rem; }
-    .tab-btn{ background:#e0ede8; border:none; padding:0.7rem 2rem; border-radius:8px 8px 0 0; cursor:pointer; font-weight:500; }
+    .page-hero {
+        display:grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 1.4rem;
+        align-items: center;
+        margin-bottom: 1.8rem;
+    }
+    .hero-card {
+        background: linear-gradient(120deg, #f3f7f5 0%, #e6efe9 100%);
+        border: 1px solid #dfeae4;
+        border-radius: 18px;
+        padding: 1.2rem 1.3rem;
+        box-shadow: 0 10px 24px rgba(19, 43, 37, 0.08);
+    }
+    .section-title {
+        font-family:'Fraunces', serif;
+        color:#1e473d;
+        margin-bottom:0.6rem;
+    }
+    .tag-row {
+        display:flex;
+        flex-wrap:wrap;
+        gap:0.5rem;
+        margin-top:0.8rem;
+    }
+    .tag {
+        background:#eef5f2;
+        color:#2c5a4b;
+        padding:0.3rem 0.7rem;
+        border-radius:999px;
+        font-size:0.85rem;
+        border:1px solid #d7e6df;
+    }
+    .skills-grid {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap:0.8rem;
+        margin-top:0.6rem;
+    }
+    .skill-card {
+        background:#f9fbfa;
+        border:1px solid #e1ebe7;
+        border-radius:12px;
+        padding:0.8rem 0.9rem;
+    }
+    .skill-title {
+        font-weight:700;
+        color:#1e473d;
+        margin:0 0 0.3rem 0;
+    }
+    .tab-bar{
+        display:flex;
+        gap:0.8rem;
+        justify-content:center;
+        flex-wrap:wrap;
+        margin: 1.4rem 0 1.8rem 0;
+    }
+    .tab-btn{
+        background:#e0ede8;
+        border:none;
+        padding:0.6rem 1.2rem;
+        border-radius:999px;
+        cursor:pointer;
+        font-weight:600;
+    }
     .tab-btn.active{ background:#1e473d; color:#fff; font-weight:bold; }
     .company-logo{ height:36px; margin-left:0.6rem; border-radius:4px; }
     .tab-content{ display:none; }
     .tab-content.active{ display:block; }
-    /* Language rules */
-    .lang-en .fr{ display:none !important; }
-    .lang-fr .en{ display:none !important; }
-    nav .en, nav .fr, span.en, span.fr{ display:inline !important; }
+    .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #dbe7e1, transparent);
+        margin: 1.8rem 0;
+    }
+    @media (max-width: 900px) {
+        .page-hero { grid-template-columns: 1fr; }
+    }
     </style>
     <link rel="stylesheet" href="css/site.css">
 </head>
@@ -48,21 +104,39 @@
         <a href="contact.html"><span class="en">Contact</span><span class="fr">Contact</span></a>
     </nav>
     <main>
-        <section style="background:#e0ede8;padding:1.2rem 1.5rem 1.2rem 1.5rem;border-radius:14px;margin-bottom:2rem;box-shadow:0 2px 10px rgba(30,71,61,0.06);">
-            <h2 style="margin-top:0;color:#1e473d;font-size:1.3rem;">Relevant Skills for Animation Studios & CG</h2>
-            <ul style="columns:2;max-width:600px;margin:0 auto 0.5rem auto;font-size:1.05rem;">
-                <li>Python (scripting, automation, pipeline tools)</li>
-                <li>Computer Graphics &amp; Image Processing</li>
-                <li>3D/2D Animation Concepts</li>
-                <li>Multimedia Programming</li>
-                <li>AI &amp; Machine Learning basics</li>
-                <li>Data Analysis &amp; Visualization</li>
-                <li>Web Development (HTML, CSS, JS)</li>
-                <li>Teamwork &amp; Communication</li>
-                <li>Problem Solving &amp; Adaptability</li>
-                <li>Curiosity &amp; Willingness to Learn</li>
-            </ul>
-            <div style="font-size:0.98rem;color:#2a4d3c;">Focused on tools, image processing, and CG workflows; eager to deepen studio toolchains (Blender, Maya, Houdini, Nuke, After Effects).</div>
+        <section class="page-hero">
+            <div>
+                <h2 class="section-title"><span class="en">Professional Project</span><span class="fr">Projet professionnel</span></h2>
+                <p class="en">My goal is to join an animation studio and contribute as a Python developer for tools, or on projects involving image processing, audiovisual data, computer graphics, or 3D modeling.</p>
+                <p class="fr">Mon objectif est de rejoindre un studio d’animation et de contribuer soit comme développeuse Python pour les outils, soit sur des projets de traitement d’image, d’audiovisuel, de computer graphics ou de modélisation 3D.</p>
+                <div class="tag-row">
+                    <span class="tag">Tools</span>
+                    <span class="tag">Rendering</span>
+                    <span class="tag">Image Processing</span>
+                    <span class="tag">CG</span>
+                    <span class="tag">Pipeline</span>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3 class="section-title"><span class="en">Target Roles</span><span class="fr">Rôles visés</span></h3>
+                <p class="en">Python Tools Developer · Technical Artist (junior) · Pipeline Support · CG/Imaging R&D</p>
+                <p class="fr">Développeuse outils Python · TD junior · Support pipeline · R&D CG / image</p>
+            </div>
+        </section>
+
+        <section class="section-divider"></section>
+
+        <section>
+            <h3 class="section-title"><span class="en">Relevant Skills for Animation Studios & CG</span><span class="fr">Compétences pertinentes pour les studios & CG</span></h3>
+            <div class="skills-grid">
+                <div class="skill-card"><div class="skill-title">Python</div><div class="en">Scripting, automation, pipeline tools</div><div class="fr">Scripting, automatisation, outils pipeline</div></div>
+                <div class="skill-card"><div class="skill-title">CG & Image</div><div class="en">Computer graphics, image processing</div><div class="fr">Computer graphics, traitement d’image</div></div>
+                <div class="skill-card"><div class="skill-title">Animation</div><div class="en">2D/3D concepts and workflows</div><div class="fr">Concepts et workflows 2D/3D</div></div>
+                <div class="skill-card"><div class="skill-title">Multimedia</div><div class="en">Audio‑visual data & systems</div><div class="fr">Données & systèmes audio‑visuels</div></div>
+                <div class="skill-card"><div class="skill-title">Data</div><div class="en">Analysis & visualization</div><div class="fr">Analyse & visualisation</div></div>
+                <div class="skill-card"><div class="skill-title">Soft skills</div><div class="en">Teamwork, communication, adaptability</div><div class="fr">Travail d’équipe, communication, adaptabilité</div></div>
+            </div>
+            <p style="margin-top:0.8rem; color:#2a4d3c;"><span class="en">Focused on tools, image processing, and CG workflows; eager to deepen studio toolchains (Blender, Maya, Houdini, Nuke, After Effects).</span><span class="fr">Focus outils, traitement d’image et workflows CG ; envie d’approfondir les toolchains (Blender, Maya, Houdini, Nuke, After Effects).</span></p>
         </section>
         <div class="tab-bar">
             <button class="tab-btn active" onclick="showTab(0)"><span class="en">Bio</span><span class="fr">Bio</span></button>

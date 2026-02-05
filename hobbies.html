@@ -9,114 +9,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="js/language-switch-css.js"></script>
     <style>
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(120deg, #f9f9f9 0%, #e0ede8 100%);
-            min-height: 100vh;
+        .page-hero {
+            display:grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 1.4rem;
+            align-items: center;
+            margin-bottom: 1.8rem;
         }
-        header {
-            background: linear-gradient(90deg, #1e473d 60%, #3e7c6b 100%);
-            color: #fff;
-            padding: 2.5rem 1rem 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease;
-        }
-        header { will-change: transform; }
-        /* subtle visual-only shrink (applies to all pages) */
-        header.shrink h1 { transform: translateY(-6px) scale(0.985); transition: transform 0.22s ease, font-size 0.22s ease; }
-        /* when page is long enough we also apply a layout shrink that reduces padding */
-        header.shrink-layout { padding: 0.9rem 1rem 0.85rem 1rem; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
-        header.shrink-layout h1 { font-size: 1.2rem; }
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 150;
-        }
-        main {
-            max-width: 800px;
-            margin: 2.5rem auto;
-            background: #fff;
-            padding: 2.5rem 2rem;
+        .hero-card {
+            background: linear-gradient(120deg, #f3f7f5 0%, #e6efe9 100%);
+            border: 1px solid #dfeae4;
             border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            min-height: 60vh;
+            padding: 1.2rem 1.3rem;
+            box-shadow: 0 10px 24px rgba(19, 43, 37, 0.08);
         }
-        nav {
-            background: #f6fdfbcc;
-            padding: 0.7rem 0;
-            text-align: center;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.03);
-            border-bottom: 1px solid #e0ede8;
+        .section-title {
+            font-family:'Fraunces', serif;
+            color:#1e473d;
+            margin-bottom:0.6rem;
         }
-        nav a {
-            color: #1e473d;
-            margin: 0 1.2rem;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            transition: color 0.2s, background 0.2s;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
+        .tag-row {
+            display:flex;
+            flex-wrap:wrap;
+            gap:0.5rem;
+            margin-top:0.8rem;
         }
-        nav a:hover {
-            color: #fff;
-            background: #1e473d;
-            text-decoration: none;
+        .tag {
+            background:#eef5f2;
+            color:#2c5a4b;
+            padding:0.3rem 0.7rem;
+            border-radius:999px;
+            font-size:0.85rem;
+            border:1px solid #d7e6df;
         }
-        main {
-            max-width: 800px;
-            margin: 2.5rem auto;
-            background: #fff;
-            padding: 2.5rem 2rem;
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            min-height: 60vh;
+        .interest-grid {
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap:1rem;
+            margin: 1rem 0 1.6rem 0;
         }
-        h1 {
-            margin-top: 0;
-            font-size: 2.3rem;
-            letter-spacing: 1px;
+        .interest-card {
+            background:#f9fbfa;
+            border:1px solid #e1ebe7;
+            border-radius:16px;
+            padding:1rem 1.1rem;
+            box-shadow:0 8px 18px rgba(19,43,37,0.07);
         }
-        h2 {
-            color: #1e473d;
+        .interest-title {
+            font-weight:700;
+            color:#1e473d;
+            margin:0 0 0.4rem 0;
         }
-        @media (max-width: 600px) {
-            main { padding: 1.2rem 0.5rem; }
+        @media (max-width: 900px) {
+            .page-hero { grid-template-columns: 1fr; }
         }
-        /* Language switching rules - default to English */
-        .lang-en .fr { display: none !important; }
-        .lang-fr .en { display: none !important; }
-        
-        /* Show appropriate language content */
-        .lang-en .en { display: block; }
-        .lang-fr .fr { display: block; }
-        
-        /* For inline elements (navigation, spans within text) */
-        nav .en, nav .fr,
-        span.en, span.fr,
-        .hero-subtitle .en, .hero-subtitle .fr,
-        .quote-author .en, .quote-author .fr {
-            display: inline !important;
-        }
-        
-        /* Hide inactive language for inline elements */
-        .lang-en nav .fr, 
-        .lang-en span.fr,
-        .lang-en .hero-subtitle .fr,
-        .lang-en .quote-author .fr { display: none !important; }
-        
-        .lang-fr nav .en,
-        .lang-fr span.en, 
-        .lang-fr .hero-subtitle .en,
-        .lang-fr .quote-author .en { display: none !important; }
         /* Gallery styles (absolute-position masonry) */
         .gallery {
             position: relative;
@@ -181,27 +127,48 @@
         </a>
     </nav>
     <main>
+        <section class="page-hero">
+            <div>
+                <h2 class="section-title"><span class="en">Interests & Hobbies</span><span class="fr">Centres d'intérêt</span></h2>
+                <p class="en">Growing up in Grasse (the perfume capital), I learned to pay attention to colors, textures, and atmosphere. I love creating visual stories through photography, drawing, painting, and small 2D/3D animations.</p>
+                <p class="fr">Originaire de Grasse (capitale du parfum), j’ai développé une attention aux couleurs, aux textures et à l’atmosphère. J’aime raconter visuellement à travers la photo, le dessin, la peinture et de petites animations 2D/3D.</p>
+                <div class="tag-row">
+                    <span class="tag">Photography</span>
+                    <span class="tag">Drawing</span>
+                    <span class="tag">Painting</span>
+                    <span class="tag">Animation</span>
+                    <span class="tag">Running</span>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3 class="section-title"><span class="en">What I Enjoy</span><span class="fr">Ce que j’aime</span></h3>
+                <p class="en">Crafting something beautiful to share—work that makes people feel and dream.</p>
+                <p class="fr">Créer quelque chose de beau à partager — un travail qui fait rêver et ressentir.</p>
+            </div>
+        </section>
 
-        <h2>
-            <span class="en">Interests & Hobbies</span>
-            <span class="fr">Centres d'intérêt</span>
-        </h2>
-        <p>
-            <span class="en">
-                Coming from Grasse, the perfume capital, a city full of colours, smells and different landscapes from the sea to the mountains, I love to admire the beauty of everything around
-                me. I have grown to enjoy doing crafts like photography, drawing, painting, video editing, little 2D and 3D animations, knitting and am so curious to learn many more in the future. My favorite
-                 thing about all of these crafts is being able to make something beautiful that I can share with others, something that will make me smile and make others dream, have stars in their 
-                 eyes and feel all the emotions that were put into it.  
-                I also like being active and one of my favourite activities is running because it allows me to focus on myself and to be resilient.
-            </span>
-            <span class="fr">Originaire de Grasse, la capitale du parfum, une ville pleine de couleurs, d'odeurs et de paysages variés, de la mer jusqu'aux montagnes,
-                 j'aime admirer la beauté de tout ce qui m'entoure. Mon passe-temps préféré que j'ai appris à développer c'est les activités manuelles comme la photographie, 
-                 le dessin, la peinture, le montage vidéo, des petites animations 2D et 3D, et le tricot, et je suis très curieuse d'en apprendre encore davantage à l'avenir. 
-                 Ce que j'apprécie le plus dans toutes ces pratiques, c'est de pouvoir créer quelque chose de beau à partager, quelque chose qui me fasse sourire, qui fasse rêver,
-                  qui mette des étoiles dans les yeux et qui transmette pleins d'émotions.</span>
-            <span class="fr">J'aime aussi être active et l'une de mes activités préférées est la course à pied, car elle me permet de me recentrer sur moi-même et de développer
-                 ma résilience.</span>
-        </p>
+        <section class="interest-grid">
+            <div class="interest-card">
+                <div class="interest-title"><span class="en">Visual Arts</span><span class="fr">Arts visuels</span></div>
+                <div class="en">Photography, drawing, painting, and composition.</div>
+                <div class="fr">Photographie, dessin, peinture, composition.</div>
+            </div>
+            <div class="interest-card">
+                <div class="interest-title"><span class="en">Animation</span><span class="fr">Animation</span></div>
+                <div class="en">Small 2D/3D animation exercises and visual storytelling.</div>
+                <div class="fr">Petits exercices d’animation 2D/3D et narration visuelle.</div>
+            </div>
+            <div class="interest-card">
+                <div class="interest-title"><span class="en">Craft & Making</span><span class="fr">Création manuelle</span></div>
+                <div class="en">Knitting and hands‑on creation.</div>
+                <div class="fr">Tricot et création manuelle.</div>
+            </div>
+            <div class="interest-card">
+                <div class="interest-title"><span class="en">Running</span><span class="fr">Course à pied</span></div>
+                <div class="en">Focus, balance, and resilience.</div>
+                <div class="fr">Concentration, équilibre et résilience.</div>
+            </div>
+        </section>
 
         <section class="gallery" aria-label="Photos gallery">
             <figure>
