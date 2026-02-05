@@ -20,12 +20,12 @@ class SimpleLanguageSwitcher {
         const languageSwitch = document.createElement('div');
         languageSwitch.className = 'language-switch';
         
-        const flagDisplay = this.currentLanguage === 'en' ? '🇫🇷' : '🇮🇪';
-        const buttonText = this.currentLanguage === 'en' ? 'Français' : 'English';
+        const flagClass = this.currentLanguage === 'en' ? 'flag-fr' : 'flag-en';
+        const buttonText = this.currentLanguage === 'en' ? 'Fran\u00e7ais' : 'English';
         
         languageSwitch.innerHTML = `
             <button id="language-toggle" class="language-toggle">
-                <span class="flag-icon">${flagDisplay}</span>
+                <span class="flag-icon ${flagClass}" aria-hidden="true"></span>
                 <span class="language-text">${buttonText}</span>
             </button>
         `;
@@ -56,10 +56,11 @@ class SimpleLanguageSwitcher {
         const languageText = document.querySelector('.language-text');
         
         if (flagIcon) {
-            flagIcon.textContent = language === 'en' ? '🇫🇷' : '🇮🇪';
+            flagIcon.classList.toggle('flag-fr', language === 'en');
+            flagIcon.classList.toggle('flag-en', language !== 'en');
         }
         if (languageText) {
-            languageText.textContent = language === 'en' ? 'Français' : 'English';
+            languageText.textContent = language === 'en' ? 'Fran\u00e7ais' : 'English';
         }
 
         // Update CV files based on language
@@ -142,6 +143,21 @@ const languageSwitchCSS = `
 .flag-icon {
     font-size: 1.2rem;
     font-family: 'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
+    display: inline-block;
+    width: 1.35rem;
+    height: 0.95rem;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.12);
+    background-size: cover;
+    background-position: center;
+}
+
+.flag-fr {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'><rect width='1' height='2' x='0' fill='%230055A4'/><rect width='1' height='2' x='1' fill='white'/><rect width='1' height='2' x='2' fill='%23EF4135'/></svg>");
+}
+
+.flag-en {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'><rect width='1' height='2' x='0' fill='%2300933B'/><rect width='1' height='2' x='1' fill='white'/><rect width='1' height='2' x='2' fill='%23FF8200'/></svg>");
 }
 
 @media (max-width: 600px) {
@@ -161,7 +177,8 @@ const languageSwitchCSS = `
     }
     
     .flag-icon {
-        font-size: 1.4rem;
+        width: 1.4rem;
+        height: 1rem;
     }
 }
 `;
