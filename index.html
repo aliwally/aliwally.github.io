@@ -104,6 +104,67 @@
             justify-content:center;
             margin-top:2rem;
         }
+        .home-grid {
+            display:grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.2rem;
+            margin-top: 1.8rem;
+        }
+        .home-card {
+            background:#f7fbf9;
+            border:1px solid #e3ece8;
+            border-radius:16px;
+            padding:1.2rem 1.2rem 1.1rem 1.2rem;
+            box-shadow:0 6px 18px rgba(30,71,61,0.08);
+        }
+        .home-card h3 {
+            margin:0 0 0.6rem 0;
+            color:var(--forest);
+            font-family:'Fraunces', serif;
+        }
+        .stat {
+            font-size:1.8rem;
+            font-weight:700;
+            color:var(--forest);
+            margin:0;
+        }
+        .stat-label {
+            color:#335a4c;
+            font-size:0.95rem;
+        }
+        .featured {
+            display:grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap:1.2rem;
+            align-items:center;
+        }
+        .featured img {
+            width:100%;
+            border-radius:14px;
+            box-shadow:0 10px 26px rgba(19,43,37,0.18);
+        }
+        .cta-row {
+            display:flex;
+            flex-wrap:wrap;
+            gap:0.8rem;
+            margin-top:1rem;
+        }
+        .cta-row a {
+            background:var(--forest);
+            color:#fff;
+            padding:0.6rem 1rem;
+            border-radius:12px;
+            text-decoration:none;
+            font-weight:700;
+        }
+        .cta-row a.secondary {
+            background:#eef5f2;
+            color:var(--forest);
+            border:1px solid #d7e6df;
+        }
+        @media (max-width: 900px) {
+            .featured { grid-template-columns: 1fr; }
+        }
         @media (max-width: 700px) {
             .hero-title { font-size:2.2rem; }
         }
@@ -168,6 +229,34 @@
             <a href="contact.html" class="secondary">Contact</a>
             <a href="https://github.com/aliwally" target="_blank" class="secondary">GitHub</a>
         </div>
+
+        <section class="home-grid">
+            <div class="home-card" style="grid-column: span 8;">
+                <div class="featured">
+                    <div>
+                        <h3><span class="en">Featured Work</span><span class="fr">Projet phare</span></h3>
+                        <p class="en">Rendering Study in Cycles: sample count vs noise, denoise impact, and render time. A structured experiment to support studio‑ready decisions.</p>
+                        <p class="fr">Étude de rendu sous Cycles : samples vs bruit, impact du denoise et temps de rendu. Une expérience structurée pour des choix studio.</p>
+                        <div class="cta-row">
+                            <a href="portfolio.html">View the study</a>
+                            <a href="portfolio.html" class="secondary">See all projects</a>
+                        </div>
+                    </div>
+                    <img src="img/rendu/R5_1024samp_t24_56.11_denoise.png" alt="Rendering Study preview">
+                </div>
+            </div>
+            <div class="home-card" style="grid-column: span 4;">
+                <h3><span class="en">Focus Areas</span><span class="fr">Domaines clés</span></h3>
+                <p class="stat">Tools</p>
+                <div class="stat-label"><span class="en">Python for DCC pipelines</span><span class="fr">Python pour pipelines DCC</span></div>
+                <div style="height:0.8rem;"></div>
+                <p class="stat">Rendering</p>
+                <div class="stat-label"><span class="en">Quality & performance studies</span><span class="fr">Qualité & performance</span></div>
+                <div style="height:0.8rem;"></div>
+                <p class="stat">CG</p>
+                <div class="stat-label"><span class="en">Image processing & visuals</span><span class="fr">Traitement d’image & visuel</span></div>
+            </div>
+        </section>
 
         <section class="projects">
             <div class="project-card">
