@@ -111,6 +111,9 @@
         border-radius: 10px;
         display: block;
     }
+    .zoomable {
+        cursor: zoom-in;
+    }
     .media-caption {
         margin-top: 0.45rem;
         font-size: 0.9rem;
@@ -137,6 +140,34 @@
     }
     @media (max-width: 800px) {
         .portfolio-hero { grid-template-columns: 1fr; }
+    }
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 20, 18, 0.88);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        padding: 2rem;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+        max-width: 92vw;
+        max-height: 90vh;
+        border-radius: 12px;
+        box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+    .lightbox-close {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+        background: rgba(255,255,255,0.9);
+        border: none;
+        border-radius: 999px;
+        padding: 0.4rem 0.7rem;
+        font-weight: 700;
+        cursor: pointer;
     }
     </style>
 </head>
@@ -216,23 +247,23 @@
 
                 <div class="media-grid">
                     <div class="media-card">
-                        <img src="img/rendu/R1_16samp_t00_10.08.png" alt="Render R1 - 16 samples, denoise off" />
+                        <img class="zoomable" src="img/rendu/R1_16samp_t00_10.08.png" alt="Render R1 - 16 samples, denoise off" />
                         <div class="media-caption">R1 — 16 samples, denoise OFF</div>
                     </div>
                     <div class="media-card">
-                        <img src="img/rendu/R2_64samp_t01_09.65.png" alt="Render R2 - 64 samples, denoise off" />
+                        <img class="zoomable" src="img/rendu/R2_64samp_t01_09.65.png" alt="Render R2 - 64 samples, denoise off" />
                         <div class="media-caption">R2 — 64 samples, denoise OFF</div>
                     </div>
                     <div class="media-card">
-                        <img src="img/rendu/R3_256samp_t04_47.50.png" alt="Render R3 - 256 samples, denoise off" />
+                        <img class="zoomable" src="img/rendu/R3_256samp_t04_47.50.png" alt="Render R3 - 256 samples, denoise off" />
                         <div class="media-caption">R3 — 256 samples, denoise OFF</div>
                     </div>
                     <div class="media-card">
-                        <img src="img/rendu/R4_256samp_t06_20.87_denoise.png" alt="Render R4 - 256 samples, denoise on" />
+                        <img class="zoomable" src="img/rendu/R4_256samp_t06_20.87_denoise.png" alt="Render R4 - 256 samples, denoise on" />
                         <div class="media-caption">R4 — 256 samples, denoise ON</div>
                     </div>
                     <div class="media-card">
-                        <img src="img/rendu/R5_1024samp_t24_56.11_denoise.png" alt="Render R5 - 1024 samples, denoise on" />
+                        <img class="zoomable" src="img/rendu/R5_1024samp_t24_56.11_denoise.png" alt="Render R5 - 1024 samples, denoise on" />
                         <div class="media-caption">R5 — 1024 samples, denoise ON</div>
                     </div>
                 </div>
@@ -293,13 +324,46 @@
                         <div class="media-caption">Blender Animation (Frames 1-84, MKV)</div>
                     </div>
                     <div class="media-card">
-                        <img src="img/blender/Pisssenlit_final.png" alt="Blender Render Example" />
+                        <img class="zoomable" src="img/blender/Pisssenlit_final.png" alt="Blender Render Example" />
                         <div class="media-caption">Blender Render: Pissenlit</div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">Close</button>
+        <img id="lightboxImg" alt="">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        document.querySelectorAll('img.zoomable').forEach((img) => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt || 'Image preview';
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
 
