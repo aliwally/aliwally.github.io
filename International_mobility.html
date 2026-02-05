@@ -72,6 +72,49 @@
         background: linear-gradient(90deg, transparent, #dbe7e1, transparent);
         margin: 2rem 0;
     }
+    .mobility-map {
+        position: relative;
+        background: radial-gradient(600px 220px at 20% 20%, #e6f4ee 0%, transparent 55%),
+                    radial-gradient(500px 260px at 80% 40%, #f6efe2 0%, transparent 55%),
+                    linear-gradient(120deg, #f9fbfa 0%, #eef5f2 100%);
+        border: 1px solid #e1ebe7;
+        border-radius: 18px;
+        padding: 1.4rem;
+        margin-top: 1.6rem;
+        box-shadow: 0 10px 24px rgba(19, 43, 37, 0.08);
+        min-height: 220px;
+        overflow: hidden;
+    }
+    .map-title {
+        font-weight: 700;
+        color: #1e473d;
+        margin-bottom: 0.6rem;
+    }
+    .map-dot {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #1e473d;
+        box-shadow: 0 0 0 6px rgba(30, 71, 61, 0.12);
+    }
+    .map-label {
+        position: absolute;
+        background: #ffffff;
+        border: 1px solid #e1ebe7;
+        padding: 0.3rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        color: #2b4c42;
+        box-shadow: 0 6px 16px rgba(19, 43, 37, 0.08);
+        white-space: nowrap;
+    }
+    .map-path {
+        position: absolute;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(30,71,61,0.1), rgba(30,71,61,0.35));
+        transform-origin: left center;
+    }
     @media (max-width: 900px) {
         .page-hero { grid-template-columns: 1fr; }
     }
@@ -163,6 +206,24 @@
                 <p class="en">Volunteered in a primary school, teaching simple English songs and returning the next year to see lasting impact.</p>
                 <p class="fr">Bénévolat en école primaire : enseignement de chansons en anglais et retour un an plus tard pour constater l’impact.</p>
             </div>
+        </div>
+
+        <div class="mobility-map" aria-hidden="true">
+            <div class="map-title"><span class="en">Mobility footprint</span><span class="fr">Empreinte de mobilité</span></div>
+            <div class="map-path" style="left: 18%; top: 52%; width: 34%; transform: rotate(6deg);"></div>
+            <div class="map-path" style="left: 44%; top: 62%; width: 38%; transform: rotate(-10deg);"></div>
+
+            <div class="map-dot" style="left: 18%; top: 48%;"></div>
+            <div class="map-label" style="left: 20.5%; top: 46%;">Ireland</div>
+
+            <div class="map-dot" style="left: 52%; top: 60%;"></div>
+            <div class="map-label" style="left: 54.5%; top: 58%;">France</div>
+
+            <div class="map-dot" style="left: 78%; top: 68%;"></div>
+            <div class="map-label" style="left: 80.5%; top: 66%;">Senegal</div>
+
+            <div class="map-dot" style="left: 70%; top: 30%;"></div>
+            <div class="map-label" style="left: 72.5%; top: 28%;">Argentina</div>
         </div>
 
         <div class="section-divider"></div>
