@@ -8,30 +8,137 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="js/language-switch-css.js"></script>
-    <style>
-    body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background: linear-gradient(120deg,#f9f9f9 0%,#e0ede8 100%); min-height:100vh; }
-    header { background: linear-gradient(90deg,#1e473d 60%,#3e7c6b 100%); color:#fff; padding:2.5rem 1rem 2rem 1rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.07); border-bottom-left-radius:30px; border-bottom-right-radius:30px; position:sticky; top:0; z-index:200; transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease; }
-    header { will-change: transform; }
-    header.shrink h1 { transform: translateY(-6px) scale(0.985); transition: transform 0.22s ease, font-size 0.22s ease; }
-    header.shrink-layout { padding: 0.9rem 1rem 0.85rem 1rem; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
-    header.shrink-layout h1 { font-size: 1.2rem; }
-    nav{ position:sticky; top:0; z-index:150; background:#f6fdfbcc; padding:0.7rem 0; text-align:center; box-shadow:0 1px 6px rgba(0,0,0,0.03); border-bottom:1px solid #e0ede8; }
-    nav a{ color:#1e473d; margin:0 1.2rem; text-decoration:none; font-weight:700; padding:0.2rem 0.5rem; border-radius:4px; }
-    nav a:hover{ background:#1e473d; color:#fff; }
-    main{ max-width:800px; margin:2.5rem auto; background:#fff; padding:2.5rem 2rem; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); }
-    h1{ margin-top:0; font-size:2.3rem; }
-    .tab-bar{ display:flex; gap:1.2rem; justify-content:center; margin-bottom:2.2rem; }
-    .tab-btn{ background:#e0ede8; border:none; padding:0.7rem 2rem; border-radius:8px 8px 0 0; cursor:pointer; font-weight:500; }
-    .tab-btn.active{ background:#1e473d; color:#fff; font-weight:bold; }
-    .company-logo{ height:36px; margin-left:0.6rem; border-radius:4px; }
-    .tab-content{ display:none; }
-    .tab-content.active{ display:block; }
-    /* Language rules */
-    .lang-en .fr{ display:none !important; }
-    .lang-fr .en{ display:none !important; }
-    nav .en, nav .fr, span.en, span.fr{ display:inline !important; }
-    </style>
     <link rel="stylesheet" href="css/site.css">
+    <style>
+    .portfolio-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 2.4rem;
+    }
+    .portfolio-hero h2 {
+        margin: 0 0 0.6rem 0;
+        font-size: 2rem;
+    }
+    .portfolio-hero p {
+        margin: 0.6rem 0 0 0;
+        color: #2b4c42;
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+    .hero-card {
+        background: linear-gradient(120deg, #f3f7f5 0%, #e6efe9 100%);
+        border: 1px solid #dfeae4;
+        border-radius: 18px;
+        padding: 1.2rem 1.3rem;
+        box-shadow: 0 10px 24px rgba(19, 43, 37, 0.08);
+    }
+    .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.8rem;
+    }
+    .tag {
+        background: #eef5f2;
+        color: #2c5a4b;
+        padding: 0.3rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        border: 1px solid #d7e6df;
+    }
+    .section {
+        margin-top: 2.2rem;
+    }
+    .section h3 {
+        margin: 0 0 1rem 0;
+        font-size: 1.4rem;
+    }
+    .project {
+        border: 1px solid #e1ebe7;
+        border-radius: 18px;
+        padding: 1.4rem;
+        background: #f9fbfa;
+        box-shadow: 0 8px 20px rgba(19, 43, 37, 0.08);
+    }
+    .project + .project { margin-top: 1.5rem; }
+    .project-header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .project-title {
+        margin: 0;
+        font-size: 1.4rem;
+        color: #1e473d;
+    }
+    .project-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        font-size: 0.9rem;
+        color: #3b6154;
+    }
+    .project-meta span {
+        background: #eef5f2;
+        border: 1px solid #d7e6df;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+    }
+    .project-body {
+        margin-top: 0.9rem;
+        color: #2b4c42;
+        line-height: 1.6;
+    }
+    .media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .media-card {
+        background: #ffffff;
+        border: 1px solid #e1ebe7;
+        border-radius: 14px;
+        padding: 0.6rem;
+        box-shadow: 0 6px 16px rgba(19, 43, 37, 0.06);
+    }
+    .media-card img, .media-card video {
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+    }
+    .media-caption {
+        margin-top: 0.45rem;
+        font-size: 0.9rem;
+        color: #1e473d;
+    }
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        margin-top: 0.8rem;
+    }
+    .data-table th, .data-table td {
+        text-align: left;
+        padding: 0.5rem;
+        border-bottom: 1px solid #e0ede8;
+    }
+    .callout {
+        margin-top: 1rem;
+        padding: 0.9rem 1rem;
+        background: #eef5f2;
+        border: 1px solid #d7e6df;
+        border-radius: 12px;
+        color: #2c5a4b;
+    }
+    @media (max-width: 800px) {
+        .portfolio-hero { grid-template-columns: 1fr; }
+    }
+    </style>
 </head>
 <body>
     <header id="mainHeader"><h1><span class="en">Portfolio</span><span class="fr">Portfolio</span></h1></header>
@@ -47,126 +154,150 @@
         <a href="contact.html"><span class="en">Contact</span><span class="fr">Contact</span></a>
     </nav>
     <main>
-        <div class="project-card">
-            <h2>Python Scripting for Maya</h2>
-            <p>I am learning Python scripting for Autodesk Maya to automate tasks and build artist-friendly tools for animation and CG workflows. See my progress and code examples in this public repository:</p>
-            <a href="https://github.com/aliwally/Python_scripting_for_animation" target="_blank">View GitHub Repo</a>
-        </div>
-
-        <div class="project-card">
-            <h2>Blender Animation Examples</h2>
-            <p>Here are some of my Blender animation and rendering experiments:</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start; align-items: flex-start;">
-                <div style="flex: 1 1 260px; max-width: 320px;">
-                    <video controls style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.5rem;">
-                        <source src="img/blender/0000-0110.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div style="font-size:0.95rem; color:#1e473d;">Blender Animation (Frames 0-110)</div>
-                </div>
-                <div style="flex: 1 1 260px; max-width: 320px;">
-                    <video controls style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.5rem;">
-                        <source src="img/blender/0001-0050.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div style="font-size:0.95rem; color:#1e473d;">Blender Animation (Frames 1-50)</div>
-                </div>
-                <div style="flex: 1 1 260px; max-width: 320px;">
-                    <video controls style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.5rem;">
-                        <source src="img/blender/0001-0084.mkv" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div style="font-size:0.95rem; color:#1e473d;">Blender Animation (Frames 1-84, MKV)</div>
-                </div>
-                <div style="flex: 1 1 260px; max-width: 320px;">
-                    <img src="img/blender/Pisssenlit_final.png" alt="Blender Render Example" style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.5rem;" />
-                    <div style="font-size:0.95rem; color:#1e473d;">Blender Render: Pissenlit</div>
+        <section class="portfolio-hero">
+            <div>
+                <h2><span class="en">Selected Work</span><span class="fr">Travaux sélectionnés</span></h2>
+                <p class="en">I’m building a portfolio at the intersection of tools, rendering, and CG. My focus is on animation‑studio workflows: creating reliable Python tools, measuring render quality, and exploring visual storytelling.</p>
+                <p class="fr">Je développe un portfolio à l’intersection des outils, du rendu et du CG. Mon focus : les workflows studio d’animation, la création d’outils Python fiables, la mesure de la qualité de rendu et l’exploration visuelle.</p>
+                <div class="tag-row">
+                    <span class="tag">Python</span>
+                    <span class="tag">Blender</span>
+                    <span class="tag">Maya</span>
+                    <span class="tag">Rendering</span>
+                    <span class="tag">Image Processing</span>
+                    <span class="tag">CG</span>
                 </div>
             </div>
-        </div>
+            <div class="hero-card">
+                <div class="project-meta">
+                    <span>Tools</span>
+                    <span>Rendering</span>
+                    <span>Study</span>
+                </div>
+                <p class="en">Currently highlighting my Cycles rendering study and Blender animations. I’m open to internships or junior roles in animation studios.</p>
+                <p class="fr">Mise en avant : étude de rendu Cycles et animations Blender. Ouverte aux stages ou postes junior en studio d’animation.</p>
+            </div>
+        </section>
 
-        <div class="project-card">
-            <h2>Rendering Study — Cycles (Samples & Denoise)</h2>
-            <p class="en">A guided study to measure how samples and denoising affect noise, quality, and render time.</p>
-            <p class="fr">Étude guidée pour mesurer l’impact des samples et du denoise sur le bruit, la qualité et le temps de rendu.</p>
+        <section class="section">
+            <h3><span class="en">Featured Project</span><span class="fr">Projet phare</span></h3>
+            <div class="project">
+                <div class="project-header">
+                    <h4 class="project-title">Rendering Study — Cycles (Samples & Denoise)</h4>
+                    <div class="project-meta">
+                        <span>Blender</span>
+                        <span>Cycles</span>
+                        <span>Rendering</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="en">A guided study measuring how samples and denoising impact noise, reflections, shadows, and render time.</p>
+                    <p class="fr">Étude guidée mesurant l’impact des samples et du denoise sur le bruit, les reflets, les ombres et le temps de rendu.</p>
+                </div>
 
-            <div style="overflow-x:auto; margin: 1rem 0;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                <table class="data-table">
                     <thead>
                         <tr>
-                            <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #e0ede8;">Image</th>
-                            <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #e0ede8;">Samples</th>
-                            <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #e0ede8;">Denoise</th>
-                            <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #e0ede8;">Render Time</th>
+                            <th>Image</th>
+                            <th>Samples</th>
+                            <th>Denoise</th>
+                            <th>Render Time</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">R1</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">16</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">OFF</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">00:10.08</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">R2</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">64</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">OFF</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">01:09.65</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">R3</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">256</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">OFF</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">04:47.50</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">R4</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">256</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">ON</td>
-                            <td style="padding:0.5rem; border-bottom:1px solid #f0f4f2;">06:20.87</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0.5rem;">R5</td>
-                            <td style="padding:0.5rem;">1024</td>
-                            <td style="padding:0.5rem;">ON</td>
-                            <td style="padding:0.5rem;">24:56.11</td>
-                        </tr>
+                        <tr><td>R1</td><td>16</td><td>OFF</td><td>00:10.08</td></tr>
+                        <tr><td>R2</td><td>64</td><td>OFF</td><td>01:09.65</td></tr>
+                        <tr><td>R3</td><td>256</td><td>OFF</td><td>04:47.50</td></tr>
+                        <tr><td>R4</td><td>256</td><td>ON</td><td>06:20.87</td></tr>
+                        <tr><td>R5</td><td>1024</td><td>ON</td><td>24:56.11</td></tr>
                     </tbody>
                 </table>
+
+                <div class="media-grid">
+                    <div class="media-card">
+                        <img src="img/rendu/R1_16samp_t00_10.08.png" alt="Render R1 - 16 samples, denoise off" />
+                        <div class="media-caption">R1 — 16 samples, denoise OFF</div>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/rendu/R2_64samp_t01_09.65.png" alt="Render R2 - 64 samples, denoise off" />
+                        <div class="media-caption">R2 — 64 samples, denoise OFF</div>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/rendu/R3_256samp_t04_47.50.png" alt="Render R3 - 256 samples, denoise off" />
+                        <div class="media-caption">R3 — 256 samples, denoise OFF</div>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/rendu/R4_256samp_t06_20.87_denoise.png" alt="Render R4 - 256 samples, denoise on" />
+                        <div class="media-caption">R4 — 256 samples, denoise ON</div>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/rendu/R5_1024samp_t24_56.11_denoise.png" alt="Render R5 - 1024 samples, denoise on" />
+                        <div class="media-caption">R5 — 1024 samples, denoise ON</div>
+                    </div>
+                </div>
+
+                <div class="callout">
+                    <span class="en">Observations: shadow noise, metallic reflections, and the quality jump with denoise. Comparison of 256 vs 1024 samples with denoise enabled.</span>
+                    <span class="fr">Observations : bruit dans les ombres, reflets métalliques, et gain avec denoise. Comparaison 256 vs 1024 samples avec denoise activé.</span>
+                </div>
             </div>
+        </section>
 
-            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: flex-start; align-items: flex-start;">
-                <div style="flex: 1 1 240px; max-width: 260px;">
-                    <img src="img/rendu/R1_16samp_t00_10.08.png" alt="Render R1 - 16 samples, denoise off" style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.4rem;" />
-                    <div style="font-size:0.9rem; color:#1e473d;">R1 ? 16 samples, denoise OFF</div>
+        <section class="section">
+            <h3><span class="en">Tools & Scripting</span><span class="fr">Outils & scripting</span></h3>
+            <div class="project">
+                <div class="project-header">
+                    <h4 class="project-title">Python Scripting for Maya</h4>
+                    <div class="project-meta">
+                        <span>Python</span>
+                        <span>Maya</span>
+                        <span>Tools</span>
+                    </div>
                 </div>
-                <div style="flex: 1 1 240px; max-width: 260px;">
-                    <img src="img/rendu/R2_64samp_t01_09.65.png" alt="Render R2 - 64 samples, denoise off" style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.4rem;" />
-                    <div style="font-size:0.9rem; color:#1e473d;">R2 ? 64 samples, denoise OFF</div>
-                </div>
-                <div style="flex: 1 1 240px; max-width: 260px;">
-                    <img src="img/rendu/R3_256samp_t04_47.50.png" alt="Render R3 - 256 samples, denoise off" style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.4rem;" />
-                    <div style="font-size:0.9rem; color:#1e473d;">R3 ? 256 samples, denoise OFF</div>
-                </div>
-                <div style="flex: 1 1 240px; max-width: 260px;">
-                    <img src="img/rendu/R4_256samp_t06_20.87_denoise.png" alt="Render R4 - 256 samples, denoise on" style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.4rem;" />
-                    <div style="font-size:0.9rem; color:#1e473d;">R4 ? 256 samples, denoise ON</div>
-                </div>
-                <div style="flex: 1 1 240px; max-width: 260px;">
-                    <img src="img/rendu/R5_1024samp_t24_56.11_denoise.png" alt="Render R5 - 1024 samples, denoise on" style="width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(30,71,61,0.10); margin-bottom:0.4rem;" />
-                    <div style="font-size:0.9rem; color:#1e473d;">R5 — 1024 samples, denoise ON</div>
+                <div class="project-body">
+                    <p class="en">Learning Python scripting for Autodesk Maya to automate tasks and build artist‑friendly tools for animation and CG workflows.</p>
+                    <p class="fr">Apprentissage du scripting Python pour Autodesk Maya afin d’automatiser des tâches et de créer des outils orientés artistes.</p>
+                    <a href="https://github.com/aliwally/Python_scripting_for_animation" target="_blank">View GitHub Repo</a>
                 </div>
             </div>
+        </section>
 
-            <ul style="margin: 1rem 0 0 1.1rem;">
-                <li class="en">Focus points: shadow noise, metallic reflections, and the quality jump with denoise.</li>
-                <li class="fr">Points d’observation : bruit dans les ombres, reflets métalliques, et le gain avec le denoise.</li>
-                <li class="en">Comparison: 256 vs 1024 samples when denoising is enabled.</li>
-                <li class="fr">Comparaison : 256 vs 1024 samples avec denoise activé.</li>
-            </ul>
-        </div>
-
-        <!-- Add more project cards here as you grow your portfolio! -->
+        <section class="section">
+            <h3><span class="en">Blender Animation & Renders</span><span class="fr">Animations & rendus Blender</span></h3>
+            <div class="project">
+                <div class="project-body">
+                    <p class="en">A selection of animation and rendering experiments exploring timing, staging, and visual polish.</p>
+                    <p class="fr">Sélection d’expérimentations en animation et rendu autour du rythme, de la mise en scène et du polish visuel.</p>
+                </div>
+                <div class="media-grid">
+                    <div class="media-card">
+                        <video controls>
+                            <source src="img/blender/0000-0110.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="media-caption">Blender Animation (Frames 0-110)</div>
+                    </div>
+                    <div class="media-card">
+                        <video controls>
+                            <source src="img/blender/0001-0050.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="media-caption">Blender Animation (Frames 1-50)</div>
+                    </div>
+                    <div class="media-card">
+                        <video controls>
+                            <source src="img/blender/0001-0084.mkv" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="media-caption">Blender Animation (Frames 1-84, MKV)</div>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/blender/Pisssenlit_final.png" alt="Blender Render Example" />
+                        <div class="media-caption">Blender Render: Pissenlit</div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
