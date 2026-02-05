@@ -1,123 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" class="lang-en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Alice Dissoubray</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="js/language-switch-css.js"></script>
     <style>
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #e0ede8 0%, #f9f9f9 100%);
-            min-height: 100vh;
-        }
-        header {
-            background: linear-gradient(90deg, #1e473d 60%, #3e7c6b 100%);
-            color: #fff;
-            padding: 2.5rem 1rem 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease;
-        }
-        header { will-change: transform; }
-        header.shrink h1 { transform: translateY(-6px) scale(0.985); transition: transform 0.22s ease, font-size 0.22s ease; }
-        header.shrink-layout { padding: 0.9rem 1rem 0.85rem 1rem; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
-        header.shrink-layout h1 { font-size: 1.2rem; }
-        h1 {
-            margin-top: 0;
-            font-size: 2.3rem;
-            letter-spacing: 1px;
-        }
-        nav {
-            background: #f6fdfbcc;
-            padding: 0.7rem 0;
-            text-align: center;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.03);
-            border-bottom: 1px solid #e0ede8;
-        }
-        nav a {
-            color: #1e473d;
-            margin: 0 1.2rem;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            transition: color 0.2s, background 0.2s;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-        }
-        nav a:hover {
-            color: #fff;
-            background: #1e473d;
-            text-decoration: none;
-        }
-        main {
-            max-width: 800px;
-            margin: 2.5rem auto;
-            background: #fff;
-            padding: 2.5rem 2rem;
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            min-height: 60vh;
-        }
-        h1 {
-            margin-top: 0;
-            font-size: 2.3rem;
-            letter-spacing: 1px;
-        }
-        h2 {
-            font-family: 'Quicksand', 'Roboto', Arial, sans-serif;
-            font-size: 1.5rem;
-            color: #1e473d;
-            margin-bottom: 1.5rem;
-        }
         form { display: flex; flex-direction: column; gap: 1rem; }
-        input, textarea { padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; }
-        button { background: #1e473d; color: #fff; border: none; padding: 0.75rem; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
-        button:hover { background: #3e7c6b; }
-        a {
-            transition: color 0.2s, background 0.2s, transform 0.2s;
-        }
+        input, textarea { padding: 0.5rem; border-radius: 6px; border: 1px solid #ccc; }
+        button { background: var(--forest); color: #fff; border: none; padding: 0.75rem; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
+        button:hover { background: var(--sage); }
         @media (max-width: 600px) {
-            main { padding: 1.2rem 0.5rem; max-width: 98vw; }
-            h1 { font-size: 1.3rem; }
+            main { padding: 1.4rem 1rem; max-width: 98vw; }
         }
-        /* Language switching rules - default to English */
-        .lang-en .fr { display: none !important; }
-        .lang-fr .en { display: none !important; }
-        
-        /* Show appropriate language content */
-        .lang-en .en { display: block; }
-        .lang-fr .fr { display: block; }
-        
-        /* For inline elements (navigation, spans within text) */
-        nav .en, nav .fr,
-        span.en, span.fr,
-        .hero-subtitle .en, .hero-subtitle .fr,
-        .quote-author .en, .quote-author .fr {
-            display: inline !important;
-        }
-        
-        /* Hide inactive language for inline elements */
-        .lang-en nav .fr, 
-        .lang-en span.fr,
-        .lang-en .hero-subtitle .fr,
-        .lang-en .quote-author .fr { display: none !important; }
-        
-        .lang-fr nav .en,
-        .lang-fr span.en, 
-        .lang-fr .hero-subtitle .en,
-        .lang-fr .quote-author .en { display: none !important; }
     </style>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
     <header id="mainHeader">
@@ -164,15 +64,15 @@
         </h2>
         <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; margin-top: 2rem; width: 100%;">
             <a href="mailto:alice.dissoubray@gmail.com" style="display: flex; align-items: center; gap: 0.75rem; background: #fffbe6; color: #1e473d; padding: 1rem 2rem; border-radius: 18px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 16px rgba(30,71,61,0.07); font-size: 1.1rem; border: 2px solid #e0ede8; transition: box-shadow 0.2s, transform 0.2s;">
-                <span style="font-size:1.4rem;">📧</span>
+                <span style="font-size:1.4rem;">ðŸ“§</span>
                 Email: alice.dissoubray@gmail.com
             </a>
             <a href="https://www.linkedin.com/in/alice-dissoubray-9a1116295" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: #e6f4fa; color: #0077b5; padding: 1rem 2rem; border-radius: 18px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 16px rgba(30,71,61,0.07); font-size: 1.1rem; border: 2px solid #b3e0f7; transition: box-shadow 0.2s, transform 0.2s;">
-                <span style="font-size:1.4rem;">💼</span>
+                <span style="font-size:1.4rem;">ðŸ’¼</span>
                 LinkedIn: alice-dissoubray
             </a>
             <a href="https://github.com/aliwally" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: #f3f3f3; color: #222; padding: 1rem 2rem; border-radius: 18px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 16px rgba(30,71,61,0.07); font-size: 1.1rem; border: 2px solid #e0ede8; transition: box-shadow 0.2s, transform 0.2s;">
-                <span style="font-size:1.4rem;">🐙</span>
+                <span style="font-size:1.4rem;">ðŸ™</span>
                 GitHub: aliwally
             </a>
         </div>
@@ -180,3 +80,4 @@
     <script src="js/header-shrink.js"></script>
 </body>
 </html>
+

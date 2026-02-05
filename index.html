@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="lang-en">
 <head>
     <meta charset="UTF-8">
@@ -6,35 +6,16 @@
     <title>Alice Dissoubray</title>
     <meta name="description" content="Portfolio and professional profile of Alice Dissoubray, Python & Blender developer, focused on animation, automation, and creative technology.">
     <meta property="og:title" content="Alice Dissoubray Portfolio">
-    <meta property="og:description" content="Portfolio and professional profile of Alice Dissoubray, Python & Blender developer, with a focus on animation, automation, and creative technology.">
+    <meta property="og:description" content="Portfolio and professional profile of Alice Dissoubray, Python & Blender developer, focused on animation, automation, and creative technology.">
     <meta property="og:image" content="img/cover.jpg">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
     <link rel="icon" type="image/png" href="img/cara.png">
     <script src="js/language-switch-css.js"></script>
     <style>
-        :root {
-            --ink: #132b25;
-            --forest: #1f4c3f;
-            --sage: #5f8775;
-            --mist: #f3f7f5;
-            --card: #ffffff;
-            --accent: #e0b86b;
-            --shadow: 0 12px 30px rgba(19, 43, 37, 0.12);
-        }
-        body {
-            font-family: 'Source Sans 3', Arial, sans-serif;
-            margin:0;
-            padding:0;
-            background:
-                radial-gradient(1200px 600px at 10% -10%, #e6f4ee 0%, transparent 60%),
-                radial-gradient(900px 500px at 100% 0%, #f6efe2 0%, transparent 55%),
-                linear-gradient(120deg, #f9f9f9 0%, #e9f0ee 100%);
-            min-height:100vh;
-            color: var(--ink);
-        }
         .hero-header {
             position: relative;
             width: 100vw;
@@ -43,13 +24,12 @@
             flex-direction:column;
             align-items:center;
             justify-content:center;
-            background: linear-gradient(110deg, #16342b 0%, #2b6a59 60%, #5f8775 100%);
+            background: linear-gradient(110deg, var(--forest-dark) 0%, var(--forest) 60%, var(--sage) 100%);
             overflow:hidden;
         }
         .hero-bg {
             position:absolute;
-            top:0;
-            left:0;
+            inset:0;
             width:100%;
             height:100%;
             object-fit:cover;
@@ -62,6 +42,7 @@
             color:#fff;
             text-align:center;
             padding: 0 1.2rem;
+            max-width: 980px;
         }
         .hero-title {
             font-family: 'Fraunces', serif;
@@ -74,7 +55,6 @@
         .hero-subtitle {
             font-size:1.2rem;
             margin-top:1rem;
-            max-width: 820px;
             text-shadow:0 2px 10px rgba(0,0,0,0.2);
         }
         .hero-focus {
@@ -89,101 +69,18 @@
             font-weight: 600;
             letter-spacing: 0.3px;
         }
-        main {
-            max-width:900px;
-            margin:2.8rem auto;
-            background:var(--card);
-            padding:2.6rem 2.2rem;
-            border-radius:22px;
-            box-shadow: var(--shadow);
-            min-height:60vh;
-        }
-        nav {
-            background: rgba(246, 253, 251, 0.92);
-            backdrop-filter: blur(8px);
-            padding:0.75rem 0;
-            text-align:center;
-            box-shadow:0 1px 10px rgba(0,0,0,0.04);
-            border-bottom:1px solid #e0ede8;
-        }
-        nav a {
-            color:var(--forest);
-            margin:0 1rem;
-            text-decoration:none;
-            font-weight:700;
-            padding:0.3rem 0.6rem;
-            border-radius:6px;
-            transition: color 0.2s, background 0.2s, transform 0.2s;
-        }
-        nav a:hover {
-            color:#fff;
-            background:var(--forest);
-            text-decoration:none;
-            transform: translateY(-1px);
-        }
-        @media(max-width:700px){
-            main{padding:1.4rem 1rem;}
-            .hero-title{font-size:2.2rem;}
-            nav a{display:inline-block; margin:0.3rem 0.4rem;}
-        }
-        .lang-en .fr{display:none !important;} .lang-fr .en{display:none !important;}
-        .lang-en .en, .lang-fr .fr{display:inline !important;}
-        .btn-group {
-            display:flex;
-            flex-wrap:wrap;
-            gap:0.8rem;
-            justify-content:center;
-            margin:1.2rem 0 2.2rem 0;
-        }
-        .btn-group a {
-            display:inline-flex;
-            align-items:center;
-            gap:0.5rem;
-            background:var(--forest);
-            color:#fff;
-            padding:0.75rem 1.4rem;
-            border-radius:14px;
-            text-decoration:none;
-            font-weight:700;
-            font-size:1rem;
-            box-shadow:0 6px 18px rgba(19, 43, 37, 0.18);
-            border:1px solid rgba(255,255,255,0.12);
-            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-        }
-        .btn-group a:hover {
-            transform: translateY(-2px);
-            box-shadow:0 10px 26px rgba(19, 43, 37, 0.25);
-            background: linear-gradient(110deg, #1f4c3f 0%, #2f745f 100%);
-        }
-        .btn-group a.secondary {
-            background: #f2f6f4;
-            color: var(--forest);
-            border: 1px solid #dbe7e1;
-        }
-        .projects {
-            display:flex;
-            flex-wrap:wrap;
-            gap:1.2rem;
-            justify-content:center;
-            margin-top:2rem;
-        }
-        .project-card {
-            flex:1 1 260px;
-            max-width:320px;
-            text-align:left;
-            background:#f7fbf9;
-            padding:1.1rem 1.1rem 1rem 1.1rem;
-            border-radius:16px;
-            border:1px solid #e3ece8;
-            box-shadow:0 6px 18px rgba(30,71,61,0.08);
-        }
-        .project-card img { width:100%; border-radius:12px; }
-        .skills ul { columns:2; max-width:520px; margin:0 auto 0.5rem auto; font-size:1.05rem; }
         .section-title {
             font-family: 'Fraunces', serif;
             font-size: 1.6rem;
-            margin-bottom: 0.6rem;
+            margin:0 0 0.6rem 0;
             color: var(--forest);
+        }
+        .skills ul {
+            columns:2;
+            max-width:520px;
+            margin:0 auto 0.5rem auto;
+            font-size:1.05rem;
+            padding-left: 1.1rem;
         }
         .tag-row {
             display:flex;
@@ -200,13 +97,15 @@
             font-size:0.85rem;
             border:1px solid #d7e6df;
         }
-        footer {
-            margin-top:2.8rem;
-            padding-top:1.6rem;
-            border-top:1px solid #e1ebe7;
-            color:#3c5f53;
-            text-align:center;
-            font-size:0.95rem;
+        .projects {
+            display:flex;
+            flex-wrap:wrap;
+            gap:1.2rem;
+            justify-content:center;
+            margin-top:2rem;
+        }
+        @media (max-width: 700px) {
+            .hero-title { font-size:2.2rem; }
         }
     </style>
 </head>
@@ -217,12 +116,16 @@
             <h1 class="hero-title">Alice Dissoubray</h1>
             <p class="hero-subtitle">
                 <span class="en"><strong>Python & Blender Developer | Workflow Automation | Pipeline & R&D Enthusiast</strong></span>
-                <span class="fr"><strong>Développeuse Python & Blender | Automatisation de workflows | Passionnée Pipeline & R&D</strong></span>
+                <span class="fr"><strong>Développeuse Python & Blender | Automatisation de workflows | Passionnée pipeline & R&D</strong></span>
             </p>
             <p class="hero-subtitle">
-                <span class="en">Hi, I’m Alice, a Master’s student in Computer Science focusing on Images & Multimedia.<br>I am genuinely curious about animation and eager to discover where I could contribute in a studio environment.</span>
-                <span class="fr">Bonjour, je suis Alice, étudiante en master informatique, spécialisée en Images & Multimédia.<br>Je suis passionnée par l’animation et curieuse de découvrir comment contribuer dans un studio.</span>
+                <span class="en">Hi, I€™m Alice, a Master€™s student in Computer Science focusing on Images & Multimedia.<br>I am genuinely curious about animation and eager to discover where I could contribute in a studio environment.</span>
+                <span class="fr">Bonjour, je suis Alice, étudiante en master informatique, spécialisée en Images & Multimédia.<br>Je suis passionnée par l€™animation et curieuse de découvrir comment contribuer dans un studio.</span>
             </p>
+            <div class="hero-focus">
+                <span class="en">Focused on: Rendering · Tools · Pipeline R&D</span>
+                <span class="fr">Focus : rendu · outils · R&D pipeline</span>
+            </div>
         </div>
     </div>
 
@@ -238,7 +141,7 @@
 
     <main>
         <section class="skills">
-            <h2><span class="en">Software & Tools</span><span class="fr">Logiciels & Outils</span></h2>
+            <h2 class="section-title"><span class="en">Software & Tools</span><span class="fr">Logiciels & Outils</span></h2>
             <ul>
                 <li><strong>Python</strong></li>
                 <li><strong>Blender</strong></li>
@@ -249,14 +152,20 @@
                 <li>Adobe Lightroom</li>
                 <li>Matlab</li>
             </ul>
+            <div class="tag-row">
+                <span class="tag">Rendering</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Lookdev</span>
+                <span class="tag">Pipeline</span>
+            </div>
             <p style="text-align:center; font-size:0.98rem; color:#2a4d3c;">Actively exploring animation tools and pipeline development for studios.</p>
         </section>
 
         <div class="btn-group">
-            <a href="portfolio.html"><span style="font-size:1.15rem;">🎬</span> Portfolio</a>
-            <a href="docs/CV_English.pdf" target="_blank"><span style="font-size:1.15rem;">📄</span> CV</a>
-            <a href="contact.html"><span style="font-size:1.15rem;">✉️</span> Contact</a>
-            <a href="https://github.com/aliwally" target="_blank"><span style="font-size:1.15rem;">💻</span> GitHub</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="docs/CV_English.pdf" target="_blank" class="secondary">CV</a>
+            <a href="contact.html" class="secondary">Contact</a>
+            <a href="https://github.com/aliwally" target="_blank" class="secondary">GitHub</a>
         </div>
 
         <section class="projects">
@@ -267,8 +176,14 @@
                 <p><strong><span class="en">More projects</span><span class="fr">Autres projets</span></strong><br><span class="en">Coming soon</span><span class="fr">À venir</span></p>
             </div>
         </section>
+
+        <footer>
+            <div class="en">Open to opportunities in animation, lookdev, and pipeline tooling.</div>
+            <div class="fr">Ouverte aux opportunités en animation, lookdev et outils de pipeline.</div>
+        </footer>
     </main>
 
     <script src="js/header-shrink.js"></script>
 </body>
 </html>
+
