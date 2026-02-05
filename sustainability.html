@@ -11,172 +11,104 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="js/language-switch-css.js"></script>
     <style>
-    body {
-        font-family: 'Roboto', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(120deg, #f9f9f9 0%, #e0ede8 100%);
-        min-height: 100vh;
+    .page-hero {
+        display:grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 1.4rem;
+        align-items: center;
+        margin-bottom: 1.8rem;
     }
-    header {
-        background: linear-gradient(90deg, #1e473d 60%, #3e7c6b 100%);
-        color: #fff;
-        padding: 2.5rem 1rem 2rem 1rem;
-        text-align: center;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        position: sticky;
-        top: 0;
-        z-index: 200;
-        transition: padding 0.25s ease, font-size 0.25s ease, transform 0.25s ease;
-    }
-    header { will-change: transform; }
-    header.shrink h1 { transform: translateY(-6px) scale(0.985); transition: transform 0.22s ease, font-size 0.22s ease; }
-    header.shrink-layout { padding: 0.9rem 1rem 0.85rem 1rem; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
-    header.shrink-layout h1 { font-size: 1.2rem; }
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 150;
-    }
-    main {
-        max-width: 800px;
-        margin: 2.5rem auto;
-        background: #fff;
-        padding: 2.5rem 2rem;
+    .hero-card {
+        background: linear-gradient(120deg, #f3f7f5 0%, #e6efe9 100%);
+        border: 1px solid #dfeae4;
         border-radius: 18px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        min-height: 60vh;
+        padding: 1.2rem 1.3rem;
+        box-shadow: 0 10px 24px rgba(19, 43, 37, 0.08);
     }
-    nav {
-        background: #f6fdfbcc;
-        padding: 0.7rem 0;
-        text-align: center;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.03);
-        border-bottom: 1px solid #e0ede8;
+    .section-title {
+        font-family:'Fraunces', serif;
+        color:#1e473d;
+        margin-bottom:0.6rem;
     }
-    nav a {
-        color: #1e473d;
-        margin: 0 1.2rem;
-        text-decoration: none;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        transition: color 0.2s, background 0.2s;
-        padding: 0.2rem 0.5rem;
-        border-radius: 4px;
+    .tag-row {
+        display:flex;
+        flex-wrap:wrap;
+        gap:0.5rem;
+        margin-top:0.8rem;
     }
-    nav a:hover {
-        color: #fff;
-        background: #1e473d;
-        text-decoration: none;
+    .tag {
+        background:#eef5f2;
+        color:#2c5a4b;
+        padding:0.3rem 0.7rem;
+        border-radius:999px;
+        font-size:0.85rem;
+        border:1px solid #d7e6df;
     }
-    main {
-        max-width: 800px;
-        margin: 2.5rem auto;
-        background: #fff;
-        padding: 2.5rem 2rem;
-        border-radius: 18px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        min-height: 60vh;
+    .impact-grid {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap:1rem;
+        margin: 1rem 0 1.6rem 0;
     }
-    h1 {
-        margin-top: 0;
-        font-size: 2.3rem;
-        letter-spacing: 1px;
+    .impact-card {
+        background:#f9fbfa;
+        border:1px solid #e1ebe7;
+        border-radius:16px;
+        padding:1rem 1.1rem;
+        box-shadow:0 8px 18px rgba(19,43,37,0.07);
     }
-    .tab-bar {
-        display: flex;
-        gap: 1.2rem;
-        margin-bottom: 2.2rem;
-        justify-content: center;
+    .impact-title {
+        font-weight:700;
+        color:#1e473d;
+        margin:0 0 0.4rem 0;
     }
-    .tab-btn {
-        background: #e0ede8;
-        border: none;
-        padding: 0.7rem 2rem;
-        border-radius: 8px 8px 0 0;
-        cursor: pointer;
-        font-size: 1.08rem;
-        font-weight: 500;
-        color: #1e473d;
-        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-        box-shadow: 0 2px 6px rgba(30,71,61,0.04);
+    .engagement-list {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 0.8rem 1.2rem;
+        margin: 0.6rem 0 1.4rem 0;
+        padding-left: 0;
+        list-style: none;
     }
-    .tab-btn.active {
-        background: #1e473d;
-        color: #fff;
-        font-weight: bold;
-        box-shadow: 0 4px 12px rgba(30,71,61,0.13);
+    .engagement-item {
+        background:#eef5f2;
+        border:1px solid #d7e6df;
+        border-radius:12px;
+        padding:0.8rem 0.9rem;
     }
-    .tab-btn:hover:not(.active) {
-        background: #3e7c6b;
-        color: #fff;
+    .gallery {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap:0.8rem;
+        margin-top: 1rem;
     }
-    .tab-content {
-        display: none;
-        animation: fadeIn 0.5s;
+    .gallery figure {
+        margin:0;
+        background:#ffffff;
+        border:1px solid #e1ebe7;
+        border-radius:14px;
+        padding:0.6rem;
+        box-shadow:0 6px 16px rgba(19,43,37,0.06);
     }
-    .tab-content.active {
-        display: block;
-        animation: fadeIn 0.5s;
+    .gallery img {
+        width:100%;
+        border-radius:10px;
+        display:block;
     }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+    .gallery figcaption {
+        font-size:0.9rem;
+        margin-top:0.4rem;
+        text-align:center;
+        color:#2b4c42;
     }
-    img {
-        border-radius: 10px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.09);
-        margin-top: 1.2rem;
+    .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #dbe7e1, transparent);
+        margin: 2rem 0;
     }
-    a.pdf-link {
-        display: inline-block;
-        margin-top: 1.2rem;
-        padding: 0.6rem 1.3rem;
-        background: linear-gradient(90deg, #3e7c6b 60%, #1e473d 100%);
-        color: #fff;
-        text-decoration: none;
-        border-radius: 7px;
-        font-weight: bold;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        transition: background 0.2s, color 0.2s;
+    @media (max-width: 900px) {
+        .page-hero { grid-template-columns: 1fr; }
     }
-    a.pdf-link:hover {
-        background: #1e473d;
-        color: #fff;
-    }
-    @media (max-width: 600px) {
-        main { padding: 1.2rem 0.5rem; }
-        .tab-bar { flex-direction: column; gap: 0.5rem; }
-        .tab-btn { width: 100%; }
-    }
-        /* Language switching rules - default to English */
-        .lang-en .fr { display: none !important; }
-        .lang-fr .en { display: none !important; }
-        
-        /* Show appropriate language content */
-        .lang-en .en { display: block; }
-        .lang-fr .fr { display: block; }
-        
-        /* For inline elements (navigation, spans within text) */
-        nav .en, nav .fr,
-        span.en, span.fr,
-        .hero-subtitle .en, .hero-subtitle .fr,
-        .quote-author .en, .quote-author .fr {
-            display: inline !important;
-        }
-        
-        /* Hide inactive language for inline elements */
-        .lang-en nav .fr, 
-        .lang-en span.fr,
-        .lang-en .hero-subtitle .fr,
-        .lang-en .quote-author .fr { display: none !important; }
-        
-        .lang-fr nav .en,
-        .lang-fr span.en, 
-        .lang-fr .hero-subtitle .en,
-        .lang-fr .quote-author .en { display: none !important; }
     </style>
     <link rel="stylesheet" href="css/site.css">
 </head>
@@ -209,7 +141,7 @@
             <span class="en">Personal Interests</span>
             <span class="fr">Centres d'intérêt personnels</span>
         </a>
-        <a href="ProfessionalProject">
+        <a href="ProfessionalProject.html">
             <span class="en">Professional Project</span>
             <span class="fr">Projet professionnel</span>
         </a>
@@ -219,69 +151,89 @@
         </a>
     </nav>
     <main>
-        <h2>
-            <span class="en">Civic Engagement</span>
-            <span class="fr">Engagement civique</span>
-        </h2>
-        <ul style="margin-bottom:1.2rem;">
-            <span class="en">
-                <li><strong>THCon</strong> ? I volunteered on the staff team in 2024 and 2025, welcoming visitors and helping run the event.</li>
-                <li><strong>Capitole du Libre</strong> ? I supported the team in 2024 and 2025 with setup, photography and visitor services.</li>
-                <li><strong>Tutoring</strong> ? I offered tutoring for high?school students in maths and physics.</li>
-                <li><strong>Secretary of the Net7 association</strong> ? I served as secretary of the Net7 student association, helping organize activities and manage the association's administration.</li>
-                <li><strong>Member of Photo7 association</strong> ? I participated in photography activities and events organized by the Photo7 association.</li>
-            </span>
-            <span class="fr">
-                <li><strong>THCon</strong> ? J'ai fait parti de l'équipe en 2024 et 2025, accueillant les visiteurs et aidant au bon déroulement de l'événement.</li>
-                <li><strong>Capitole du Libre</strong> ? J'ai participé en 2024 and 2025 à l'installation, à la prise de photos et à l'accueil des visiteurs.</li>
-                <li><strong>Tutorat</strong> ? J'ai accompagné des lycéens en mathématiques et en physique.</li>
-                <li><strong>Secrétaire du bureau Net7</strong> ? J'ai été secrétaire de l'association étudiante Net7, participant à l'organisation des activités et à la gestion administrative de l'association.</li>
-                <li><strong>Membre de l'association Photo7</strong> ? J'ai participé aux activités et événements photographiques organisés par l'association Photo7.</li>
-            </span>
+        <section class="page-hero">
+            <div>
+                <h2 class="section-title"><span class="en">Civic Engagement</span><span class="fr">Engagement civique</span></h2>
+                <p class="en">I contribute to community events, education, and student associations—experiences that build teamwork, leadership, and service mindset.</p>
+                <p class="fr">Je contribue à des événements, à l’éducation et aux associations étudiantes — des expériences qui renforcent l’esprit d’équipe, le leadership et le sens du service.</p>
+                <div class="tag-row">
+                    <span class="tag">Volunteering</span>
+                    <span class="tag">Community</span>
+                    <span class="tag">Photography</span>
+                    <span class="tag">Mentoring</span>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3 class="section-title"><span class="en">Impact Themes</span><span class="fr">Thèmes d’impact</span></h3>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-title">Teamwork</div>
+                        <div class="en">Coordination and support in events and associations.</div>
+                        <div class="fr">Coordination et entraide lors d’événements et en association.</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-title">Education</div>
+                        <div class="en">Tutoring and knowledge sharing.</div>
+                        <div class="fr">Tutorat et partage de connaissances.</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-title">Community</div>
+                        <div class="en">Active participation in local tech and creative communities.</div>
+                        <div class="fr">Participation active aux communautés tech et créatives.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="section-title"><span class="en">Engagements</span><span class="fr">Engagements</span></h3>
+        <ul class="engagement-list">
+            <li class="engagement-item"><strong>THCon</strong> — <span class="en">Staff volunteer in 2024 and 2025 (welcoming visitors, helping run the event).</span><span class="fr">Bénévolat en 2024 et 2025 (accueil et aide à l’organisation).</span></li>
+            <li class="engagement-item"><strong>Capitole du Libre</strong> — <span class="en">Support in 2024 and 2025 (setup, photography, visitor services).</span><span class="fr">Participation en 2024 et 2025 (installation, photo, accueil).</span></li>
+            <li class="engagement-item"><strong>Tutoring</strong> — <span class="en">Support for high‑school students in maths and physics.</span><span class="fr">Tutorat en mathématiques et physique pour lycéens.</span></li>
+            <li class="engagement-item"><strong>Net7 Association</strong> — <span class="en">Secretary, organizing activities and managing administration.</span><span class="fr">Secrétaire, organisation des activités et gestion administrative.</span></li>
+            <li class="engagement-item"><strong>Photo7 Association</strong> — <span class="en">Participation in photography activities and events.</span><span class="fr">Participation aux activités et événements photo.</span></li>
         </ul>
-        <div class="cdl-gallery" style="display:flex;flex-wrap:wrap;gap:0.8rem;margin:1rem 0;">
-            <!-- Net7 Association General Assembly -->
-            <figure style="margin:0; width:100%;">
-                <img src="img/ag_net7_passation-67.jpg" alt="Net7 Association General Assembly" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                <figcaption style="font-size:0.9rem;margin-top:0.4rem; text-align:center;"><span class="en">General Assembly of the Net7 association (as secretary)</span><span class="fr">Assemblée générale de l'association Net7 (en tant que secrétaire)</span></figcaption>
+
+        <div class="section-divider"></div>
+
+        <div class="gallery">
+            <figure>
+                <img src="img/ag_net7_passation-67.jpg" alt="Net7 Association General Assembly">
+                <figcaption><span class="en">General Assembly of the Net7 association (as secretary)</span><span class="fr">Assemblée générale de l'association Net7 (en tant que secrétaire)</span></figcaption>
             </figure>
-            <!-- 2024 Capitole du Libre -->
-            <figure style="margin:0; width:calc(50% - 0.4rem);">
-                <img src="img/CDL_24_1.jpg" alt="Capitole du Libre 2024 - photo 1" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                <figcaption style="font-size:0.9rem;margin-top:0.4rem;"><span class="en">2024 Capitole du Libre ? setup and welcome</span><span class="fr">2024 Capitole du Libre ? installation et accueil</span></figcaption>
+            <figure>
+                <img src="img/CDL_24_1.jpg" alt="Capitole du Libre 2024 - photo 1">
+                <figcaption><span class="en">2024 Capitole du Libre — setup and welcome</span><span class="fr">2024 Capitole du Libre — installation et accueil</span></figcaption>
             </figure>
-            <figure style="margin:0; width:calc(50% - 0.4rem);">
-                <img src="img/CDL_24_2.jpg" alt="Capitole du Libre 2024 - photo 2" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                <figcaption style="font-size:0.9rem;margin-top:0.4rem;"><span class="en">2024 Capitole du Libre ? volunteering at the event</span><span class="fr">2024 Capitole du Libre ? bénévolat durant l'événement</span></figcaption>
+            <figure>
+                <img src="img/CDL_24_2.jpg" alt="Capitole du Libre 2024 - photo 2">
+                <figcaption><span class="en">2024 Capitole du Libre — volunteering at the event</span><span class="fr">2024 Capitole du Libre — bénévolat durant l'événement</span></figcaption>
             </figure>
-            <figure style="margin:0; width:calc(50% - 0.4rem);">
-                <img src="img/CDL_24_6.jpg" alt="Capitole du Libre 2024 - photo 6" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                <figcaption style="font-size:0.9rem;margin-top:0.4rem;"><span class="en">2024 Capitole du Libre ? event highlights</span><span class="fr">2024 Capitole du Libre ? moments forts</span></figcaption>
+            <figure>
+                <img src="img/CDL_24_6.jpg" alt="Capitole du Libre 2024 - photo 6">
+                <figcaption><span class="en">2024 Capitole du Libre — event highlights</span><span class="fr">2024 Capitole du Libre — moments forts</span></figcaption>
             </figure>
-            <figure style="margin:0; width:calc(50% - 0.4rem);">
-                <img src="img/CDL_24_7.jpg" alt="Capitole du Libre 2024 - photo 7" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                <fig
-                caption style="font-size:0.9rem;margin-top:0.4rem;"><span class="en">2024 Capitole du Libre ? sharing knowledge with visitors</span><span class="fr">2024 Capitole du Libre ? partage de connaissances avec les visiteurs</span></figcaption>
+            <figure>
+                <img src="img/CDL_24_7.jpg" alt="Capitole du Libre 2024 - photo 7">
+                <figcaption><span class="en">2024 Capitole du Libre — sharing knowledge with visitors</span><span class="fr">2024 Capitole du Libre — partage de connaissances avec les visiteurs</span></figcaption>
             </figure>
-            <!-- 2025 Capitole du Libre -->
-            <figure style="margin:0; width:calc(50% - 0.4rem);">
-                <img src="img/6931d196a772e.jpg" alt="Capitole du Libre 2025 - photo 1" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                <figcaption style="font-size:0.9rem;margin-top:0.4rem;"><span class="en">2025 Capitole du Libre ? setup and welcome</span><span class="fr">2025 Capitole du Libre ? installation et accueil</span></figcaption>
+            <figure>
+                <img src="img/6931d196a772e.jpg" alt="Capitole du Libre 2025 - photo 1">
+                <figcaption><span class="en">2025 Capitole du Libre — setup and welcome</span><span class="fr">2025 Capitole du Libre — installation et accueil</span></figcaption>
             </figure>
-            <figure style="margin:0; width:calc(50% - 0.4rem);">
-                <img src="img/6931d860e7f85.jpg" alt="Capitole du Libre 2025 - photo 2" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                <figcaption style="font-size:0.9rem;margin-top:0.4rem;"><span class="en">2025 Capitole du Libre ? volunteering at the event</span><span class="fr">2025 Capitole du Libre ? bénévolat durant l'événement</span></figcaption>
+            <figure>
+                <img src="img/6931d860e7f85.jpg" alt="Capitole du Libre 2025 - photo 2">
+                <figcaption><span class="en">2025 Capitole du Libre — volunteering at the event</span><span class="fr">2025 Capitole du Libre — bénévolat durant l'événement</span></figcaption>
             </figure>
-            <figure style="margin:0; width:calc(50% - 0.4rem);">
-                <img src="img/6931d86210e0b.jpg" alt="Capitole du Libre 2025 - photo 3" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                <figcaption style="font-size:0.9rem;margin-top:0.4rem;"><span class="en">2025 Capitole du Libre ? event highlights</span><span class="fr">2025 Capitole du Libre ? moments forts</span></figcaption>
+            <figure>
+                <img src="img/6931d86210e0b.jpg" alt="Capitole du Libre 2025 - photo 3">
+                <figcaption><span class="en">2025 Capitole du Libre — event highlights</span><span class="fr">2025 Capitole du Libre — moments forts</span></figcaption>
             </figure>
-            <figure style="margin:0; width:calc(50% - 0.4rem);">
-                <img src="img/6931d75453053.jpg" alt="Capitole du Libre 2025 - photo 4" style="width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-                <figcaption style="font-size:0.9rem;margin-top:0.4rem;"><span class="en">2025 Capitole du Libre ? sharing knowledge with visitors</span><span class="fr">2025 Capitole du Libre ? partage de connaissances avec les visiteurs</span></figcaption>
+            <figure>
+                <img src="img/6931d75453053.jpg" alt="Capitole du Libre 2025 - photo 4">
+                <figcaption><span class="en">2025 Capitole du Libre — sharing knowledge with visitors</span><span class="fr">2025 Capitole du Libre — partage de connaissances avec les visiteurs</span></figcaption>
             </figure>
         </div>
-        
     </main>
     <script src="js/header-shrink.js"></script>
 </body>
