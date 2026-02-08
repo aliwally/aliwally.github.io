@@ -133,26 +133,26 @@
             radial-gradient(700px 260px at 18% 20%, #e6f4ee 0%, transparent 55%),
             radial-gradient(520px 300px at 82% 55%, #f6efe2 0%, transparent 55%),
             linear-gradient(120deg, #f9fbfa 0%, #eef5f2 100%);
-        background-image:
-            url("img/world.svg"),
-            radial-gradient(700px 260px at 18% 20%, #e6f4ee 0%, transparent 55%),
-            radial-gradient(520px 300px at 82% 55%, #f6efe2 0%, transparent 55%),
-            linear-gradient(120deg, #f9fbfa 0%, #eef5f2 100%);
-        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-        background-position: center center, left top, right center, center center;
-        background-size: 92% auto, auto, auto, cover;
         border: 1px solid #e1ebe7;
         border-radius: 18px;
         padding: 1.2rem;
         margin-top: 1.6rem;
         box-shadow: 0 10px 24px rgba(19, 43, 37, 0.08);
-        min-height: 320px;
         overflow: hidden;
     }
     .map-title {
         font-weight: 700;
         color: #1e473d;
         margin-bottom: 0.6rem;
+    }
+    .map-stage {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 2000 / 1001;
+        background-image: url("img/world.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
     }
     .map-dot {
         position: absolute;
@@ -307,17 +307,19 @@
 
         <div class="mobility-map">
             <div class="map-title"><span class="en">Mobility footprint</span><span class="fr">Empreinte de mobilité</span></div>
-            <div class="map-dot" style="left: 40%; top: 34%;"></div>
-            <div class="map-label" style="left: 40%; top: 34%;">Ireland</div>
+            <div class="map-stage" aria-hidden="true">
+                <div class="map-dot" style="left: 47.9%; top: 20.3%;"></div>
+                <div class="map-label" style="left: 47.9%; top: 20.3%;">Ireland</div>
 
-            <div class="map-dot" style="left: 44%; top: 40%;"></div>
-            <div class="map-label" style="left: 44%; top: 40%;">France</div>
+                <div class="map-dot" style="left: 50.6%; top: 24.3%;"></div>
+                <div class="map-label" style="left: 50.6%; top: 24.3%;">France</div>
 
-            <div class="map-dot" style="left: 46%; top: 54%;"></div>
-            <div class="map-label" style="left: 46%; top: 54%;">Senegal</div>
+                <div class="map-dot" style="left: 46.0%; top: 41.9%;"></div>
+                <div class="map-label" style="left: 46.0%; top: 41.9%;">Senegal</div>
 
-            <div class="map-dot" style="left: 28%; top: 74%;"></div>
-            <div class="map-label" style="left: 28%; top: 74%;">Argentina</div>
+                <div class="map-dot" style="left: 33.8%; top: 69.2%;"></div>
+                <div class="map-label" style="left: 33.8%; top: 69.2%;">Argentina</div>
+            </div>
             <div class="map-legend">
                 <span class="en">Dots show key locations.</span>
                 <span class="fr">Les points indiquent les lieux clés.</span>
