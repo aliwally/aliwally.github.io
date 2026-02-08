@@ -176,6 +176,9 @@
         }
         @media (max-width: 900px) {
             .featured { grid-template-columns: 1fr; }
+            .home-grid { grid-template-columns: 1fr; }
+            .home-card { grid-column: 1 / -1 !important; }
+            .home-card + .home-card { margin-top: 0.4rem; }
             .project-media { grid-template-columns: 1fr; }
         }
         @media (max-width: 700px) {
