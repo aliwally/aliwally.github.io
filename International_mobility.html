@@ -86,6 +86,33 @@
         color:#2b4c42;
         font-size:0.98rem;
     }
+    .language-left {
+        display:flex;
+        align-items:center;
+        gap:0.5rem;
+    }
+    .flag {
+        width: 22px;
+        height: 14px;
+        border-radius: 3px;
+        border: 1px solid #d7e6df;
+        box-shadow: 0 2px 6px rgba(19, 43, 37, 0.08);
+        background-size: cover;
+        background-position: center;
+        flex: 0 0 auto;
+    }
+    .flag-fr {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='14' viewBox='0 0 22 14'><rect width='7.33' height='14' fill='%23003399'/><rect x='7.33' width='7.33' height='14' fill='%23ffffff'/><rect x='14.66' width='7.34' height='14' fill='%23ed2939'/></svg>");
+    }
+    .flag-en {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='14' viewBox='0 0 22 14'><rect width='22' height='14' fill='%23012169'/><rect x='0' y='6' width='22' height='2' fill='%23ffffff'/><rect x='10' y='0' width='2' height='14' fill='%23ffffff'/><rect x='0' y='6.5' width='22' height='1' fill='%23c8102e'/><rect x='10.5' y='0' width='1' height='14' fill='%23c8102e'/></svg>");
+    }
+    .flag-es {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='14' viewBox='0 0 22 14'><rect width='22' height='14' fill='%23aa151b'/><rect y='3' width='22' height='8' fill='%23f1bf00'/></svg>");
+    }
+    .flag-jp {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='14' viewBox='0 0 22 14'><rect width='22' height='14' fill='%23ffffff'/><circle cx='11' cy='7' r='4' fill='%23bc002d'/></svg>");
+    }
     .language-level {
         font-size:0.85rem;
         color:#3b6154;
@@ -102,25 +129,30 @@
     }
     .mobility-map {
         position: relative;
-        background: radial-gradient(700px 260px at 18% 20%, #e6f4ee 0%, transparent 55%),
-                    radial-gradient(520px 300px at 82% 55%, #f6efe2 0%, transparent 55%),
-                    linear-gradient(120deg, #f9fbfa 0%, #eef5f2 100%);
+        background:
+            radial-gradient(700px 260px at 18% 20%, #e6f4ee 0%, transparent 55%),
+            radial-gradient(520px 300px at 82% 55%, #f6efe2 0%, transparent 55%),
+            linear-gradient(120deg, #f9fbfa 0%, #eef5f2 100%);
+        background-image:
+            url("img/world.svg"),
+            radial-gradient(700px 260px at 18% 20%, #e6f4ee 0%, transparent 55%),
+            radial-gradient(520px 300px at 82% 55%, #f6efe2 0%, transparent 55%),
+            linear-gradient(120deg, #f9fbfa 0%, #eef5f2 100%);
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        background-position: center center, left top, right center, center center;
+        background-size: 92% auto, auto, auto, cover;
         border: 1px solid #e1ebe7;
         border-radius: 18px;
         padding: 1.2rem;
         margin-top: 1.6rem;
         box-shadow: 0 10px 24px rgba(19, 43, 37, 0.08);
+        min-height: 320px;
         overflow: hidden;
     }
     .map-title {
         font-weight: 700;
         color: #1e473d;
         margin-bottom: 0.6rem;
-    }
-    .map-svg {
-        width: 100%;
-        height: auto;
-        display: block;
     }
     .map-dot {
         position: absolute;
@@ -211,16 +243,40 @@
             <div class="hero-card">
                 <h3 class="section-title"><span class="en">Languages</span><span class="fr">Langues</span></h3>
                 <ul class="language-list en">
-                    <li class="language-item"><span>French</span><span class="language-level">Native</span></li>
-                    <li class="language-item"><span>English</span><span class="language-level">Native</span></li>
-                    <li class="language-item"><span>Spanish</span><span class="language-level">Intermediate</span></li>
-                    <li class="language-item"><span>Japanese</span><span class="language-level">Basic</span></li>
+                    <li class="language-item">
+                        <span class="language-left"><span class="flag flag-fr" aria-hidden="true"></span>French</span>
+                        <span class="language-level">Native</span>
+                    </li>
+                    <li class="language-item">
+                        <span class="language-left"><span class="flag flag-ie" aria-hidden="true"></span>English</span>
+                        <span class="language-level">Native</span>
+                    </li>
+                    <li class="language-item">
+                        <span class="language-left"><span class="flag flag-es" aria-hidden="true"></span>Spanish</span>
+                        <span class="language-level">Intermediate</span>
+                    </li>
+                    <li class="language-item">
+                        <span class="language-left"><span class="flag flag-jp" aria-hidden="true"></span>Japanese</span>
+                        <span class="language-level">Basic</span>
+                    </li>
                 </ul>
                 <ul class="language-list fr">
-                    <li class="language-item"><span>Français</span><span class="language-level">Native</span></li>
-                    <li class="language-item"><span>Anglais</span><span class="language-level">Native</span></li>
-                    <li class="language-item"><span>Espagnol</span><span class="language-level">Intermédiaire</span></li>
-                    <li class="language-item"><span>Japonais</span><span class="language-level">Notions</span></li>
+                    <li class="language-item">
+                        <span class="language-left"><span class="flag flag-fr" aria-hidden="true"></span>Français</span>
+                        <span class="language-level">Native</span>
+                    </li>
+                    <li class="language-item">
+                        <span class="language-left"><span class="flag flag-ie" aria-hidden="true"></span>Anglais</span>
+                        <span class="language-level">Native</span>
+                    </li>
+                    <li class="language-item">
+                        <span class="language-left"><span class="flag flag-es" aria-hidden="true"></span>Espagnol</span>
+                        <span class="language-level">Intermédiaire</span>
+                    </li>
+                    <li class="language-item">
+                        <span class="language-left"><span class="flag flag-jp" aria-hidden="true"></span>Japonais</span>
+                        <span class="language-level">Notions</span>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -251,26 +307,17 @@
 
         <div class="mobility-map">
             <div class="map-title"><span class="en">Mobility footprint</span><span class="fr">Empreinte de mobilité</span></div>
-            <svg class="map-svg" viewBox="0 0 1000 500" aria-hidden="true">
-                <path d="M120 110 L260 90 L330 120 L340 170 L300 220 L250 250 L210 240 L170 200 L140 170 Z" fill="#dfeee6"/>
-                <path d="M230 260 L300 250 L330 300 L320 360 L260 410 L210 380 L200 320 Z" fill="#dfeee6"/>
-                <path d="M440 120 L520 110 L570 140 L600 180 L570 210 L520 200 L470 180 Z" fill="#dfeee6"/>
-                <path d="M520 210 L590 220 L620 260 L610 320 L560 360 L520 340 L500 280 Z" fill="#dfeee6"/>
-                <path d="M660 120 L760 120 L860 160 L870 210 L800 230 L740 220 L700 180 Z" fill="#dfeee6"/>
-                <path d="M760 240 L830 250 L860 300 L830 340 L770 330 L740 280 Z" fill="#dfeee6"/>
-            </svg>
+            <div class="map-dot" style="left: 40%; top: 34%;"></div>
+            <div class="map-label" style="left: 40%; top: 34%;">Ireland</div>
 
-            <div class="map-dot" style="left: 47%; top: 32%;"></div>
-            <div class="map-label" style="left: 47%; top: 32%;">Ireland</div>
+            <div class="map-dot" style="left: 44%; top: 40%;"></div>
+            <div class="map-label" style="left: 44%; top: 40%;">France</div>
 
-            <div class="map-dot" style="left: 52%; top: 40%;"></div>
-            <div class="map-label" style="left: 52%; top: 40%;">France</div>
+            <div class="map-dot" style="left: 46%; top: 54%;"></div>
+            <div class="map-label" style="left: 46%; top: 54%;">Senegal</div>
 
-            <div class="map-dot" style="left: 53%; top: 56%;"></div>
-            <div class="map-label" style="left: 53%; top: 56%;">Senegal</div>
-
-            <div class="map-dot" style="left: 26%; top: 74%;"></div>
-            <div class="map-label" style="left: 26%; top: 74%;">Argentina</div>
+            <div class="map-dot" style="left: 28%; top: 74%;"></div>
+            <div class="map-label" style="left: 28%; top: 74%;">Argentina</div>
             <div class="map-legend">
                 <span class="en">Dots show key locations.</span>
                 <span class="fr">Les points indiquent les lieux clés.</span>
