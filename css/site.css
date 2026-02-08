@@ -80,6 +80,10 @@ main {
     box-shadow: var(--shadow);
     min-height:60vh;
 }
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
 
 h2, h3 {
     color: var(--forest);
@@ -144,9 +148,18 @@ footer {
 }
 
 @media (max-width: 700px) {
-    main { padding:1.4rem 1rem; }
+    header { padding: 1.6rem 0.8rem 1.2rem 0.8rem; }
     header h1 { font-size:1.6rem; }
-    nav a { margin:0.3rem 0.4rem; }
+    nav { padding:0.6rem 0.4rem; }
+    nav a { margin:0.2rem 0.3rem; font-size:0.92rem; }
+    main { padding:1.4rem 1rem; margin:1.6rem 0.8rem; border-radius:16px; }
+    .btn-group a { width:100%; justify-content:center; }
+}
+
+@media (max-width: 480px) {
+    header h1 { font-size:1.4rem; }
+    nav a { margin:0.15rem 0.25rem; font-size:0.88rem; }
+    main { padding:1.2rem 0.9rem; margin:1.2rem 0.6rem; border-radius:14px; }
 }
 
 .lang-en .fr{display:none !important;}
