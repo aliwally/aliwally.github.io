@@ -104,6 +104,18 @@
             justify-content:center;
             margin-top:2rem;
         }
+        .project-media {
+            display:grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap:0.6rem;
+            margin-top:0.8rem;
+        }
+        .project-media img {
+            width:100%;
+            border-radius:12px;
+            border:1px solid #d7e6df;
+            box-shadow:0 6px 16px rgba(30,71,61,0.12);
+        }
         .home-grid {
             display:grid;
             grid-template-columns: repeat(12, 1fr);
@@ -164,6 +176,7 @@
         }
         @media (max-width: 900px) {
             .featured { grid-template-columns: 1fr; }
+            .project-media { grid-template-columns: 1fr; }
         }
         @media (max-width: 700px) {
             .hero-title { font-size:2.2rem; }
@@ -260,7 +273,15 @@
 
         <section class="projects">
             <div class="project-card">
-                <p><strong>Blender / Maya Scripts</strong><br><span class="en">Python scripts for 3D workflows (coming soon)</span><span class="fr">Scripts Python pour workflows 3D (bientôt)</span></p>
+                <p><strong><span class="en">Maya Script Project</span><span class="fr">Projet Script Maya</span></strong><br><span class="en">Python tools for animation workflow automation.</span><span class="fr">Outils Python pour automatiser les workflows d’animation.</span></p>
+                <div class="cta-row">
+                    <a href="https://github.com/aliwally/Python_scripting_for_animation" target="_blank" class="secondary"><span class="en">View repo</span><span class="fr">Voir le repo</span></a>
+                </div>
+                <div class="project-media">
+                    <img src="img/maya_script/full_maya_screen.png" alt="Maya project overview">
+                    <img src="img/maya_script/maya_create_project.png" alt="Maya project creation tool">
+                    <img src="img/maya_script/script.png" alt="Maya script interface">
+                </div>
             </div>
             <div class="project-card">
                 <p><strong><span class="en">More projects</span><span class="fr">Autres projets</span></strong><br><span class="en">Coming soon</span><span class="fr">À venir</span></p>
