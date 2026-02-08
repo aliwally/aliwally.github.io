@@ -70,6 +70,29 @@
             background: linear-gradient(90deg, transparent, #dbe7e1, transparent);
             margin: 2rem 0;
         }
+        .project-grid {
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap:1rem;
+            margin-top:1rem;
+        }
+        .project-card {
+            background:#f9fbfa;
+            border:1px solid #e1ebe7;
+            border-radius:16px;
+            padding:1rem 1.1rem;
+            box-shadow:0 8px 20px rgba(19, 43, 37, 0.08);
+        }
+        .project-card h4 {
+            margin:0 0 0.5rem 0;
+            color:#1e473d;
+            font-size:1.2rem;
+        }
+        .project-card p {
+            margin:0.3rem 0 0 0;
+            color:#2b4c42;
+            line-height:1.55;
+        }
         /* Collapsible year/semester styles */
         details.year, details.semester { margin: 1rem 0; border-radius: 10px; }
         details.year > summary, details.semester > summary {
@@ -133,7 +156,7 @@
     <main>
         <section class="page-hero" id="overview">
             <div>
-                <h2 class="section-title"><span class="en">Engineering Course Overview</span><span class="fr">Parcours ingénieur — aperçu</span></h2>
+                <h2 class="section-title"><span class="en">Engineering Course Overview</span><span class="fr">Parcours ingénieur</span></h2>
                 <p class="en">My curriculum combines computer science foundations with Images & Multimedia specialization, aligned with animation‑studio tools, image processing, and CG workflows.</p>
                 <p class="fr">Mon cursus combine les fondamentaux en informatique et la spécialisation Images & Multimédia, en lien avec les outils studio, le traitement d’image et les workflows CG.</p>
                 <div class="tag-row">
@@ -171,6 +194,24 @@
             </ul>
             <div style="font-size:0.98rem;color:#2a4d3c;">These courses built a strong foundation in programming, computer graphics, image processing, and multimedia—skills aligned with animation studios and CG.</div>
         </section>
+
+        <section id="projects">
+            <h2 class="section-title">
+                <span class="en">Projects</span>
+                <span class="fr">Projets</span>
+            </h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4><span class="en">Object Detection (Deep Learning)</span><span class="fr">D&eacute;tection d’objets (apprentissage profond)</span></h4>
+                    <p class="en">See details in the related course section below.</p>
+                    <p class="fr">Voir les d&eacute;tails dans la section du cours correspondant ci-dessous.</p>
+                    <div class="toc">
+                        <a href="#project-yolo"><span class="en">Jump to project</span><span class="fr">Voir le projet</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <h2 class="section-title">
             <span class="en">My studies</span>
             <span class="fr">Mon parcours</span>
@@ -406,7 +447,7 @@
                     </h3>
                     <ul>
                         <li><span class="en">OpenMP</span><span class="fr">OpenMP</span></li>
-                        <li><span class="en">Web Applications</span><span class="fr">Applications Web</span></li>
+                        <li><span class="en">Web Applications<code class="lang-note">HTML</code><code class="lang-note">CSS</code></span><span class="fr">Applications Web<code class="lang-note">HTML</code><code class="lang-note">CSS</code></span></li>
                         <li><span class="en">Databases</span><span class="fr">Base de données</span></li>
                         <li><span class="en">Distributed Data Project</span><span class="fr">Projet Données Réparties</span></li>
                     </ul>
@@ -416,7 +457,7 @@
                         <span class="fr">Traitement des données audio-visuelles</span>
                     </h3>
                     <ul>
-                        <li><span class="en">Audio-visual Data Processing</span><span class="fr">Traitement des données audio-visuelles</span></li>
+                        <li><span class="en">Audio-visual Data Processing<code class="lang-note">Matlab</code></span><span class="fr">Traitement des données audio-visuelles<code class="lang-note">Matlab</code></span></li>
                     </ul>
 
                     <h3>
@@ -433,7 +474,7 @@
                         <span class="fr">Image et Modélisation</span>
                     </h3>
                     <ul>
-                        <li><span class="en">Image Processing</span><span class="fr">Traitement d'Images</span></li>
+                        <li><span class="en">Image Processing<code class="lang-note">C++</code><code class="lang-note">OpenCv</code></span><span class="fr">Traitement d'Images<code class="lang-note">C++</code><code class="lang-note">OpenCv</code></span></li>
                         <li><span class="en">Modelling</span><span class="fr">Modélisation</span></li>
                         <li><span class="en">Image Project</span><span class="fr">Projet Image</span></li>
                     </ul>
@@ -446,6 +487,11 @@
                         <li><span class="en">Computer Graphics</span><span class="fr">Computer Graphics</span></li>
                         <li><span class="en">Deep Learning</span><span class="fr">Apprentissage Profond</span></li>
                     </ul>
+                    <div class="project-card" id="project-yolo">
+                        <h4><span class="en">Object Detection (YOLO)</span><span class="fr">D&eacute;tection d’objets (YOLO)</span></h4>
+                        <p class="en">Built a dataset, performed labeling, and trained a YOLO model for object detection. Focus on data preparation, annotation quality, and training workflow.</p>
+                        <p class="fr">Cr&eacute;ation d’une base de donn&eacute;es, labellisation et entra&icirc;nement d’un mod&egrave;le YOLO pour la d&eacute;tection d’objets. Focus sur la pr&eacute;paration des donn&eacute;es, la qualit&eacute; des annotations et le workflow d’entra&icirc;nement.</p>
+                    </div>
                     <h3>
                         <span class="en">Soft &amp; Human Skills</span>
                         <span class="fr">Compétences humaines et transversales</span>
