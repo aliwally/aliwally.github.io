@@ -104,6 +104,44 @@
             justify-content:center;
             margin-top:2rem;
         }
+        .highlights-grid {
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap:1rem;
+            margin-top:1rem;
+        }
+        .highlight-card {
+            background:#f7fbf9;
+            border:1px solid #e3ece8;
+            border-radius:16px;
+            padding:1rem 1.05rem;
+            box-shadow:0 6px 18px rgba(30,71,61,0.08);
+        }
+        .highlight-card h4 {
+            margin:0 0 0.45rem 0;
+            font-family:'Fraunces', serif;
+            color:var(--forest);
+        }
+        .highlight-meta {
+            color:#335a4c;
+            font-size:0.95rem;
+            font-weight:600;
+            margin-bottom:0.45rem;
+        }
+        .highlight-tags {
+            display:flex;
+            flex-wrap:wrap;
+            gap:0.35rem;
+            margin-top:0.6rem;
+        }
+        .highlight-tags span {
+            background:#eef5f2;
+            border:1px solid #d7e6df;
+            color:#2c5a4b;
+            border-radius:999px;
+            padding:0.2rem 0.55rem;
+            font-size:0.78rem;
+        }
         .project-media {
             display:grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -218,16 +256,16 @@
             <h2 class="section-title"><span class="en">Software & Tools</span><span class="fr">Logiciels & Outils</span></h2>
             <ul>
                 <li><strong>Python</strong></li>
-                <li><strong>Blender</strong></li>
-                <li><strong>Maya</strong></li>
-                <li>Git & Linux</li>
-                <li>OpenCv</li>
+                <li><strong>C++</strong></li>
+                <li><strong>Git & Linux</strong></li>
+                <li>Blender</li>
+                <li>Maya</li>
                 <li>Unity</li>
+                <li><strong>OpenCv</strong></li>
+                <li><strong>Matlab</strong></li>
+                <li><strong>Java</strong></li>
                 <li>DaVinci Resolve</li>
                 <li>Adobe Lightroom</li>
-                <li>Matlab</li>
-                <li>C++</li>
-                <li>Java</li>
                 <li>Html & Css</li>
             </ul>
             <div class="tag-row">
@@ -274,19 +312,54 @@
             </div>
         </section>
 
-        <section class="projects">
-            <div class="project-card">
-                <p><strong><span class="en">Maya Script Project</span><span class="fr">Projet Script Maya</span></strong><br><span class="en">A set of small Maya scripting projects to get familiar with animation pipelines. The main script opens a UI to create a new project and builds a standard folder structure for assets, shots, and publish (characters, props, sets).</span><span class="fr">Une série de petits projets de scripting Maya pour se familiariser avec les pipelines d’animation. Le script principal ouvre une UI pour créer un nouveau projet et génère une structure standard pour les assets, shots et publish (personnages, props, décors).</span></p>
-                <div class="cta-row">
-                    <a href="https://github.com/aliwally/Python_scripting_for_animation" target="_blank" class="secondary"><span class="en">View repo</span><span class="fr">Voir le repo</span></a>
+        <section>
+            <h2 class="section-title"><span class="en">Internship Highlights</span><span class="fr">Stages mis en avant</span></h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h4><span class="en">Data Processing Internship</span><span class="fr">Stage en traitement de données</span></h4>
+                    <div class="highlight-meta">IRIT, Toulouse · 2024</div>
+                    <p class="en">Python scripts for satellite data processing, vegetation evolution analysis, arthropod annotation, and iterative YOLO training with statistical evaluation.</p>
+                    <p class="fr">Scripts Python pour le traitement de données satellites, l’analyse de l’évolution de la végétation, l’annotation d’arthropodes et l’entraînement itératif de modèles YOLO avec analyse statistique.</p>
+                    <div class="highlight-tags"><span>Python</span><span>YOLO</span><span>Satellite Data</span><span>Computer Vision</span></div>
                 </div>
-                <div class="project-media">
-                    <img src="img/maya_script/maya_create_project.png" alt="Maya project creation tool">
-                    <img src="img/maya_script/script.png" alt="Maya script interface">
+                <div class="highlight-card">
+                    <h4><span class="en">Python Software Internship</span><span class="fr">Stage développeur logiciel Python</span></h4>
+                    <div class="highlight-meta">Vitesco Technologies, Toulouse · 2024</div>
+                    <p class="en">Designed a modular Python architecture for measurement files, automated analysis and test validation, and generated reports in agile team projects.</p>
+                    <p class="fr">Conception d’une architecture Python modulaire pour des fichiers de mesure, automatisation de l’analyse et de la validation des tests, et génération de rapports en contexte agile.</p>
+                    <div class="highlight-tags"><span>Python</span><span>Software Design</span><span>Automation</span><span>Agile</span></div>
                 </div>
             </div>
-            <div class="project-card">
-                <p><strong><span class="en">More projects</span><span class="fr">Autres projets</span></strong><br><span class="en">Coming soon</span><span class="fr">À venir</span></p>
+            <div class="cta-row">
+                <a href="ProfessionalProject.html"><span class="en">See internship details</span><span class="fr">Voir le détail des stages</span></a>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title"><span class="en">Academic Projects</span><span class="fr">Projets scolaires</span></h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h4><span class="en">Maya Script Project</span><span class="fr">Projet Script Maya</span></h4>
+                    <p class="en">Built a Maya UI in Python to create projects and generate a studio-like folder structure for assets, shots, and publish.</p>
+                    <p class="fr">Développement d’une UI Maya en Python pour créer des projets et générer une arborescence type studio (assets, shots, publish).</p>
+                    <div class="highlight-tags"><span>Maya</span><span>Python</span><span>Pipeline</span></div>
+                </div>
+                <div class="highlight-card">
+                    <h4><span class="en">Geometric Modelling Project</span><span class="fr">Projet de modélisation géométrique</span></h4>
+                    <p class="en">Implemented and analyzed a 2D/3D geometric model, with focus on representation choices and visual behavior.</p>
+                    <p class="fr">Implémentation et analyse d’un modèle géométrique 2D/3D, avec focus sur les choix de représentation et le comportement visuel.</p>
+                    <div class="highlight-tags"><span>Computer Graphics</span><span>Geometry</span><span>Modeling</span></div>
+                </div>
+                <div class="highlight-card">
+                    <h4><span class="en">Image Processing & YOLO Project</span><span class="fr">Projet traitement d’images & YOLO</span></h4>
+                    <p class="en">Implemented image-processing methods from a research paper and trained a YOLO detector through dataset building and annotation workflow.</p>
+                    <p class="fr">Implémentation de méthodes de traitement d’images issues d’un article, puis entraînement d’un détecteur YOLO via création de dataset et workflow d’annotation.</p>
+                    <div class="highlight-tags"><span>OpenCV</span><span>C++</span><span>YOLO</span><span>Deep Learning</span></div>
+                </div>
+            </div>
+            <div class="cta-row">
+                <a href="Engineering_course.html"><span class="en">See academic background</span><span class="fr">Voir le cursus et les projets</span></a>
+                <a href="portfolio.html" class="secondary"><span class="en">See portfolio projects</span><span class="fr">Voir les projets portfolio</span></a>
             </div>
         </section>
 
