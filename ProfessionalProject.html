@@ -83,6 +83,37 @@
         background: linear-gradient(90deg, transparent, #dbe7e1, transparent);
         margin: 1.8rem 0;
     }
+    .internships-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 0 0;
+        display: grid;
+        gap: 1rem;
+    }
+    .internship-card {
+        background: #f9fbfa;
+        border: 1px solid #dfeae4;
+        border-radius: 14px;
+        padding: 1rem 1.1rem;
+        box-shadow: 0 8px 20px rgba(19, 43, 37, 0.07);
+    }
+    .internship-header {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.45rem;
+    }
+    .internship-meta {
+        color: #2d5345;
+        margin-bottom: 0.45rem;
+        font-weight: 600;
+    }
+    .impact-points {
+        margin: 0.2rem 0 0 1.1rem;
+    }
+    .impact-points li {
+        margin-bottom: 0.25rem;
+    }
     @media (max-width: 900px) {
         .page-hero { grid-template-columns: 1fr; }
     }
@@ -169,27 +200,31 @@
 
         <div class="tab-content">
             <h2><span class="en">Previous internships</span><span class="fr">Stages précédents</span></h2>
-            <p><span class="en">My previous internships are shown below, highlighting practical experience in data processing, software development, and multimedia.</span><span class="fr">Vous trouverez ci-dessous mes stages précédents illustrant mon expérience pratique en traitement de données, développement logiciel et multimédia.</span></p>
-            <ul>
-                <li>
-                    <div style="display:flex;align-items:center;gap:0.6rem;">
-                        <strong><span class="en">Data Processing Internship</span><span class="fr">Stage Traitement de données</span></strong>
+            <p><span class="en">These two internships are key milestones in my profile: applied AI for satellite and arthropod data at IRIT, and modular Python software engineering at Vitesco Technologies.</span><span class="fr">Ces deux stages constituent des expériences clés de mon parcours : IA appliquée aux données satellites et arthropodes à l’IRIT, puis ingénierie logicielle Python modulaire chez Vitesco Technologies.</span></p>
+            <ul class="internships-list">
+                <li class="internship-card">
+                    <div class="internship-header">
+                        <strong><span class="en">Data Processing Internship</span><span class="fr">Stage en traitement de données</span></strong>
                         <img src="img/irit.png" alt="IRIT logo" class="company-logo">
                     </div>
-                    <div>
-                        <span class="en"><em>IRIT, Toulouse — 2024 — 4 months</em><br>Retrieval of satellite images and calculation of vegetation index based on GPS coordinates, and assistance in the detection and identification of arthropods. Helped train and cross-validate recognition models.</span>
-                        <span class="fr"><em>IRIT, Toulouse — 2024 — 4 mois</em><br>Récupération d'images satellite et calcul d'indice de végétation à partir de coordonnées GPS, et assistance à la détection et l'identification d'arthropodes. Participation à l'entraînement et à la validation croisée de modèles de reconnaissance.</span>
-                    </div>
+                    <div class="internship-meta"><span class="en">IRIT, Toulouse — 2024 — 4 months</span><span class="fr">IRIT, Toulouse — 2024 — 4 mois</span></div>
+                    <ul class="impact-points">
+                        <li><span class="en">Developed Python scripts for satellite data processing and vegetation evolution analysis.</span><span class="fr">Développement de scripts Python pour le traitement de données satellites et l’analyse de l’évolution de la végétation.</span></li>
+                        <li><span class="en">Annotated arthropod detection bounding boxes and prepared robust datasets.</span><span class="fr">Annotation de boîtes de détection d’arthropodes et préparation de datasets.</span></li>
+                        <li><span class="en">Ran iterative YOLO trainings and performed statistical performance analysis.</span><span class="fr">Entraînements itératifs de modèles YOLO et analyse statistique des performances.</span></li>
+                    </ul>
                 </li>
-                <li>
-                    <div style="display:flex;align-items:center;gap:0.6rem;">
-                        <strong><span class="en">Python Software Developer Internship</span><span class="fr">Stage Développeur Python</span></strong>
+                <li class="internship-card">
+                    <div class="internship-header">
+                        <strong><span class="en">Python Software Developer Internship</span><span class="fr">Stage développeur logiciel Python</span></strong>
                         <img src="img/vitesco.jpg" alt="Vitesco Technologies logo" class="company-logo">
                     </div>
-                    <div>
-                        <span class="en"><em>Vitesco Technologies, Toulouse — 2024 — 2 months</em><br>Prototyping the processing of measurement files from electric battery test benches by creating a Python architecture that allows for processing, analyzing, and validating the proper execution of the tests.</span>
-                        <span class="fr"><em>Vitesco Technologies, Toulouse — 2024 — 2 mois</em><br>Prototypage du traitement des fichiers de mesures provenant de bancs d'essai de batteries électriques en créant une architecture Python permettant le traitement, l'analyse et la validation du bon déroulement des tests.</span>
-                    </div>
+                    <div class="internship-meta"><span class="en">Vitesco Technologies, Toulouse — 2024 — 2 months</span><span class="fr">Vitesco Technologies, Toulouse — 2024 — 2 mois</span></div>
+                    <ul class="impact-points">
+                        <li><span class="en">Designed a modular Python architecture for measurement file processing.</span><span class="fr">Conception d’une architecture Python modulaire pour le traitement de fichiers de mesure.</span></li>
+                        <li><span class="en">Automated analysis, test validation, and report generation.</span><span class="fr">Automatisation de l’analyse, validation des tests et génération de rapports.</span></li>
+                        <li><span class="en">Contributed in agile team projects to meet functional specifications.</span><span class="fr">Participation à des projets en méthodes agiles et travail en équipe pour répondre à un cahier des charges.</span></li>
+                    </ul>
                 </li>
             </ul>
         </div>
