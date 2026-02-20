@@ -75,6 +75,14 @@
             margin:0 0 0.6rem 0;
             color: var(--forest);
         }
+        .flow-section {
+            margin-top: 2.4rem;
+        }
+        .section-lead {
+            margin: 0 0 0.8rem 0;
+            color: #2f5547;
+            max-width: 760px;
+        }
         .skills ul {
             columns:2;
             width: fit-content;
@@ -110,14 +118,14 @@
         .highlights-grid {
             display:grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap:1rem;
+            gap:1.15rem;
             margin-top:1rem;
         }
         .highlight-card {
             background:#f7fbf9;
             border:1px solid #e3ece8;
             border-radius:16px;
-            padding:1rem 1.05rem;
+            padding:1.15rem 1.15rem 1.05rem 1.15rem;
             box-shadow:0 6px 18px rgba(30,71,61,0.08);
         }
         .highlight-card h4 {
@@ -144,6 +152,15 @@
             border-radius:999px;
             padding:0.2rem 0.55rem;
             font-size:0.78rem;
+        }
+        .highlight-visual {
+            width:100%;
+            height:180px;
+            object-fit:cover;
+            border-radius:12px;
+            border:1px solid #d7e6df;
+            margin-bottom:0.7rem;
+            box-shadow:0 8px 18px rgba(30,71,61,0.12);
         }
         .project-media {
             display:grid;
@@ -255,7 +272,7 @@
     </nav>
 
     <main>
-        <section class="skills">
+        <section class="skills flow-section">
             <h2 class="section-title"><span class="en">Software & Tools</span><span class="fr">Logiciels & Outils</span></h2>
             <ul>
                 <li><strong>Python</strong></li>
@@ -287,36 +304,9 @@
             <a href="https://github.com/aliwally" target="_blank" class="secondary"><span class="en">GitHub</span><span class="fr">GitHub</span></a>
         </div>
 
-        <section class="home-grid">
-            <div class="home-card" style="grid-column: span 8;">
-                <div class="featured">
-                    <div>
-                        <h3><span class="en">Last Work</span><span class="fr">Dernier Projet</span></h3>
-                        <p class="en">Rendering Study in Cycles: sample count vs noise, denoise impact, and render time. Exploring parameters impact on rendering.</p>
-                        <p class="fr">Étude de rendu sous Cycles : samples vs bruit, impact du denoise et temps de rendu. Exploration de l'impact de facteurs variées sur le rendu.</p>
-                        <div class="cta-row">
-                            <a href="portfolio.html"><span class="en">View results</span><span class="fr">Voir les résultats</span></a>
-                            <a href="portfolio.html" class="secondary"><span class="en">See all projects</span><span class="fr">Voir tous les projets</span></a>
-                        </div>
-                    </div>
-                    <img src="img/rendu/R5_1024samp_t24_56.11_denoise.png" alt="Project preview">
-                </div>
-            </div>
-            <div class="home-card" style="grid-column: span 4;">
-                <h3><span class="en">Focus Areas</span><span class="fr">Domaines clés</span></h3>
-                <p class="stat"><span class="en">Tools</span><span class="fr">Outils</span></p>
-                <div class="stat-label"><span class="en">Python for Digital Content Creation pipelines</span><span class="fr">Python pour pipelines Digital Content Creation</span></div>
-                <div style="height:0.8rem;"></div>
-                <p class="stat"><span class="en">Rendering</span><span class="fr">Rendu</span></p>
-                <div class="stat-label"><span class="en">Quality & performance studies</span><span class="fr">Qualité & performance</span></div>
-                <div style="height:0.8rem;"></div>
-                <p class="stat"><span class="en">Computer Graphics</span><span class="fr">Images de synthèse</span></p>
-                <div class="stat-label"><span class="en">Image processing & visuals</span><span class="fr">Traitement d’image & visuel</span></div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title"><span class="en">Internship Highlights</span><span class="fr">Stages mis en avant</span></h2>
+        <section class="flow-section">
+            <h2 class="section-title"><span class="en">Past Internships</span><span class="fr">Stages passés</span></h2>
+            <p class="section-lead"><span class="en">Hands-on industry experience in data processing and Python software engineering.</span><span class="fr">Expériences en entreprise axées sur le traitement de données et l’ingénierie logicielle Python.</span></p>
             <div class="highlights-grid">
                 <div class="highlight-card">
                     <h4><span class="en">Data Processing Internship</span><span class="fr">Stage en traitement de données</span></h4>
@@ -338,14 +328,23 @@
             </div>
         </section>
 
-        <section>
-            <h2 class="section-title"><span class="en">Academic Projects</span><span class="fr">Projets scolaires</span></h2>
+        <section class="flow-section">
+            <h2 class="section-title"><span class="en">Personal & Work Projects</span><span class="fr">Projets personnels & professionnels</span></h2>
+            <p class="section-lead"><span class="en">A clear snapshot of projects mixing technical tooling, rendering studies, and computer vision practice.</span><span class="fr">Un aperçu clair de projets mêlant outillage technique, études de rendu et pratique de vision par ordinateur.</span></p>
             <div class="highlights-grid">
                 <div class="highlight-card">
+                    <img class="highlight-visual" src="img/maya_script/maya_create_project.png" alt="Maya project setup UI">
                     <h4><span class="en">Maya Script Project</span><span class="fr">Projet Script Maya</span></h4>
                     <p class="en">Built a Maya UI in Python to create projects and generate a studio-like folder structure for assets, shots, and publish.</p>
                     <p class="fr">Développement d’une UI Maya en Python pour créer des projets et générer une arborescence type studio (assets, shots, publish).</p>
                     <div class="highlight-tags"><span>Maya</span><span>Python</span><span>Pipeline</span></div>
+                </div>
+                <div class="highlight-card">
+                    <img class="highlight-visual" src="img/rendu/R5_1024samp_t24_56.11_denoise.png" alt="Cycles rendering study preview">
+                    <h4><span class="en">Rendering Study (Cycles)</span><span class="fr">Étude de rendu (Cycles)</span></h4>
+                    <p class="en">Compared sample counts, noise, denoising impact, and render time to understand quality/performance trade-offs.</p>
+                    <p class="fr">Comparaison des niveaux de samples, du bruit, de l’effet du débruitage et du temps de rendu pour analyser les compromis qualité/performance.</p>
+                    <div class="highlight-tags"><span>Blender</span><span>Cycles</span><span>Rendering</span></div>
                 </div>
                 <div class="highlight-card">
                     <h4><span class="en">Geometric Modelling Project</span><span class="fr">Projet de modélisation géométrique</span></h4>
@@ -361,8 +360,8 @@
                 </div>
             </div>
             <div class="cta-row">
-                <a href="Engineering_course.html"><span class="en">See academic background</span><span class="fr">Voir le cursus et les projets</span></a>
-                <a href="portfolio.html" class="secondary"><span class="en">See portfolio projects</span><span class="fr">Voir les projets portfolio</span></a>
+                <a href="portfolio.html"><span class="en">See portfolio projects</span><span class="fr">Voir les projets portfolio</span></a>
+                <a href="Engineering_course.html" class="secondary"><span class="en">See academic projects</span><span class="fr">Voir les projets scolaires</span></a>
             </div>
         </section>
 
