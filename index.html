@@ -56,6 +56,7 @@
             font-size:1.2rem;
             margin-top:1rem;
             text-shadow:0 2px 10px rgba(0,0,0,0.2);
+            line-height: 1.45;
         }
         .hero-focus {
             margin-top: 1.4rem;
@@ -69,6 +70,9 @@
             font-weight: 600;
             letter-spacing: 0.3px;
         }
+        .home-main {
+            max-width: 1080px;
+        }
         .section-title {
             font-family: 'Fraunces', serif;
             font-size: 1.6rem;
@@ -77,6 +81,10 @@
         }
         .flow-section {
             margin-top: 2.4rem;
+            padding: 1.4rem 1.3rem;
+            border: 1px solid #e4ede9;
+            border-radius: 18px;
+            background: linear-gradient(160deg, #ffffff 0%, #f6faf8 100%);
         }
         .section-lead {
             margin: 0 0 0.8rem 0;
@@ -108,16 +116,9 @@
             font-size:0.85rem;
             border:1px solid #d7e6df;
         }
-        .projects {
-            display:flex;
-            flex-wrap:wrap;
-            gap:1.2rem;
-            justify-content:center;
-            margin-top:2rem;
-        }
         .highlights-grid {
             display:grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap:1.15rem;
             margin-top:1rem;
         }
@@ -127,11 +128,20 @@
             border-radius:16px;
             padding:1.15rem 1.15rem 1.05rem 1.15rem;
             box-shadow:0 6px 18px rgba(30,71,61,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .highlight-card:hover {
+            transform: translateY(-3px);
+            box-shadow:0 12px 24px rgba(30,71,61,0.12);
         }
         .highlight-card h4 {
             margin:0 0 0.45rem 0;
             font-family:'Fraunces', serif;
             color:var(--forest);
+        }
+        .highlight-card p {
+            line-height: 1.45;
+            margin: 0.35rem 0 0 0;
         }
         .highlight-meta {
             color:#335a4c;
@@ -153,65 +163,11 @@
             padding:0.2rem 0.55rem;
             font-size:0.78rem;
         }
-        .highlight-visual {
-            width:100%;
-            height:180px;
-            object-fit:cover;
-            border-radius:12px;
-            border:1px solid #d7e6df;
-            margin-bottom:0.7rem;
-            box-shadow:0 8px 18px rgba(30,71,61,0.12);
-        }
-        .project-media {
-            display:grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap:0.6rem;
-            margin-top:0.8rem;
-        }
-        .project-media img {
-            width:100%;
-            border-radius:12px;
-            border:1px solid #d7e6df;
-            box-shadow:0 6px 16px rgba(30,71,61,0.12);
-        }
-        .home-grid {
-            display:grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.2rem;
-            margin-top: 1.8rem;
-        }
-        .home-card {
-            background:#f7fbf9;
-            border:1px solid #e3ece8;
-            border-radius:16px;
-            padding:1.2rem 1.2rem 1.1rem 1.2rem;
-            box-shadow:0 6px 18px rgba(30,71,61,0.08);
-        }
-        .home-card h3 {
-            margin:0 0 0.6rem 0;
-            color:var(--forest);
-            font-family:'Fraunces', serif;
-        }
-        .stat {
-            font-size:1.8rem;
-            font-weight:700;
-            color:var(--forest);
-            margin:0;
-        }
-        .stat-label {
-            color:#335a4c;
-            font-size:0.95rem;
-        }
-        .featured {
-            display:grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-            gap:1.2rem;
-            align-items:center;
-        }
-        .featured img {
-            width:100%;
-            border-radius:14px;
-            box-shadow:0 10px 26px rgba(19,43,37,0.18);
+        .group-title {
+            margin: 1.4rem 0 0.4rem 0;
+            color: #20493e;
+            font-size: 1.15rem;
+            font-weight: 700;
         }
         .cta-row {
             display:flex;
@@ -233,14 +189,17 @@
             border:1px solid #d7e6df;
         }
         @media (max-width: 900px) {
-            .featured { grid-template-columns: 1fr; }
-            .home-grid { grid-template-columns: 1fr; }
-            .home-card { grid-column: 1 / -1 !important; }
-            .home-card + .home-card { margin-top: 0.4rem; }
-            .project-media { grid-template-columns: 1fr; }
+            .flow-section {
+                padding: 1.15rem 1rem;
+            }
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
         }
         @media (max-width: 700px) {
             .hero-title { font-size:2.2rem; }
+            .hero-subtitle { font-size:1.05rem; }
+            .hero-focus { font-size:0.86rem; }
         }
     </style>
 </head>
@@ -251,11 +210,15 @@
             <h1 class="hero-title">Alice Dissoubray</h1>
             <p class="hero-subtitle">
               <span class="en"><strong>Python & Blender Tools Developer<br>Rendering &middot; Geometric Modeling &middot; Image and Audio‑visual Processing &middot; Computer Graphics &middot; Deep Learning</strong></span>
-              <span class="fr"><strong>D&eacute;veloppeuse Python & Outils Blender<br>Rendu &middot; Rod&eacute;lisation G&eacute;om&eacute;trique &middot; Traitement d’Images et Audio‑Visuel &middot; Apprentissage Profond</strong></span>
+              <span class="fr"><strong>D&eacute;veloppeuse Python & Outils Blender<br>Rendu &middot; Mod&eacute;lisation G&eacute;om&eacute;trique &middot; Traitement d’images et donn&eacute;es audiovisuelles &middot; Images de synth&egrave;se &middot; Apprentissage profond</strong></span>
             </p>
             <p class="hero-subtitle">
                             <span class="en">Curious and excited to apply what I’ve learned and my technical knowledge from my courses to animation. I enjoy exploring new workflows, creating tools, and bringing creative ideas to life in studio environments.</span>
                             <span class="fr">Curieuse et enthousiaste à l’idée d’utiliser ce que j’ai appris et mes connaissances techniques acquises en cours pour l’animation. J’aime explorer de nouveaux workflows, créer des outils et donner vie à des idées créatives en studio.</span>
+            </p>
+            <p class="hero-focus">
+                <span class="en">Open to animation studio roles: Python tools, pipeline support, and technical R&D.</span>
+                <span class="fr">Ouverte aux postes en studio d’animation : outils Python, support pipeline et R&D technique.</span>
             </p>
         </div>
     </div>
@@ -271,7 +234,7 @@
         <a href="contact.html"><span class="en">Contact</span><span class="fr">Contact</span></a>
     </nav>
 
-    <main>
+    <main class="home-main">
         <section class="skills flow-section">
             <h2 class="section-title"><span class="en">Software & Tools</span><span class="fr">Logiciels & Outils</span></h2>
             <ul>
@@ -331,6 +294,7 @@
         <section class="flow-section">
             <h2 class="section-title"><span class="en">Work-Related Projects</span><span class="fr">Projets orientés métier</span></h2>
             <p class="section-lead"><span class="en">Selected team and academic projects focused on software engineering, systems, optimization, and AI workflows.</span><span class="fr">Sélection de projets d’équipe et académiques orientés ingénierie logicielle, systèmes, optimisation et workflows IA.</span></p>
+            <h3 class="group-title"><span class="en">Software & Systems</span><span class="fr">Logiciel & systèmes</span></h3>
             <div class="highlights-grid">
                 <div class="highlight-card">
                     <h4><span class="en">MiniShell in C</span><span class="fr">MiniShell en C</span></h4>
@@ -345,12 +309,6 @@
                     <div class="highlight-tags"><span>Java</span><span>Agile</span><span>Team Project</span></div>
                 </div>
                 <div class="highlight-card">
-                    <h4><span class="en">Optimization & Operations Research</span><span class="fr">Optimisation & recherche opérationnelle</span></h4>
-                    <p class="en">Modeled and solved optimization problems with Julia, focusing on mathematical formulation and performance of solutions.</p>
-                    <p class="fr">Modélisation et résolution de problèmes d’optimisation avec Julia, avec focus sur la formulation mathématique et la performance des solutions.</p>
-                    <div class="highlight-tags"><span>Julia</span><span>Optimization</span><span>Operations Research</span></div>
-                </div>
-                <div class="highlight-card">
                     <h4><span class="en">Compiler Project</span><span class="fr">Projet compilateur</span></h4>
                     <p class="en">Implemented compiler components in OCaml, from language processing steps to intermediate representations.</p>
                     <p class="fr">Implémentation de composants de compilateur en OCaml, des étapes de traitement du langage jusqu’aux représentations intermédiaires.</p>
@@ -363,12 +321,6 @@
                     <div class="highlight-tags"><span>Eclipse</span><span>Java</span><span>Model-Driven Engineering</span></div>
                 </div>
                 <div class="highlight-card">
-                    <h4><span class="en">Image Database + YOLO Pipeline</span><span class="fr">Base d’images + pipeline YOLO</span></h4>
-                    <p class="en">Built an image dataset, created bounding-box annotations, and trained YOLO models for iterative object detection experiments.</p>
-                    <p class="fr">Création d’une base d’images, annotation de boîtes de détection, puis entraînement de modèles YOLO dans une boucle d’expérimentation itérative.</p>
-                    <div class="highlight-tags"><span>Python</span><span>Dataset</span><span>Annotation</span><span>YOLO</span></div>
-                </div>
-                <div class="highlight-card">
                     <h4><span class="en">Network Architecture Project</span><span class="fr">Projet réseau : conception d’architecture</span></h4>
                     <p class="en">Designed and documented a network architecture with focus on topology, services, and deployment constraints.</p>
                     <p class="fr">Conception et documentation d’une architecture réseau avec focus sur la topologie, les services et les contraintes de déploiement.</p>
@@ -379,6 +331,21 @@
                     <p class="en">Manipulated and validated bus/register behavior in SHDL to understand low-level hardware architecture mechanisms.</p>
                     <p class="fr">Manipulation et validation du comportement des bus et registres en SHDL pour comprendre les mécanismes bas niveau d’architecture matérielle.</p>
                     <div class="highlight-tags"><span>SHDL</span><span>Computer Architecture</span><span>Bus</span><span>Registers</span></div>
+                </div>
+            </div>
+            <h3 class="group-title"><span class="en">Data, Vision & AI</span><span class="fr">Données, vision & IA</span></h3>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h4><span class="en">Optimization & Operations Research</span><span class="fr">Optimisation & recherche opérationnelle</span></h4>
+                    <p class="en">Modeled and solved optimization problems with Julia, focusing on mathematical formulation and performance of solutions.</p>
+                    <p class="fr">Modélisation et résolution de problèmes d’optimisation avec Julia, avec focus sur la formulation mathématique et la performance des solutions.</p>
+                    <div class="highlight-tags"><span>Julia</span><span>Optimization</span><span>Operations Research</span></div>
+                </div>
+                <div class="highlight-card">
+                    <h4><span class="en">Image Database + YOLO Pipeline</span><span class="fr">Base d’images + pipeline YOLO</span></h4>
+                    <p class="en">Built an image dataset, created bounding-box annotations, and trained YOLO models for iterative object detection experiments.</p>
+                    <p class="fr">Création d’une base d’images, annotation de boîtes de détection, puis entraînement de modèles YOLO dans une boucle d’expérimentation itérative.</p>
+                    <div class="highlight-tags"><span>Python</span><span>Dataset</span><span>Annotation</span><span>YOLO</span></div>
                 </div>
             </div>
             <div class="cta-row">
