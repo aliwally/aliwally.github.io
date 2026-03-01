@@ -182,17 +182,39 @@
         .projects-columns {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+            gap: 1.35rem;
+            margin-top: 1.2rem;
+        }
+        .section-kicker {
+            display: inline-block;
+            margin: 0 0 0.65rem 0;
+            padding: 0.22rem 0.6rem;
+            border-radius: 999px;
+            background: #e8f2ed;
+            border: 1px solid #cfe1d9;
+            color: #2c5a4b;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.25px;
+        }
+        .projects-section {
+            margin-top: 2.8rem;
+            border: 1px solid #dbe8e3;
+            background: linear-gradient(170deg, #fcfffe 0%, #f2f8f5 100%);
         }
         .projects-column {
-            background: #f7fbf9;
+            background: #ffffff;
             border: 1px solid #e3ece8;
             border-radius: 16px;
-            padding: 1rem;
+            padding: 1.15rem 1.1rem 1rem 1.1rem;
         }
         .projects-column .group-title {
-            margin: 0 0 0.6rem 0;
+            margin: 0 0 0.2rem 0;
+        }
+        .group-lead-mini {
+            margin: 0 0 0.7rem 0;
+            color: #527468;
+            font-size: 0.92rem;
         }
         .project-list {
             list-style: none;
@@ -200,24 +222,27 @@
             padding: 0;
         }
         .project-item {
-            padding: 0.75rem 0;
+            padding: 0.95rem 0;
             border-top: 1px solid #e1ebe7;
         }
         .project-item:first-child {
             border-top: 0;
-            padding-top: 0.1rem;
+            padding-top: 0.2rem;
         }
         .project-item h4 {
             margin: 0 0 0.3rem 0;
             font-family: 'Fraunces', serif;
             color: var(--forest);
-            font-size: 1.02rem;
+            font-size: 1.05rem;
         }
         .project-item p {
             margin: 0;
             color: #325648;
             line-height: 1.4;
             font-size: 0.95rem;
+        }
+        .project-item .highlight-tags {
+            margin-top: 0.45rem;
         }
         .cta-row {
             display:flex;
@@ -245,6 +270,11 @@
             .highlights-grid {
                 grid-template-columns: 1fr;
             }
+            .projects-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 980px) {
             .projects-columns {
                 grid-template-columns: 1fr;
             }
@@ -347,11 +377,13 @@
         </section>
 
         <section class="flow-section projects-section">
-            <h2 class="section-title"><span class="en">Project Snapshot</span><span class="fr">Aperçu des projets</span></h2>
-            <p class="section-lead"><span class="en">A compact overview of the most relevant projects. Full details are available in Portfolio and Engineering Course pages.</span><span class="fr">Un aper&ccedil;u compact des projets les plus pertinents. Les d&eacute;tails complets sont disponibles dans les pages Portfolio et Cursus Ing&eacute;nieur.</span></p>
+            <p class="section-kicker"><span class="en">Academic Coursework</span><span class="fr">Projets acad&eacute;miques</span></p>
+            <h2 class="section-title"><span class="en">Academic Projects</span><span class="fr">Projets scolaires</span></h2>
+            <p class="section-lead"><span class="en">All projects below were completed in coursework or team assignments at ENSEEIHT.</span><span class="fr">Tous les projets ci-dessous ont &eacute;t&eacute; r&eacute;alis&eacute;s dans le cadre de cours ou de projets d&rsquo;&eacute;quipe &agrave; l&rsquo;ENSEEIHT.</span></p>
             <div class="projects-columns">
                 <article class="projects-column">
                     <h3 class="group-title"><span class="en">Software & Systems</span><span class="fr">Logiciel & syst&egrave;mes</span></h3>
+                    <p class="group-lead-mini"><span class="en">Coursework projects in programming and systems.</span><span class="fr">Projets de cours en programmation et syst&egrave;mes.</span></p>
                     <ul class="project-list">
                         <li class="project-item">
                             <h4><span class="en">MiniShell in C</span><span class="fr">MiniShell en C</span></h4>
@@ -377,6 +409,7 @@
                 </article>
                 <article class="projects-column">
                     <h3 class="group-title"><span class="en">Data, Vision & AI</span><span class="fr">Donn&eacute;es, vision & IA</span></h3>
+                    <p class="group-lead-mini"><span class="en">Coursework projects in data, modeling, and computer vision.</span><span class="fr">Projets de cours en donn&eacute;es, mod&eacute;lisation et vision par ordinateur.</span></p>
                     <ul class="project-list">
                         <li class="project-item">
                             <h4><span class="en">Dataset + YOLO Pipeline</span><span class="fr">Dataset + pipeline YOLO</span></h4>
@@ -402,8 +435,8 @@
                 </article>
             </div>
             <div class="cta-row">
-                <a href="portfolio.html"><span class="en">See portfolio projects</span><span class="fr">Voir les projets portfolio</span></a>
-                <a href="Engineering_course.html" class="secondary"><span class="en">See academic projects</span><span class="fr">Voir les projets scolaires</span></a>
+                <a href="Engineering_course.html"><span class="en">See full academic project list</span><span class="fr">Voir la liste compl&egrave;te des projets scolaires</span></a>
+                <a href="portfolio.html" class="secondary"><span class="en">See portfolio projects</span><span class="fr">Voir les projets portfolio</span></a>
             </div>
         </section>
 
