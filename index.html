@@ -91,8 +91,12 @@
             color: #2f5547;
             max-width: 760px;
         }
+        .skills {
+            text-align: center;
+        }
         .skills ul {
             columns:2;
+            display: inline-block;
             width: fit-content;
             margin:0 auto 0.5rem auto;
             font-size:1.05rem;
@@ -169,6 +173,12 @@
             font-size: 1.15rem;
             font-weight: 700;
         }
+        .group-lead {
+            margin: 0 0 0.9rem 0;
+            color: #47685c;
+            font-size: 0.98rem;
+            line-height: 1.4;
+        }
         .cta-row {
             display:flex;
             flex-wrap:wrap;
@@ -209,16 +219,16 @@
         <div class="hero-content" id="heroContent">
             <h1 class="hero-title">Alice Dissoubray</h1>
             <p class="hero-subtitle">
-              <span class="en"><strong>Computer Engineering Student &mdash; Image &amp; Multimedia<br>Python &middot; C++ &middot; Pipeline Tools &middot; Data Processing &middot; Computer Graphics</strong></span>
-              <span class="fr"><strong>&Eacute;tudiante ing&eacute;nieure en informatique &mdash; Image &amp; Multim&eacute;dia<br>Python &middot; C++ &middot; Outils pipeline &middot; Traitement de donn&eacute;es &middot; Images de synth&egrave;se</strong></span>
+              <span class="en"><strong>Computer Engineering Student &mdash; Image &amp; Multimedia<br>Python &middot; C++ &middot; AI &middot; Data Processing &middot; Images &middot; 3D Vision &middot; Computer Graphics &middot; Geometric modeling</strong></span>
+              <span class="fr"><strong>&Eacute;tudiante ing&eacute;nieure en informatique &mdash; Image &amp; Multim&eacute;dia<br>Python &middot; C++ &middot; IA &middot; Traitement de données &middot; Image &middot; Vision 3D &middot; Rendu &middot; Modélisation Géométrique</strong></span>
             </p>
             <p class="hero-subtitle">
-                            <span class="en">Second-year Computer Engineering student at ENSEEIHT (Toulouse), specialized in Image and Multimedia. I build technical tools and reliable workflows for image, data, and production contexts.</span>
-                            <span class="fr">&Eacute;tudiante en deuxi&egrave;me ann&eacute;e d&rsquo;ing&eacute;nierie informatique &agrave; l&rsquo;ENSEEIHT (Toulouse), sp&eacute;cialis&eacute;e en Image et Multim&eacute;dia. Je con&ccedil;ois des outils techniques et des workflows fiables pour l&rsquo;image, la donn&eacute;e et la production.</span>
+                            <span class="en">Second-year Computer Engineering student at ENSEEIHT (Toulouse), specialized in Image and Multimedia.</span>
+                            <span class="fr">&Eacute;tudiante en deuxi&egrave;me ann&eacute;e d&rsquo;ing&eacute;nierie informatique &agrave; l&rsquo;ENSEEIHT (Toulouse), sp&eacute;cialis&eacute;e en Image et Multim&eacute;dia.</span>
             </p>
             <p class="hero-focus">
-                <span class="en">Open to technical internships: Python/C++ pipeline tooling, data workflows, and immersive production support.</span>
-                <span class="fr">Ouverte aux stages techniques : outillage pipeline Python/C++, workflows de donn&eacute;es et support de production immersive.</span>
+                <span class="en">Open to technical internships: Python, C++, AI, Data Processing, Images, 3D Vision, Computer Graphics, Geometric modeling</span>
+                <span class="fr">Ouverte aux stages techniques : Python, C++, IA, Traitement de données, Image, Vision 3D, Rendu, Modélisation Géométrique</span>
             </p>
         </div>
     </div>
@@ -244,21 +254,23 @@
                 <li><strong>Java</strong></li>
                 <li>Ada</li>
                 <li>OCaml</li>
+                <li>C#</li>
                 <li><strong>Git & Linux</strong></li>
                 <li>Blender</li>
-                <li>Maya</li>
+                <li>Unity</li>
                 <li>Adobe Lightroom</li>
                 <li>Data Processing</li>
-                <li>Technical Communication</li>
+                <li>OpenCv</li>
+                <li>Matlab</li>
+                <li>Julia</li>
+                <li>Jupyter</li>
             </ul>
             <div class="tag-row">
                 <span class="tag"><span class="en">Rendering</span><span class="fr">Rendu</span></span>
                 <span class="tag"><span class="en">Automation</span><span class="fr">Automatisation</span></span>
-                <span class="tag"><span class="en">Data Management</span><span class="fr">Gestion de donn&eacute;es</span></span>
-                <span class="tag"><span class="en">Production Pipeline</span><span class="fr">Pipeline de production</span></span>
-                <span class="tag"><span class="en">Immersive Workflows</span><span class="fr">Workflows immersifs</span></span>
+                <span class="tag"><span class="en">Data Management</span><span class="fr">Traitement de donn&eacute;es</span></span>
+                <span class="tag"><span class="en">Computer Graphics</span><span class="fr">Vision 3D</span></span>
             </div>
-            <p style="text-align:center; font-size:0.98rem; color:#2a4d3c;"><span class="en">Currently strengthening real-time pipeline skills (Unreal fundamentals, versioning workflows, and CI practices).</span><span class="fr">Je renforce actuellement mes comp&eacute;tences pipeline temps r&eacute;el (bases Unreal, workflows de versioning et pratiques CI).</span></p>
         </section>
         <div class="btn-group">
             <a href="portfolio.html"><span class="en">Portfolio</span><span class="fr">Portfolio</span></a>
@@ -269,14 +281,14 @@
 
         <section class="flow-section">
             <h2 class="section-title"><span class="en">Past Internships</span><span class="fr">Stages passés</span></h2>
-            <p class="section-lead"><span class="en">Hands-on industry experience in Python software engineering, large-data processing, and reproducible technical workflows.</span><span class="fr">Exp&eacute;riences en entreprise orient&eacute;es ing&eacute;nierie logicielle Python, traitement de donn&eacute;es volumineuses et workflows techniques reproductibles.</span></p>
+            <p class="section-lead"><span class="en">Hands-on industry and research experience in Python software engineering, large-data processing, and reproducible technical workflows.</span><span class="fr">Exp&eacute;riences en entreprise et en recherche orient&eacute;es ing&eacute;nierie logicielle Python, traitement de donn&eacute;es volumineuses et workflows techniques reproductibles.</span></p>
             <div class="highlights-grid">
                 <div class="highlight-card">
                     <h4><span class="en">Data Processing Internship</span><span class="fr">Stage en traitement de données</span></h4>
                     <div class="highlight-meta">IRIT, Toulouse · 2024</div>
                     <p class="en">Python scripts for satellite data processing, vegetation evolution analysis, arthropod annotation, and iterative YOLO training with statistical evaluation.</p>
                     <p class="fr">Scripts Python pour le traitement de donn&eacute;es satellites, l&rsquo;analyse de l&rsquo;&eacute;volution de la v&eacute;g&eacute;tation, l&rsquo;annotation d&rsquo;arthropodes et l&rsquo;entra&icirc;nement it&eacute;ratif de mod&egrave;les YOLO avec analyse statistique.</p>
-                    <div class="highlight-tags"><span>Python</span><span>YOLO</span><span>Satellite Data</span><span>Computer Vision</span></div>
+                    <div class="highlight-tags"><span>Python</span><span>YOLO</span><span>CNN</span><span>TensorFlow</span><span>Satellite Data</span><span>Computer Vision</span></div>
                 </div>
                 <div class="highlight-card">
                     <h4><span class="en">Python Software Internship</span><span class="fr">Stage développeur logiciel Python</span></h4>
@@ -291,60 +303,70 @@
             </div>
         </section>
 
-        <section class="flow-section">
+        <section class="flow-section projects-section">
             <h2 class="section-title"><span class="en">Work-Related Projects</span><span class="fr">Projets orientés métier</span></h2>
-            <p class="section-lead"><span class="en">Selected team and academic projects focused on software engineering, systems, network/data architecture, and AI workflows.</span><span class="fr">S&eacute;lection de projets d&rsquo;&eacute;quipe et acad&eacute;miques orient&eacute;s ing&eacute;nierie logicielle, syst&egrave;mes, architecture r&eacute;seau/donn&eacute;es et workflows IA.</span></p>
+            <p class="section-lead"><span class="en">A structured view of projects by domain, with concrete technical focus and methods used.</span><span class="fr">Une vue structur&eacute;e des projets par domaine, avec un focus clair sur les aspects techniques et les m&eacute;thodes utilis&eacute;es.</span></p>
             <h3 class="group-title"><span class="en">Software & Systems</span><span class="fr">Logiciel & systèmes</span></h3>
+            <p class="group-lead"><span class="en">Core engineering projects in systems programming, software architecture, and low-level computing.</span><span class="fr">Projets d&rsquo;ing&eacute;nierie centr&eacute;s sur la programmation syst&egrave;me, l&rsquo;architecture logicielle et l&rsquo;informatique bas niveau.</span></p>
             <div class="highlights-grid">
                 <div class="highlight-card">
                     <h4><span class="en">MiniShell in C</span><span class="fr">MiniShell en C</span></h4>
-                    <p class="en">Developed a Unix-like command interpreter in C with process handling, parsing, and core shell features.</p>
-                    <p class="fr">Développement d’un interpréteur de commandes type Unix en C, avec gestion des processus, parsing et fonctionnalités principales d’un shell.</p>
+                    <div class="highlight-meta"><span class="en">Academic project · Systems programming</span><span class="fr">Projet acad&eacute;mique · Programmation syst&egrave;me</span></div>
+                    <p class="en">Implemented a Unix-like shell in C with command parsing, process management, and key shell behaviors.</p>
+                    <p class="fr">Impl&eacute;mentation d&rsquo;un shell type Unix en C avec parsing des commandes, gestion des processus et comportements essentiels d&rsquo;un shell.</p>
                     <div class="highlight-tags"><span>C</span><span>Systems</span><span>CLI</span></div>
                 </div>
                 <div class="highlight-card">
                     <h4><span class="en">Agile Java Game Project</span><span class="fr">Projet de jeu Java en méthode agile</span></h4>
-                    <p class="en">Built a game in a team project using Java and agile organization (planning, iterations, and collaborative delivery).</p>
-                    <p class="fr">Réalisation d’un jeu en projet de groupe avec Java et organisation agile (planification, itérations et livrables collaboratifs).</p>
+                    <div class="highlight-meta"><span class="en">Team project · Agile delivery</span><span class="fr">Projet d&rsquo;&eacute;quipe · Livraison agile</span></div>
+                    <p class="en">Built a Java game in team mode with sprint planning, iterative delivery, and shared code ownership.</p>
+                    <p class="fr">R&eacute;alisation d&rsquo;un jeu Java en &eacute;quipe avec planification par sprints, livraisons it&eacute;ratives et responsabilit&eacute; de code partag&eacute;e.</p>
                     <div class="highlight-tags"><span>Java</span><span>Agile</span><span>Team Project</span></div>
                 </div>
                 <div class="highlight-card">
                     <h4><span class="en">Compiler Project</span><span class="fr">Projet compilateur</span></h4>
-                    <p class="en">Implemented compiler components in OCaml, from language processing steps to intermediate representations.</p>
-                    <p class="fr">Implémentation de composants de compilateur en OCaml, des étapes de traitement du langage jusqu’aux représentations intermédiaires.</p>
+                    <div class="highlight-meta"><span class="en">Academic project · Language tooling</span><span class="fr">Projet acad&eacute;mique · Outils langage</span></div>
+                    <p class="en">Implemented key compiler stages in OCaml, from parsing and semantic checks to intermediate representations.</p>
+                    <p class="fr">Impl&eacute;mentation des &eacute;tapes cl&eacute;s d&rsquo;un compilateur en OCaml, du parsing aux v&eacute;rifications s&eacute;mantiques puis aux repr&eacute;sentations interm&eacute;diaires.</p>
                     <div class="highlight-tags"><span>OCaml</span><span>Compiler</span><span>Language Processing</span></div>
                 </div>
                 <div class="highlight-card">
-                    <h4><span class="en">IDM Model Representation</span><span class="fr">Représentation de modèles IDM</span></h4>
-                    <p class="en">Worked on model representation workflows using Eclipse and Java for model-driven engineering tasks.</p>
-                    <p class="fr">Travail sur des workflows de représentation de modèles avec Eclipse et Java dans un cadre d’ingénierie dirigée par les modèles.</p>
+                    <h4><span class="en">Model-Driven Engineering (IDM)</span><span class="fr">Ing&eacute;nierie dirig&eacute;e par les mod&egrave;les (IDM)</span></h4>
+                    <div class="highlight-meta"><span class="en">Academic project · Modeling workflow</span><span class="fr">Projet acad&eacute;mique · Workflow de mod&eacute;lisation</span></div>
+                    <p class="en">Designed model-representation workflows using Eclipse and Java for model-driven engineering tasks.</p>
+                    <p class="fr">Conception de workflows de repr&eacute;sentation de mod&egrave;les avec Eclipse et Java dans un cadre d&rsquo;ing&eacute;nierie dirig&eacute;e par les mod&egrave;les.</p>
                     <div class="highlight-tags"><span>Eclipse</span><span>Java</span><span>Model-Driven Engineering</span></div>
                 </div>
                 <div class="highlight-card">
-                    <h4><span class="en">Network Architecture Project</span><span class="fr">Projet réseau : conception d’architecture</span></h4>
-                    <p class="en">Designed and documented a network architecture with focus on topology, services, data flows, and deployment constraints.</p>
-                    <p class="fr">Conception et documentation d&rsquo;une architecture r&eacute;seau avec focus sur la topologie, les services, les flux de donn&eacute;es et les contraintes de d&eacute;ploiement.</p>
+                    <h4><span class="en">Network Architecture Design</span><span class="fr">Conception d&rsquo;architecture r&eacute;seau</span></h4>
+                    <div class="highlight-meta"><span class="en">Team project · Architecture and documentation</span><span class="fr">Projet d&rsquo;&eacute;quipe · Architecture et documentation</span></div>
+                    <p class="en">Specified network topology, services, and data flows, then documented deployment constraints and design choices.</p>
+                    <p class="fr">D&eacute;finition de la topologie r&eacute;seau, des services et des flux de donn&eacute;es, puis documentation des contraintes de d&eacute;ploiement et choix d&rsquo;architecture.</p>
                     <div class="highlight-tags"><span>Networks</span><span>Architecture</span><span>System Design</span></div>
                 </div>
                 <div class="highlight-card">
                     <h4><span class="en">Computer Architecture Project (SHDL)</span><span class="fr">Projet architecture (SHDL)</span></h4>
-                    <p class="en">Manipulated and validated bus/register behavior in SHDL to understand low-level hardware architecture mechanisms.</p>
-                    <p class="fr">Manipulation et validation du comportement des bus et registres en SHDL pour comprendre les mécanismes bas niveau d’architecture matérielle.</p>
+                    <div class="highlight-meta"><span class="en">Academic project · Low-level hardware logic</span><span class="fr">Projet acad&eacute;mique · Logique mat&eacute;rielle bas niveau</span></div>
+                    <p class="en">Modeled and verified bus/register behavior in SHDL to understand low-level computer architecture mechanisms.</p>
+                    <p class="fr">Mod&eacute;lisation et validation du comportement des bus et registres en SHDL pour comprendre les m&eacute;canismes d&rsquo;architecture mat&eacute;rielle bas niveau.</p>
                     <div class="highlight-tags"><span>SHDL</span><span>Computer Architecture</span><span>Bus</span><span>Registers</span></div>
                 </div>
             </div>
             <h3 class="group-title"><span class="en">Data, Vision & AI</span><span class="fr">Données, vision & IA</span></h3>
+            <p class="group-lead"><span class="en">Applied projects around optimization, dataset engineering, and computer vision experimentation.</span><span class="fr">Projets appliqu&eacute;s autour de l&rsquo;optimisation, de l&rsquo;ing&eacute;nierie de donn&eacute;es et de l&rsquo;exp&eacute;rimentation en vision par ordinateur.</span></p>
             <div class="highlights-grid">
                 <div class="highlight-card">
                     <h4><span class="en">Optimization & Operations Research</span><span class="fr">Optimisation & recherche opérationnelle</span></h4>
-                    <p class="en">Modeled and solved optimization problems with Julia, focusing on mathematical formulation and performance of solutions.</p>
-                    <p class="fr">Modélisation et résolution de problèmes d’optimisation avec Julia, avec focus sur la formulation mathématique et la performance des solutions.</p>
+                    <div class="highlight-meta"><span class="en">Academic project · Mathematical optimization</span><span class="fr">Projet acad&eacute;mique · Optimisation math&eacute;matique</span></div>
+                    <p class="en">Formulated and solved optimization problems with Julia, comparing solution quality and computational performance.</p>
+                    <p class="fr">Formulation et r&eacute;solution de probl&egrave;mes d&rsquo;optimisation avec Julia, avec comparaison de la qualit&eacute; des solutions et des performances de calcul.</p>
                     <div class="highlight-tags"><span>Julia</span><span>Optimization</span><span>Operations Research</span></div>
                 </div>
                 <div class="highlight-card">
-                    <h4><span class="en">Image Database + YOLO Pipeline</span><span class="fr">Base d’images + pipeline YOLO</span></h4>
-                    <p class="en">Built an image dataset, created bounding-box annotations, and trained YOLO models for iterative object detection experiments.</p>
-                    <p class="fr">Création d’une base d’images, annotation de boîtes de détection, puis entraînement de modèles YOLO dans une boucle d’expérimentation itérative.</p>
+                    <h4><span class="en">Computer Vision Dataset & YOLO Pipeline</span><span class="fr">Dataset vision & pipeline YOLO</span></h4>
+                    <div class="highlight-meta"><span class="en">Applied project · Data pipeline and training loop</span><span class="fr">Projet appliqu&eacute; · Pipeline de donn&eacute;es et boucle d&rsquo;entra&icirc;nement</span></div>
+                    <p class="en">Built an image dataset, produced bounding-box annotations, and iteratively trained YOLO models for object-detection evaluation.</p>
+                    <p class="fr">Construction d&rsquo;un dataset d&rsquo;images, production d&rsquo;annotations de bo&icirc;tes englobantes, puis entra&icirc;nement it&eacute;ratif de mod&egrave;les YOLO pour l&rsquo;&eacute;valuation de la d&eacute;tection d&rsquo;objets.</p>
                     <div class="highlight-tags"><span>Python</span><span>Dataset</span><span>Annotation</span><span>YOLO</span></div>
                 </div>
             </div>
