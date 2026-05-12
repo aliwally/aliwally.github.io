@@ -1,269 +1,777 @@
+Claude a terminé la réponse.
+Vous avez dit : <!
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <title>INP‑ENSEEIHT — TP TAV</title>
+  <link rel="stylesheet" href="css/site.css">
+  <style>body{max-width:900px;margin:2rem auto;padding:1rem;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#222}</style>
+</head>
+<body>
+  <main>
+    <h1>Traitement des Données Audiovisuelles - Rapport de TP</h1>
+    <section id="overview" style="margin-top:1.5rem">
+      <h2>coucou</h2>
+      <p>Les tpss</p>
+    </section>
+    <section id="selection" style="margin-top:1.5rem">
+      <h2>Les Tp choisis</h2>
+      <p>TP....</p>
+    </section>
+    <section id="TP1" style="margin-top:1.5rem">
+      <h2>Les Tp 1</h2>
+      <p>TP....</p>
+    </section>
+  </main>
+</body>
+</html>
+je veux un format et des couleurs pour en faire un truc agréable à lire, pas fatiguant, fun
+17:20
+Claude a répondu : Voilà !
+Consulté un fichier, fichier créé, lu un fichier
+
+Voilà ! Ce que j'ai mis en place :
+
+    Palette douce et chaude — fond beige crème, cartes blanches, accents colorés (corail, turquoise, jaune, violet) sans que ça pique les yeux
+    Typographie Syne pour les titres (fun, géométrique) + DM Sans pour le corps (très lisible)
+    Cartes avec badges numérotés pour chaque section — facile de se repérer d'un coup d'œil
+    Animation d'apparition subtile au chargement pour que ce soit vivant
+    Hover effect sur les cartes (légère élévation)
+    Un petit grain de texture en fond pour que ce ne soit pas trop plat
+
+Tu peux maintenant remplir les <p> avec ton vrai contenu, ajouter des <div class="card"> pour d'autres TP, et ça s'adapte tout seul !
+Tp tav
+Code · HTML 
+Vous avez dit : c'est pour faire ça INP-ENSEEIHT 2e année SN – Image et Multimédia
+
+c'est pour faire ça INP-ENSEEIHT 2e année SN – Image et Multimédia
+Instructions concernant le rapport de TP
+• Le rapport de TAV devra être déposé sur Moodle, au plus tard le dimanche 31 mai 2026.
+• Ce rapport est individuel et compte pour 50% de la note de l’UE.
+• Vous devrez choisir 5 TP parmi les 10 séances allant du TP3 au TP12 (précisez votre choix).
+• Pour chacun de ces 5 TP, il vous est demandé de ne pas suivre le déroulé du sujet, mais au
+contraire, de faire preuve d’originalité dans la présentation des résultats. Même si les TP sont
+totalement indépendants, il n’est pas interdit de faire des liens entre eux.
+• Une des pistes d’amélioration consiste à réaliser la partie facultative (fortement recommandé).
+• Toutes les extensions qui vous paraissent pertinentes seront les bienvenues : nouvelles données,
+nouveaux jeux de paramètres, autres façons d’aborder le problème, application de la méthode à
+d’autres problèmes.
+• Sur la forme, vous pouvez opter pour un pdf, accompagné éventuellement d’un dossier de résul-
+tats (pour le son notamment), ou pour tout autre manière de rendre le rapport agréable à lire
+(page html, par exemple).
+• Il vous est demandé de ne pas excéder l’équivalent de 5 pages par TP, soit 25 pages en tout.
+Veillez à soigner la présentation, et en particulier l’orthographe (merci de bien vouloir vous relire).
+• Enfin, il est inutile de mettre vos codes à jour sur Moodle. L’important est de respecter la date
+limite de dépôt du rapport sur Moodle !
+Traitement des données audiovisuelles 1/1 2025-2026
+17:22
+Claude a répondu : Cool, donc c'est un vrai rapport académique à rendre !
+
+Cool, donc c'est un vrai rapport académique à rendre ! Avec ces contraintes en tête (5 TP choisis parmi 10, ~5 pages par TP, présentation originale), je peux t'aider de plusieurs façons :
+Vous avez dit : Q : Tu en es où dans le rapport ?
+
+Q : Tu en es où dans le rapport ?
+R : Je pars de zéro, j'ai juste la structure vide
+
+Q : Tu veux que je t'aide sur quoi en priorité ?
+R : Améliorer le design/mise en page HTML
+17:23
+Claude a répondu : Parfait !
+
+Parfait ! Donc l'idée c'est de construire une belle base HTML prête à remplir, avec une structure adaptée à un rapport de 5 TP.
+
+Une dernière chose avant de me lancer :
+Vous avez dit : Q : Tu as déjà choisi tes 5 TP ?
+
+Q : Tu as déjà choisi tes 5 TP ? (pour mettre les bons titres dans la structure)
+R : Non pas encore
+17:23
+Claude a répondu : Pas de souci, je vais faire une structure générique avec 5 TP numérotés, facile à renommer ensuite.
+
+Pas de souci, je vais faire une structure générique avec 5 TP numérotés, facile à renommer ensuite. Je génère une base complète et bien pensée pour un rapport HTML de qualité !
+Fichier créé, lu un fichier
+
+Voilà ta base complète ! Voici ce que j'ai intégré dans la structure :
+
+Navigation — petits points colorés sur le côté gauche, un par section, qui s'activent au scroll.
+
+Structure par TP — chaque TP a 4 blocs prêts à remplir :
+
+    Contexte & objectifs
+    Méthode & implémentation (avec zone de code)
+    Résultats (zone pour images + encart observation)
+    Analyse & extensions
+
+Chaque TP a sa couleur (corail, teal, violet, rose, jaune) qui se retrouve sur le bandeau supérieur de la carte et les accents.
+
+Pour remplir : cherche tous les <!-- ✏️  --> dans le fichier, c'est là que tu mets ton contenu. Pour les images, remplace les zones 📷 par <img src="ton_image.png" alt="...">.
+
+Quand tu auras choisi tes 5 TP, je peux mettre à jour les titres et labels directement !
+Rapport tav
+Code · HTML 
+Vous n’avez plus de messages gratuits jusqu’à 22:20.
+Obtenir plus
+
+
+Claude est une IA et peut faire des erreurs. Veuillez vérifier les réponses.
+Rapport tav · HTML
 <!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INP‑ENSEEIHT — TP TAV</title>
+  <title>Rapport TAV — INP‑ENSEEIHT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
   <style>
+    /* ── TOKENS ─────────────────────────────────────────────── */
     :root {
-      --bg: #F7F4EF;
-      --ink: #1a1a2e;
-      --accent1: #FF6B6B;
-      --accent2: #4ECDC4;
-      --accent3: #FFE66D;
-      --accent4: #A29BFE;
-      --card: #ffffff;
-      --muted: #7f8c8d;
-      --border: #e0dbd0;
+      --bg:        #F5F2EC;
+      --surface:   #FFFFFF;
+      --ink:       #1C1C2A;
+      --muted:     #6B6B7A;
+      --border:    #DDD8CE;
+      --tp1:       #FF6B6B;   /* coral   */
+      --tp2:       #4ECDC4;   /* teal    */
+      --tp3:       #A29BFE;   /* violet  */
+      --tp4:       #FDA7DF;   /* rose    */
+      --tp5:       #F9CA24;   /* jaune   */
+      --tp1-light: #FFF0F0;
+      --tp2-light: #EDFAF9;
+      --tp3-light: #F0EFFE;
+      --tp4-light: #FEF0FA;
+      --tp5-light: #FFFAED;
+      --r: 1.1rem;
+      --r-lg: 1.5rem;
     }
-
+ 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
+    html { scroll-behavior: smooth; }
+ 
     body {
       background: var(--bg);
       color: var(--ink);
       font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
-      line-height: 1.7;
-      min-height: 100vh;
+      line-height: 1.75;
     }
-
-    /* Grain overlay */
-    body::before {
-      content: '';
+ 
+    /* ── NAV LATÉRALE ───────────────────────────────────────── */
+    .sidenav {
       position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.5;
-    }
-
-    /* HEADER */
-    header {
-      position: relative;
-      padding: 3rem 2rem 2rem;
-      max-width: 860px;
-      margin: 0 auto;
-      animation: fadeUp 0.6s ease both;
-    }
-
-    .school-tag {
-      display: inline-block;
-      background: var(--ink);
-      color: var(--accent3);
-      font-family: 'Syne', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.8rem;
-      border-radius: 2rem;
-      margin-bottom: 1.2rem;
-    }
-
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
-
-    h1 .highlight {
-      position: relative;
-      display: inline-block;
-      color: var(--accent1);
-    }
-
-    h1 .highlight::after {
-      content: '';
-      position: absolute;
-      bottom: 0.05em;
-      left: 0; right: 0;
-      height: 0.35em;
-      background: var(--accent3);
-      opacity: 0.4;
-      z-index: -1;
-      border-radius: 2px;
-    }
-
-    .subtitle {
-      margin-top: 0.6rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* DIVIDER */
-    .divider {
-      max-width: 860px;
-      margin: 0 auto 1rem;
-      padding: 0 2rem;
-    }
-    .divider hr {
-      border: none;
-      border-top: 2px dashed var(--border);
-    }
-
-    /* MAIN LAYOUT */
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 2rem 4rem;
+      left: max(1rem, calc(50% - 560px));
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 0.55rem;
+      z-index: 100;
     }
-
-    /* SECTION CARDS */
-    .card {
-      background: var(--card);
-      border-radius: 1.2rem;
-      padding: 2rem 2.2rem;
-      border: 1.5px solid var(--border);
-      position: relative;
-      overflow: hidden;
-      animation: fadeUp 0.5s ease both;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+ 
+    .sidenav a {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      border: 2px solid var(--border);
+      transition: background 0.2s, transform 0.2s;
+      display: block;
+      text-decoration: none;
     }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    .sidenav a:hover,
+    .sidenav a.active { background: var(--ink); border-color: var(--ink); transform: scale(1.3); }
+    .sidenav a[data-tp="1"]:hover, .sidenav a[data-tp="1"].active { background: var(--tp1); border-color: var(--tp1); }
+    .sidenav a[data-tp="2"]:hover, .sidenav a[data-tp="2"].active { background: var(--tp2); border-color: var(--tp2); }
+    .sidenav a[data-tp="3"]:hover, .sidenav a[data-tp="3"].active { background: var(--tp3); border-color: var(--tp3); }
+    .sidenav a[data-tp="4"]:hover, .sidenav a[data-tp="4"].active { background: var(--tp4); border-color: var(--tp4); }
+    .sidenav a[data-tp="5"]:hover, .sidenav a[data-tp="5"].active { background: var(--tp5); border-color: var(--tp5); }
+ 
+    /* ── PAGE WRAPPER ───────────────────────────────────────── */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
     }
-
-    .card:nth-child(1) { animation-delay: 0.1s; }
-    .card:nth-child(2) { animation-delay: 0.2s; }
-    .card:nth-child(3) { animation-delay: 0.3s; }
-
-    /* Colored corner accent */
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 80px; height: 80px;
-      border-radius: 0 1.2rem 0 80px;
+ 
+    /* ── HERO ───────────────────────────────────────────────── */
+    .hero {
+      padding: 5rem 0 3.5rem;
+      animation: up 0.7s ease both;
     }
-
-    .card:nth-child(1)::before { background: color-mix(in srgb, var(--accent2) 15%, transparent); }
-    .card:nth-child(2)::before { background: color-mix(in srgb, var(--accent4) 15%, transparent); }
-    .card:nth-child(3)::before { background: color-mix(in srgb, var(--accent1) 15%, transparent); }
-
-    /* Section number badge */
-    .section-badge {
+ 
+    .tag {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.8rem;
+      gap: 0.4rem;
+      background: var(--ink);
+      color: var(--tp5);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 2rem;
+      margin-bottom: 1.5rem;
     }
-
-    .badge-num {
-      width: 2rem; height: 2rem;
+ 
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+ 
+    h1 em {
+      font-style: normal;
+      position: relative;
+    }
+    h1 em::after {
+      content: '';
+      position: absolute;
+      bottom: 0.08em; left: 0; right: 0;
+      height: 0.28em;
+      background: var(--tp5);
+      opacity: 0.55;
+      z-index: -1;
+      border-radius: 3px;
+    }
+ 
+    .hero-meta {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+ 
+    .hero-meta strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+ 
+    /* ── DIVIDER ────────────────────────────────────────────── */
+    hr.dashed {
+      border: none;
+      border-top: 1.5px dashed var(--border);
+      margin: 0 0 3rem;
+    }
+ 
+    /* ── INTRO CARD ─────────────────────────────────────────── */
+    .intro-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      animation: up 0.5s 0.1s ease both;
+    }
+ 
+    .intro-card h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+ 
+    .intro-card p {
+      font-size: 0.95rem;
+      color: #3d3d52;
+    }
+ 
+    /* ── CHOIX DES TP ───────────────────────────────────────── */
+    .tp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0.75rem;
+      margin: 1.2rem 0;
+    }
+ 
+    .tp-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 2rem;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: border-color 0.2s, background 0.2s;
+    }
+ 
+    .tp-pill .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+ 
+    .tp-pill[data-tp="1"] .dot { background: var(--tp1); }
+    .tp-pill[data-tp="2"] .dot { background: var(--tp2); }
+    .tp-pill[data-tp="3"] .dot { background: var(--tp3); }
+    .tp-pill[data-tp="4"] .dot { background: var(--tp4); }
+    .tp-pill[data-tp="5"] .dot { background: var(--tp5); }
+ 
+    .tp-pill a { color: inherit; text-decoration: none; }
+    .tp-pill:hover { border-color: var(--ink); }
+ 
+    /* ── SECTION TP ─────────────────────────────────────────── */
+    .tp-section {
+      margin-bottom: 2.5rem;
+      animation: up 0.5s ease both;
+      scroll-margin-top: 3rem;
+    }
+ 
+    .tp-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 1.3rem;
+    }
+ 
+    .tp-num {
+      flex-shrink: 0;
+      width: 3rem; height: 3rem;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Syne', sans-serif;
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-weight: 800;
-      flex-shrink: 0;
     }
-
-    .card:nth-child(1) .badge-num { background: var(--accent2); color: var(--ink); }
-    .card:nth-child(2) .badge-num { background: var(--accent4); color: white; }
-    .card:nth-child(3) .badge-num { background: var(--accent1); color: white; }
-
-    .badge-label {
+ 
+    .tp-section[data-tp="1"] .tp-num { background: var(--tp1-light); color: var(--tp1); }
+    .tp-section[data-tp="2"] .tp-num { background: var(--tp2-light); color: #0ea59e; }
+    .tp-section[data-tp="3"] .tp-num { background: var(--tp3-light); color: #6c5ce7; }
+    .tp-section[data-tp="4"] .tp-num { background: var(--tp4-light); color: #d63ab6; }
+    .tp-section[data-tp="5"] .tp-num { background: var(--tp5-light); color: #c9a600; }
+ 
+    .tp-header-text {}
+    .tp-label {
       font-size: 0.7rem;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
+      margin-bottom: 0.1rem;
     }
-
-    h2 {
+ 
+    .tp-section[data-tp="1"] .tp-label { color: var(--tp1); }
+    .tp-section[data-tp="2"] .tp-label { color: #0ea59e; }
+    .tp-section[data-tp="3"] .tp-label { color: #6c5ce7; }
+    .tp-section[data-tp="4"] .tp-label { color: #d63ab6; }
+    .tp-section[data-tp="5"] .tp-label { color: #c9a600; }
+ 
+    h2.tp-title {
       font-family: 'Syne', sans-serif;
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.7rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
     }
-
-    p {
-      color: #3d3d4f;
-      font-size: 0.97rem;
+ 
+    /* Card conteneur d'un TP */
+    .tp-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
     }
-
-    /* FOOTER */
+ 
+    .tp-section[data-tp="1"] .tp-card { border-top: 3px solid var(--tp1); }
+    .tp-section[data-tp="2"] .tp-card { border-top: 3px solid var(--tp2); }
+    .tp-section[data-tp="3"] .tp-card { border-top: 3px solid var(--tp3); }
+    .tp-section[data-tp="4"] .tp-card { border-top: 3px solid var(--tp4); }
+    .tp-section[data-tp="5"] .tp-card { border-top: 3px solid var(--tp5); }
+ 
+    /* Sous-sections internes */
+    .tp-block {
+      padding: 1.5rem 1.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .tp-block:last-child { border-bottom: none; }
+ 
+    .tp-block h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+ 
+    .tp-block p, .tp-block li {
+      font-size: 0.95rem;
+      color: #3d3d52;
+    }
+ 
+    .tp-block ul, .tp-block ol {
+      padding-left: 1.3rem;
+    }
+ 
+    .tp-block li { margin-bottom: 0.3rem; }
+ 
+    /* Zone figure / image */
+    .fig-zone {
+      background: var(--bg);
+      border: 1.5px dashed var(--border);
+      border-radius: var(--r);
+      min-height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 1.5rem;
+      margin: 0.8rem 0;
+      gap: 0.5rem;
+    }
+ 
+    .fig-zone img {
+      max-width: 100%;
+      border-radius: 0.5rem;
+    }
+ 
+    /* Bloc résultat / observation */
+    .result-box {
+      background: #F7F9FC;
+      border-left: 3px solid var(--tp3);
+      border-radius: 0 var(--r) var(--r) 0;
+      padding: 0.85rem 1.1rem;
+      font-size: 0.93rem;
+      color: #3d3d52;
+      margin: 0.8rem 0;
+    }
+ 
+    .tp-section[data-tp="1"] .result-box { border-left-color: var(--tp1); }
+    .tp-section[data-tp="2"] .result-box { border-left-color: var(--tp2); }
+    .tp-section[data-tp="3"] .result-box { border-left-color: var(--tp3); }
+    .tp-section[data-tp="4"] .result-box { border-left-color: var(--tp4); }
+    .tp-section[data-tp="5"] .result-box { border-left-color: var(--tp5); }
+ 
+    /* ── CODE ───────────────────────────────────────────────── */
+    pre, code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+    }
+ 
+    pre {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: var(--r);
+      padding: 1.1rem 1.3rem;
+      overflow-x: auto;
+      margin: 0.8rem 0;
+    }
+ 
+    code { background: #ECEAF5; color: #5a3ea8; padding: 0.1em 0.35em; border-radius: 0.3em; }
+    pre code { background: none; color: inherit; padding: 0; }
+ 
+    /* ── FOOTER ─────────────────────────────────────────────── */
     footer {
       text-align: center;
-      padding: 2rem;
-      font-size: 0.8rem;
+      padding: 3rem 0 2rem;
+      font-size: 0.82rem;
       color: var(--muted);
     }
-
-    footer span {
+ 
+    footer .badge {
       display: inline-block;
       background: var(--ink);
       color: var(--bg);
-      padding: 0.2rem 0.7rem;
-      border-radius: 1rem;
       font-family: 'Syne', sans-serif;
       font-size: 0.75rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 2rem;
+      margin-bottom: 0.7rem;
     }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+ 
+    /* ── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes up {
+      from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
+    }
+ 
+    @media (max-width: 700px) {
+      .sidenav { display: none; }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="school-tag">INP‑ENSEEIHT</div>
-    <h1>Traitement des Données<br><span class="highlight">Audiovisuelles</span> — TP</h1>
-    <p class="subtitle">Rapport de travaux pratiques · TAV</p>
+ 
+<!-- Navigation latérale -->
+<nav class="sidenav" aria-label="Sections">
+  <a href="#intro"  title="Introduction"></a>
+  <a href="#tp1" data-tp="1" title="TP 1"></a>
+  <a href="#tp2" data-tp="2" title="TP 2"></a>
+  <a href="#tp3" data-tp="3" title="TP 3"></a>
+  <a href="#tp4" data-tp="4" title="TP 4"></a>
+  <a href="#tp5" data-tp="5" title="TP 5"></a>
+</nav>
+ 
+<div class="page">
+ 
+  <!-- ═══ HÉRO ═══════════════════════════════════════════════ -->
+  <header class="hero">
+    <div class="tag">INP‑ENSEEIHT · 2A SN · 2025–2026</div>
+    <h1>Traitement des<br>Données <em>Audiovisuelles</em></h1>
+    <div class="hero-meta">
+      <span><strong>UE :</strong> Image et Multimédia</span>
+      <span><strong>Auteur :</strong> Prénom NOM</span>
+      <span><strong>Rendu :</strong> 31 mai 2026</span>
+    </div>
   </header>
-
-  <div class="divider"><hr></div>
-
-  <main>
-
-    <div class="card" id="overview">
-      <div class="section-badge">
-        <div class="badge-num">01</div>
-        <span class="badge-label">Vue d'ensemble</span>
-      </div>
-      <h2>Coucou</h2>
-      <p>Les tpss</p>
+ 
+  <hr class="dashed">
+ 
+  <!-- ═══ INTRODUCTION ═════════════════════════════════════== -->
+  <section id="intro" class="intro-card" style="scroll-margin-top:3rem">
+    <h2>Introduction & choix des TP</h2>
+    <p>
+      Ce rapport présente une sélection de 5 travaux pratiques parmi les séances TP3–TP12 de l'UE TAV.
+      Pour chaque TP, j'ai cherché à dépasser le simple déroulé du sujet en approfondissant certains
+      aspects, en testant des paramètres supplémentaires ou en appliquant les méthodes à d'autres données.
+      <!-- ✏️  Remplace ce texte par ta propre intro -->
+    </p>
+ 
+    <!-- ✏️  Remplace les labels par tes vrais TP choisis (numéro + titre court) -->
+    <div class="tp-grid">
+      <div class="tp-pill" data-tp="1"><span class="dot"></span><a href="#tp1">TP ? — Titre</a></div>
+      <div class="tp-pill" data-tp="2"><span class="dot"></span><a href="#tp2">TP ? — Titre</a></div>
+      <div class="tp-pill" data-tp="3"><span class="dot"></span><a href="#tp3">TP ? — Titre</a></div>
+      <div class="tp-pill" data-tp="4"><span class="dot"></span><a href="#tp4">TP ? — Titre</a></div>
+      <div class="tp-pill" data-tp="5"><span class="dot"></span><a href="#tp5">TP ? — Titre</a></div>
     </div>
-
-    <div class="card" id="selection">
-      <div class="section-badge">
-        <div class="badge-num">02</div>
-        <span class="badge-label">Sélection</span>
+  </section>
+ 
+  <!-- ═══ TP 1 ═════════════════════════════════════════════== -->
+  <section id="tp1" class="tp-section" data-tp="1">
+    <div class="tp-header">
+      <div class="tp-num">1</div>
+      <div class="tp-header-text">
+        <p class="tp-label">TP numéro ?</p>
+        <!-- ✏️  Remplace par le titre du TP -->
+        <h2 class="tp-title">Titre du TP choisi</h2>
       </div>
-      <h2>Les TP choisis</h2>
-      <p>TP....</p>
     </div>
-
-    <div class="card" id="TP1">
-      <div class="section-badge">
-        <div class="badge-num">03</div>
-        <span class="badge-label">Travaux Pratiques</span>
+ 
+    <div class="tp-card">
+ 
+      <div class="tp-block">
+        <h3>Contexte & objectifs</h3>
+        <p>
+          <!-- ✏️  Décris brièvement le sujet du TP, ce qu'on cherche à faire -->
+          Lorem ipsum — décris ici le cadre du TP, les notions abordées, et ton angle d'approche original.
+        </p>
       </div>
-      <h2>TP 1</h2>
-      <p>TP....</p>
+ 
+      <div class="tp-block">
+        <h3>Méthode & implémentation</h3>
+        <p>
+          <!-- ✏️  Explique ta démarche, les paramètres testés, etc. -->
+          Présente ici ta démarche. Tu peux inclure des extraits de code :
+        </p>
+        <!-- ✏️  Exemple de bloc code — remplace par ton vrai code -->
+        <pre><code># Exemple Python
+import numpy as np
+img = np.array(...)   # charger l'image</code></pre>
+      </div>
+ 
+      <div class="tp-block">
+        <h3>Résultats</h3>
+        <!-- ✏️  Zone pour insérer une image ou figure -->
+        <div class="fig-zone">
+          <!-- Pour insérer une image : <img src="resultats/mon_image.png" alt="Description"> -->
+          📷 Insère ici ta figure / image de résultat
+        </div>
+        <div class="result-box">
+          <!-- ✏️  Formule ici ton observation principale -->
+          Observation clé : …
+        </div>
+      </div>
+ 
+      <div class="tp-block">
+        <h3>Analyse & extensions</h3>
+        <p>
+          <!-- ✏️  Analyse critique, partie facultative, tests supplémentaires -->
+          Discute ici tes résultats, les limites observées, et toute extension que tu as explorée
+          (nouveaux paramètres, autres données, lien avec un autre TP…).
+        </p>
+      </div>
+ 
     </div>
-
-  </main>
-
+  </section>
+ 
+  <!-- ═══ TP 2 ═════════════════════════════════════════════== -->
+  <section id="tp2" class="tp-section" data-tp="2">
+    <div class="tp-header">
+      <div class="tp-num">2</div>
+      <div class="tp-header-text">
+        <p class="tp-label">TP numéro ?</p>
+        <h2 class="tp-title">Titre du TP choisi</h2>
+      </div>
+    </div>
+ 
+    <div class="tp-card">
+      <div class="tp-block">
+        <h3>Contexte & objectifs</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+      <div class="tp-block">
+        <h3>Méthode & implémentation</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+      <div class="tp-block">
+        <h3>Résultats</h3>
+        <div class="fig-zone">📷 Insère ici ta figure / image de résultat</div>
+        <div class="result-box">Observation clé : …</div>
+      </div>
+      <div class="tp-block">
+        <h3>Analyse & extensions</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ═══ TP 3 ═════════════════════════════════════════════== -->
+  <section id="tp3" class="tp-section" data-tp="3">
+    <div class="tp-header">
+      <div class="tp-num">3</div>
+      <div class="tp-header-text">
+        <p class="tp-label">TP numéro ?</p>
+        <h2 class="tp-title">Titre du TP choisi</h2>
+      </div>
+    </div>
+ 
+    <div class="tp-card">
+      <div class="tp-block">
+        <h3>Contexte & objectifs</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+      <div class="tp-block">
+        <h3>Méthode & implémentation</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+      <div class="tp-block">
+        <h3>Résultats</h3>
+        <div class="fig-zone">📷 Insère ici ta figure / image de résultat</div>
+        <div class="result-box">Observation clé : …</div>
+      </div>
+      <div class="tp-block">
+        <h3>Analyse & extensions</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ═══ TP 4 ═════════════════════════════════════════════== -->
+  <section id="tp4" class="tp-section" data-tp="4">
+    <div class="tp-header">
+      <div class="tp-num">4</div>
+      <div class="tp-header-text">
+        <p class="tp-label">TP numéro ?</p>
+        <h2 class="tp-title">Titre du TP choisi</h2>
+      </div>
+    </div>
+ 
+    <div class="tp-card">
+      <div class="tp-block">
+        <h3>Contexte & objectifs</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+      <div class="tp-block">
+        <h3>Méthode & implémentation</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+      <div class="tp-block">
+        <h3>Résultats</h3>
+        <div class="fig-zone">📷 Insère ici ta figure / image de résultat</div>
+        <div class="result-box">Observation clé : …</div>
+      </div>
+      <div class="tp-block">
+        <h3>Analyse & extensions</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ═══ TP 5 ═════════════════════════════════════════════== -->
+  <section id="tp5" class="tp-section" data-tp="5">
+    <div class="tp-header">
+      <div class="tp-num">5</div>
+      <div class="tp-header-text">
+        <p class="tp-label">TP numéro ?</p>
+        <h2 class="tp-title">Titre du TP choisi</h2>
+      </div>
+    </div>
+ 
+    <div class="tp-card">
+      <div class="tp-block">
+        <h3>Contexte & objectifs</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+      <div class="tp-block">
+        <h3>Méthode & implémentation</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+      <div class="tp-block">
+        <h3>Résultats</h3>
+        <div class="fig-zone">📷 Insère ici ta figure / image de résultat</div>
+        <div class="result-box">Observation clé : …</div>
+      </div>
+      <div class="tp-block">
+        <h3>Analyse & extensions</h3>
+        <p><!-- ✏️ --></p>
+      </div>
+    </div>
+  </section>
+ 
   <footer>
-    <span>TAV · INP‑ENSEEIHT</span>
+    <div class="badge">TAV · INP‑ENSEEIHT · 2A SN · 2025–2026</div>
+    <p>Rapport individuel · 50% de la note de l'UE</p>
   </footer>
-
+ 
+</div>
+ 
+<script>
+  // Navigation latérale — point actif au scroll
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('.sidenav a');
+ 
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.sidenav a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+ 
+  sections.forEach(s => obs.observe(s));
+ 
+  // Animation d'entrée au scroll
+  const cards = document.querySelectorAll('.tp-section');
+  const cardObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.animation = 'up 0.5s ease both';
+        cardObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+ 
+  cards.forEach(c => { c.style.opacity = '0'; cardObs.observe(c); });
+</script>
+ 
 </body>
 </html>
+ 
+
