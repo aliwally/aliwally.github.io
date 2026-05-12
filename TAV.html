@@ -3,29 +3,267 @@
 <head>
   <meta charset="utf-8">
   <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>INP‑ENSEEIHT — TP TAV</title>
-  <link rel="stylesheet" href="css/site.css">
-  <style>body{max-width:900px;margin:2rem auto;padding:1rem;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#222}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F4EF;
+      --ink: #1a1a2e;
+      --accent1: #FF6B6B;
+      --accent2: #4ECDC4;
+      --accent3: #FFE66D;
+      --accent4: #A29BFE;
+      --card: #ffffff;
+      --muted: #7f8c8d;
+      --border: #e0dbd0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* HEADER */
+    header {
+      position: relative;
+      padding: 3rem 2rem 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .school-tag {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--accent3);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    h1 .highlight {
+      position: relative;
+      display: inline-block;
+      color: var(--accent1);
+    }
+
+    h1 .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 0.05em;
+      left: 0; right: 0;
+      height: 0.35em;
+      background: var(--accent3);
+      opacity: 0.4;
+      z-index: -1;
+      border-radius: 2px;
+    }
+
+    .subtitle {
+      margin-top: 0.6rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* DIVIDER */
+    .divider {
+      max-width: 860px;
+      margin: 0 auto 1rem;
+      padding: 0 2rem;
+    }
+    .divider hr {
+      border: none;
+      border-top: 2px dashed var(--border);
+    }
+
+    /* MAIN LAYOUT */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* SECTION CARDS */
+    .card {
+      background: var(--card);
+      border-radius: 1.2rem;
+      padding: 2rem 2.2rem;
+      border: 1.5px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+
+    /* Colored corner accent */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 80px; height: 80px;
+      border-radius: 0 1.2rem 0 80px;
+    }
+
+    .card:nth-child(1)::before { background: color-mix(in srgb, var(--accent2) 15%, transparent); }
+    .card:nth-child(2)::before { background: color-mix(in srgb, var(--accent4) 15%, transparent); }
+    .card:nth-child(3)::before { background: color-mix(in srgb, var(--accent1) 15%, transparent); }
+
+    /* Section number badge */
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .badge-num {
+      width: 2rem; height: 2rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .card:nth-child(1) .badge-num { background: var(--accent2); color: var(--ink); }
+    .card:nth-child(2) .badge-num { background: var(--accent4); color: white; }
+    .card:nth-child(3) .badge-num { background: var(--accent1); color: white; }
+
+    .badge-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.7rem;
+    }
+
+    p {
+      color: #3d3d4f;
+      font-size: 0.97rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer span {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--bg);
+      padding: 0.2rem 0.7rem;
+      border-radius: 1rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+
+  <header>
+    <div class="school-tag">INP‑ENSEEIHT</div>
+    <h1>Traitement des Données<br><span class="highlight">Audiovisuelles</span> — TP</h1>
+    <p class="subtitle">Rapport de travaux pratiques · TAV</p>
+  </header>
+
+  <div class="divider"><hr></div>
+
   <main>
-    <h1>Traitement des Données Audiovisuelles - Rapport de TP</h1>
 
-    <section id="overview" style="margin-top:1.5rem">
-      <h2>coucou</h2>
+    <div class="card" id="overview">
+      <div class="section-badge">
+        <div class="badge-num">01</div>
+        <span class="badge-label">Vue d'ensemble</span>
+      </div>
+      <h2>Coucou</h2>
       <p>Les tpss</p>
-    </section>
+    </div>
 
-    <section id="selection" style="margin-top:1.5rem">
-      <h2>Les Tp choisis</h2>
+    <div class="card" id="selection">
+      <div class="section-badge">
+        <div class="badge-num">02</div>
+        <span class="badge-label">Sélection</span>
+      </div>
+      <h2>Les TP choisis</h2>
       <p>TP....</p>
-    </section>
+    </div>
 
-    <section id="TP1" style="margin-top:1.5rem">
-      <h2>Les Tp 1</h2>
+    <div class="card" id="TP1">
+      <div class="section-badge">
+        <div class="badge-num">03</div>
+        <span class="badge-label">Travaux Pratiques</span>
+      </div>
+      <h2>TP 1</h2>
       <p>TP....</p>
-    </section>
+    </div>
 
   </main>
+
+  <footer>
+    <span>TAV · INP‑ENSEEIHT</span>
+  </footer>
+
 </body>
 </html>
