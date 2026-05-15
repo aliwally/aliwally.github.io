@@ -1,0 +1,172 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+  *{box-sizing:border-box;}
+  .poster{width:560px;min-height:820px;background:#FAFAF7;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;font-family:'DM Sans',sans-serif;margin:0 auto;}
+  .poster-header{background:#1B3A2D;padding:26px 28px 18px;position:relative;}
+  .flag-stripe{display:flex;height:4px;margin-bottom:14px;border-radius:2px;overflow:hidden;}
+  .flag-stripe span{flex:1;}
+  .top-label{font-size:9px;letter-spacing:2.5px;color:#9FE1CB;text-transform:uppercase;margin-bottom:5px;}
+  .poster-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#fff;line-height:1.15;margin:0 0 3px;}
+  .poster-subtitle{font-size:11px;color:#9FE1CB;margin:0;font-style:italic;}
+  .flag-icons{position:absolute;right:22px;top:22px;font-size:20px;}
+  .section{padding:12px 24px;}
+  .slabel{font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:#0F6E56;font-weight:500;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+  .slabel::after{content:'';flex:1;height:0.5px;background:#C0DD97;}
+  .divider{height:0.5px;background:#E5E3DB;margin:0 24px;}
+  .scale-row{display:flex;flex-direction:column;gap:7px;}
+  .scale-item{background:#fff;border:0.5px solid #D3D1C7;border-radius:8px;padding:9px 12px;}
+  .scale-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+  .scale-name{font-size:10px;font-weight:500;color:#1B3A2D;}
+  .scale-tag{font-size:8px;padding:1px 6px;border-radius:3px;background:#FAECE7;color:#993C1D;}
+  .scale-track{position:relative;height:20px;display:flex;align-items:center;}
+  .track-bg{width:100%;height:3px;background:#E5E3DB;border-radius:2px;position:relative;}
+  .track-label-left{position:absolute;left:0;top:5px;font-size:8px;color:#888780;}
+  .track-label-right{position:absolute;right:0;top:5px;font-size:8px;color:#888780;}
+  .dot{position:absolute;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;border:2px solid #fff;top:50%;margin-top:-7px;display:flex;align-items:center;justify-content:center;font-size:7px;}
+  .dot-fr{background:#002395;}
+  .dot-ie{background:#009A44;}
+  .dot-me{background:#1B3A2D;border:2px solid #FFD700;}
+  .scale-note{font-size:9px;color:#5F5E5A;margin-top:5px;padding-top:5px;border-top:0.5px dashed #E5E3DB;line-height:1.4;}
+  .legend-row{display:flex;gap:10px;margin-bottom:8px;}
+  .legend-item{display:flex;align-items:center;gap:4px;font-size:9px;color:#5F5E5A;}
+  .legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+  .conflict-block{background:#fff;border:0.5px solid #D3D1C7;border-radius:10px;padding:11px 13px;margin-bottom:7px;}
+  .ctag{display:inline-block;font-size:8.5px;text-transform:uppercase;letter-spacing:1px;font-weight:500;padding:2px 8px;border-radius:4px;margin-bottom:5px;}
+  .t1{background:#FAECE7;color:#993C1D;}
+  .t2{background:#EEEDFE;color:#534AB7;}
+  .ctitle{font-size:11.5px;font-weight:500;color:#1B3A2D;margin-bottom:3px;}
+  .cbody{font-size:10px;color:#5F5E5A;line-height:1.5;}
+  .cmanage{font-size:9.5px;color:#0F6E56;margin-top:5px;padding-top:5px;border-top:0.5px dashed #C0DD97;}
+  .skills-row{display:flex;gap:7px;}
+  .skill-chip{flex:1;background:#fff;border:0.5px solid #D3D1C7;border-radius:8px;padding:8px;text-align:center;}
+  .sk-icon{font-size:14px;margin-bottom:2px;}
+  .sk-name{font-size:9.5px;font-weight:500;color:#1B3A2D;}
+  .sk-desc{font-size:8.5px;color:#888780;margin-top:1px;line-height:1.3;}
+  .strategy-box{background:#1B3A2D;border-radius:10px;padding:11px 13px;}
+  .st-label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#9FE1CB;margin-bottom:4px;}
+  .st-text{font-size:10.5px;color:#fff;line-height:1.55;}
+  .footer-bar{background:#1B3A2D;padding:10px 24px;display:flex;justify-content:space-between;align-items:center;}
+  .footer-name{font-family:'Playfair Display',serif;font-size:12px;color:#fff;font-style:italic;}
+  .footer-tag{font-size:8px;color:#9FE1CB;letter-spacing:1px;text-transform:uppercase;}
+</style>
+<h2 class="sr-only">Intercultural conflict poster for Alice Dissoubray. Data from cultural comparison tool showing gaps between her profile, France, and Ireland on communication dimensions like implicit/explicit, emotion, and conflict style.</h2>
+<div class="poster">
+  <div class="poster-header">
+    <div class="flag-stripe">
+      <span style="background:#009A44"></span><span style="background:#fff"></span><span style="background:#FF883E"></span>
+      <span style="background:#002395"></span><span style="background:#fff"></span><span style="background:#ED2939"></span>
+    </div>
+    <div class="top-label">Intercultural conflict — lived experience · Alice Dissoubray</div>
+    <div class="poster-title">Too Sensitive or Just Different?</div>
+    <div class="poster-subtitle">What the data says about growing up Irish in a French environment</div>
+    <div class="flag-icons" aria-hidden="true">🇮🇪 🇫🇷</div>
+  </div>
+
+  <div class="section">
+    <div class="slabel">My cultural profile vs France & Ireland</div>
+    <div class="legend-row">
+      <div class="legend-item"><div class="legend-dot" style="background:#002395"></div>France</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#009A44"></div>Ireland</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#1B3A2D;border:1.5px solid #FFD700"></div>Me (Alice)</div>
+    </div>
+    <div class="scale-row">
+
+      <div class="scale-item">
+        <div class="scale-header">
+          <span class="scale-name">Explicit → Implicit</span>
+          <span class="scale-tag">Key conflict dimension</span>
+        </div>
+        <div class="scale-track">
+          <div class="track-bg">
+            <span class="track-label-left">Explicit</span>
+            <span class="track-label-right">Implicit</span>
+            <div class="dot dot-fr" style="left:62%" title="France"></div>
+            <div class="dot dot-ie" style="left:72%" title="Ireland"></div>
+            <div class="dot dot-me" style="left:84%" title="Me"></div>
+          </div>
+        </div>
+        <div class="scale-note">France is explicit — say it plainly. I sit far more on the implicit side, even beyond Ireland. French bluntness feels like an attack when I'm wired to read between the lines.</div>
+      </div>
+
+      <div class="scale-item">
+        <div class="scale-header">
+          <span class="scale-name">Autocontrôle → Émotion</span>
+          <span class="scale-tag">Why it sticks</span>
+        </div>
+        <div class="scale-track">
+          <div class="track-bg">
+            <span class="track-label-left">Autocontrôle</span>
+            <span class="track-label-right">Émotion</span>
+            <div class="dot dot-fr" style="left:48%" title="France"></div>
+            <div class="dot dot-ie" style="left:38%" title="Ireland"></div>
+            <div class="dot dot-me" style="left:28%" title="Me"></div>
+          </div>
+        </div>
+        <div class="scale-note">I process feedback more emotionally than both cultures. Direct criticism doesn't just inform me — it affects me. My peers move on; I don't, straight away.</div>
+      </div>
+
+      <div class="scale-item">
+        <div class="scale-header">
+          <span class="scale-name">Conflit → Partenariat</span>
+          <span class="scale-tag">Conflict style</span>
+        </div>
+        <div class="scale-track">
+          <div class="track-bg">
+            <span class="track-label-left">Conflit direct</span>
+            <span class="track-label-right">Partenariat</span>
+            <div class="dot dot-fr" style="left:22%" title="France"></div>
+            <div class="dot dot-ie" style="left:42%" title="Ireland"></div>
+            <div class="dot dot-me" style="left:62%" title="Me"></div>
+          </div>
+        </div>
+        <div class="scale-note">France confronts directly. I lean strongly toward harmony and partnership — which means direct confrontation registers as a rupture, not just a debate.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="slabel">The conflict</div>
+    <div class="conflict-block">
+      <span class="ctag t1">Situation · Study group / classroom, France</span>
+      <div class="ctitle">Blunt feedback everyone else shrugged off</div>
+      <div class="cbody">In study groups or with teachers, direct criticism that my French peers absorbed without reaction would affect me disproportionately. I'd feel targeted or diminished — while the room moved on. The data now shows why: I'm more implicit, more emotionally-wired, and more harmony-oriented than the average French person. The friction was structural, not personal.</div>
+      <div class="cmanage">→ Management: pause before reacting, ask "is this style or intent?", separate the information from the delivery.</div>
+    </div>
+    <div class="conflict-block">
+      <span class="ctag t2">Root cause · Invisible cultural gap</span>
+      <div class="ctitle">Neither side was wrong — the gap was real</div>
+      <div class="cbody">My French peers heard "your argument is weak" as useful information. I heard it as a judgment of me. Both reactions are rational — they reflect different cultural logics about what criticism is for. My Irish-influenced values around relational care and indirect communication were colliding daily with French academic norms.</div>
+      <div class="cmanage">→ Resolution: understanding the gap gave me agency. I stopped asking "why are they harsh?" and started asking "why does this hit me specifically?"</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="slabel">Skills developed</div>
+    <div class="skills-row">
+      <div class="skill-chip"><div class="sk-icon" aria-hidden="true">🪞</div><div class="sk-name">Self-awareness</div><div class="sk-desc">Knowing my own cultural triggers</div></div>
+      <div class="skill-chip"><div class="sk-icon" aria-hidden="true">🔄</div><div class="sk-name">Adaptability</div><div class="sk-desc">Reframing feedback culturally</div></div>
+      <div class="skill-chip"><div class="sk-icon" aria-hidden="true">🗣️</div><div class="sk-name">Communication</div><div class="sk-desc">Expressing needs across styles</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" style="padding-bottom:14px;">
+    <div class="slabel">Prevention strategy</div>
+    <div class="strategy-box">
+      <div class="st-label">Reframe before you react</div>
+      <div class="st-text">When blunt feedback stings, I pause and ask: "Is this person being unkind — or are they just being French?" Separating cultural style from personal intent is the one habit that changed how I function in French academic settings. The gap is real. The conflict is structural. And knowing that is already half the solution.</div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="footer-name">Irish mum · French dad · Always lived in France</div>
+    <div class="footer-tag">Self-awareness · Adaptability · Intercultural communication</div>
+  </div>
+</div>
